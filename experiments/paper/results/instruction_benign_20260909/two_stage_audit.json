@@ -1,0 +1,1205 @@
+{
+  "policy": "multi[count:4+width:2:cap16]/runs",
+  "retrieval_floor": 0.9,
+  "scores_sha256": "d60421a1e9a4994cb0056ddb0b774a59d2680a3a4c9ec636540b673384368764",
+  "summary_sha256": "8acf1e82d3c7aaa471c21bb343a9960dcc4c2ae325a4ad86dd8fcc732889b072",
+  "retrieval_scope": "Target-entry pairwise cosine threshold; no competing-entry top-1 replay.",
+  "corpora": {
+    "comqa": {
+      "dg_threshold": 0.006114191829593842,
+      "groups": {
+        "bare": {
+          "n": 244,
+          "n_intents": 244,
+          "hits": 244,
+          "misses": 0,
+          "vetoed_hits": 13,
+          "unjudgeable_hits": 0,
+          "median_full_cosine": 0.9846930796235415,
+          "hit_rate": 1.0,
+          "veto_given_hit": 0.05327868852459016
+        },
+        "polite/entry_only": {
+          "n": 1464,
+          "n_intents": 244,
+          "hits": 1456,
+          "misses": 8,
+          "vetoed_hits": 695,
+          "unjudgeable_hits": 0,
+          "median_full_cosine": 0.9747199062541809,
+          "hit_rate": 0.994535519125683,
+          "veto_given_hit": 0.47733516483516486,
+          "median_before_cosine": 0.9846930796235415,
+          "median_paired_cosine_delta": -0.006031931322159456,
+          "fresh_only": {
+            "before_hit_and_dg_pass": 1386,
+            "after_still_hit": 1378,
+            "new_vetoed_hits": 634,
+            "new_veto_given_retained_hit": 0.46008708272859217
+          }
+        },
+        "polite/query_only": {
+          "n": 1464,
+          "n_intents": 244,
+          "hits": 1464,
+          "misses": 0,
+          "vetoed_hits": 81,
+          "unjudgeable_hits": 0,
+          "median_full_cosine": 0.973840877233064,
+          "hit_rate": 1.0,
+          "veto_given_hit": 0.055327868852459015
+        },
+        "polite/both_same": {
+          "n": 1464,
+          "n_intents": 244,
+          "hits": 1464,
+          "misses": 0,
+          "vetoed_hits": 69,
+          "unjudgeable_hits": 0,
+          "median_full_cosine": 0.9850714744843356,
+          "hit_rate": 1.0,
+          "veto_given_hit": 0.0471311475409836
+        },
+        "polite/both_paraphrase": {
+          "n": 1464,
+          "n_intents": 244,
+          "hits": 1463,
+          "misses": 1,
+          "vetoed_hits": 167,
+          "unjudgeable_hits": 0,
+          "median_full_cosine": 0.977570586570236,
+          "hit_rate": 0.9993169398907104,
+          "veto_given_hit": 0.11414900888585099
+        },
+        "polite/exact_core": {
+          "n": 1464,
+          "n_intents": 244,
+          "hits": 1464,
+          "misses": 0,
+          "vetoed_hits": 891,
+          "unjudgeable_hits": 0,
+          "median_full_cosine": 0.9897184930450718,
+          "hit_rate": 1.0,
+          "veto_given_hit": 0.6086065573770492
+        },
+        "constraint/entry_only": {
+          "n": 1464,
+          "n_intents": 244,
+          "hits": 1460,
+          "misses": 4,
+          "vetoed_hits": 891,
+          "unjudgeable_hits": 0,
+          "median_full_cosine": 0.9676565409707665,
+          "hit_rate": 0.9972677595628415,
+          "veto_given_hit": 0.6102739726027397,
+          "median_before_cosine": 0.9846930796235415,
+          "median_paired_cosine_delta": -0.009735033722548858,
+          "fresh_only": {
+            "before_hit_and_dg_pass": 1386,
+            "after_still_hit": 1382,
+            "new_vetoed_hits": 822,
+            "new_veto_given_retained_hit": 0.5947901591895803
+          }
+        },
+        "constraint/query_only": {
+          "n": 1464,
+          "n_intents": 244,
+          "hits": 1463,
+          "misses": 1,
+          "vetoed_hits": 82,
+          "unjudgeable_hits": 0,
+          "median_full_cosine": 0.9684837459216363,
+          "hit_rate": 0.9993169398907104,
+          "veto_given_hit": 0.056049213943950786
+        },
+        "constraint/both_same": {
+          "n": 1464,
+          "n_intents": 244,
+          "hits": 1464,
+          "misses": 0,
+          "vetoed_hits": 54,
+          "unjudgeable_hits": 0,
+          "median_full_cosine": 0.9873473614019833,
+          "hit_rate": 1.0,
+          "veto_given_hit": 0.036885245901639344
+        },
+        "constraint/both_paraphrase": {
+          "n": 1464,
+          "n_intents": 244,
+          "hits": 1464,
+          "misses": 0,
+          "vetoed_hits": 93,
+          "unjudgeable_hits": 0,
+          "median_full_cosine": 0.9808944110120447,
+          "hit_rate": 1.0,
+          "veto_given_hit": 0.06352459016393443
+        },
+        "constraint/exact_core": {
+          "n": 1464,
+          "n_intents": 244,
+          "hits": 1464,
+          "misses": 0,
+          "vetoed_hits": 1070,
+          "unjudgeable_hits": 0,
+          "median_full_cosine": 0.9840839558929153,
+          "hit_rate": 1.0,
+          "veto_given_hit": 0.7308743169398907
+        }
+      },
+      "positions": {
+        "polite/prefix": {
+          "n": 732,
+          "n_intents": 244,
+          "hits": 726,
+          "misses": 6,
+          "vetoed_hits": 393,
+          "unjudgeable_hits": 0,
+          "median_full_cosine": 0.9741863960218728,
+          "hit_rate": 0.9918032786885246,
+          "veto_given_hit": 0.5413223140495868,
+          "median_before_cosine": 0.9846930796235415,
+          "median_paired_cosine_delta": -0.006092892588630439,
+          "fresh_only": {
+            "before_hit_and_dg_pass": 693,
+            "after_still_hit": 687,
+            "new_vetoed_hits": 359,
+            "new_veto_given_retained_hit": 0.5225618631732168
+          }
+        },
+        "polite/suffix": {
+          "n": 732,
+          "n_intents": 244,
+          "hits": 730,
+          "misses": 2,
+          "vetoed_hits": 302,
+          "unjudgeable_hits": 0,
+          "median_full_cosine": 0.9754263263098233,
+          "hit_rate": 0.9972677595628415,
+          "veto_given_hit": 0.4136986301369863,
+          "median_before_cosine": 0.9846930796235415,
+          "median_paired_cosine_delta": -0.0059474492859477035,
+          "fresh_only": {
+            "before_hit_and_dg_pass": 693,
+            "after_still_hit": 691,
+            "new_vetoed_hits": 275,
+            "new_veto_given_retained_hit": 0.3979739507959479
+          }
+        },
+        "constraint/prefix": {
+          "n": 732,
+          "n_intents": 244,
+          "hits": 731,
+          "misses": 1,
+          "vetoed_hits": 406,
+          "unjudgeable_hits": 0,
+          "median_full_cosine": 0.9721808309122303,
+          "hit_rate": 0.9986338797814208,
+          "veto_given_hit": 0.5554035567715458,
+          "median_before_cosine": 0.9846930796235415,
+          "median_paired_cosine_delta": -0.0069863308093924825,
+          "fresh_only": {
+            "before_hit_and_dg_pass": 693,
+            "after_still_hit": 692,
+            "new_vetoed_hits": 371,
+            "new_veto_given_retained_hit": 0.5361271676300579
+          }
+        },
+        "constraint/suffix": {
+          "n": 732,
+          "n_intents": 244,
+          "hits": 729,
+          "misses": 3,
+          "vetoed_hits": 485,
+          "unjudgeable_hits": 0,
+          "median_full_cosine": 0.963609188239333,
+          "hit_rate": 0.9959016393442623,
+          "veto_given_hit": 0.6652949245541838,
+          "median_before_cosine": 0.9846930796235415,
+          "median_paired_cosine_delta": -0.01154342649847806,
+          "fresh_only": {
+            "before_hit_and_dg_pass": 693,
+            "after_still_hit": 690,
+            "new_vetoed_hits": 451,
+            "new_veto_given_retained_hit": 0.6536231884057971
+          }
+        }
+      },
+      "templates": {
+        "polite_answer/prefix": {
+          "n": 244,
+          "n_intents": 244,
+          "hits": 242,
+          "misses": 2,
+          "vetoed_hits": 77,
+          "unjudgeable_hits": 0,
+          "median_full_cosine": 0.9795120226286926,
+          "hit_rate": 0.9918032786885246,
+          "veto_given_hit": 0.3181818181818182,
+          "median_before_cosine": 0.9846930796235415,
+          "median_paired_cosine_delta": -0.0027220243312687242,
+          "fresh_only": {
+            "before_hit_and_dg_pass": 231,
+            "after_still_hit": 229,
+            "new_vetoed_hits": 66,
+            "new_veto_given_retained_hit": 0.28820960698689957
+          }
+        },
+        "polite_help/prefix": {
+          "n": 244,
+          "n_intents": 244,
+          "hits": 243,
+          "misses": 1,
+          "vetoed_hits": 189,
+          "unjudgeable_hits": 0,
+          "median_full_cosine": 0.9701613251877449,
+          "hit_rate": 0.9959016393442623,
+          "veto_given_hit": 0.7777777777777778,
+          "median_before_cosine": 0.9846930796235415,
+          "median_paired_cosine_delta": -0.010858842101213573,
+          "fresh_only": {
+            "before_hit_and_dg_pass": 231,
+            "after_still_hit": 230,
+            "new_vetoed_hits": 177,
+            "new_veto_given_retained_hit": 0.7695652173913043
+          }
+        },
+        "polite_tell/prefix": {
+          "n": 244,
+          "n_intents": 244,
+          "hits": 241,
+          "misses": 3,
+          "vetoed_hits": 127,
+          "unjudgeable_hits": 0,
+          "median_full_cosine": 0.9734740159951938,
+          "hit_rate": 0.9877049180327869,
+          "veto_given_hit": 0.5269709543568465,
+          "median_before_cosine": 0.9846930796235415,
+          "median_paired_cosine_delta": -0.006590180113599409,
+          "fresh_only": {
+            "before_hit_and_dg_pass": 231,
+            "after_still_hit": 228,
+            "new_vetoed_hits": 116,
+            "new_veto_given_retained_hit": 0.5087719298245614
+          }
+        },
+        "polite_answer/suffix": {
+          "n": 244,
+          "n_intents": 244,
+          "hits": 244,
+          "misses": 0,
+          "vetoed_hits": 53,
+          "unjudgeable_hits": 0,
+          "median_full_cosine": 0.9791811805640759,
+          "hit_rate": 1.0,
+          "veto_given_hit": 0.21721311475409835,
+          "median_before_cosine": 0.9846930796235415,
+          "median_paired_cosine_delta": -0.003067344968889496,
+          "fresh_only": {
+            "before_hit_and_dg_pass": 231,
+            "after_still_hit": 231,
+            "new_vetoed_hits": 45,
+            "new_veto_given_retained_hit": 0.19480519480519481
+          }
+        },
+        "polite_help/suffix": {
+          "n": 244,
+          "n_intents": 244,
+          "hits": 243,
+          "misses": 1,
+          "vetoed_hits": 155,
+          "unjudgeable_hits": 0,
+          "median_full_cosine": 0.9696488942064244,
+          "hit_rate": 0.9959016393442623,
+          "veto_given_hit": 0.6378600823045267,
+          "median_before_cosine": 0.9846930796235415,
+          "median_paired_cosine_delta": -0.00984963319829213,
+          "fresh_only": {
+            "before_hit_and_dg_pass": 231,
+            "after_still_hit": 230,
+            "new_vetoed_hits": 144,
+            "new_veto_given_retained_hit": 0.6260869565217392
+          }
+        },
+        "polite_tell/suffix": {
+          "n": 244,
+          "n_intents": 244,
+          "hits": 243,
+          "misses": 1,
+          "vetoed_hits": 94,
+          "unjudgeable_hits": 0,
+          "median_full_cosine": 0.9753649002016185,
+          "hit_rate": 0.9959016393442623,
+          "veto_given_hit": 0.3868312757201646,
+          "median_before_cosine": 0.9846930796235415,
+          "median_paired_cosine_delta": -0.005709623321342339,
+          "fresh_only": {
+            "before_hit_and_dg_pass": 231,
+            "after_still_hit": 230,
+            "new_vetoed_hits": 86,
+            "new_veto_given_retained_hit": 0.3739130434782609
+          }
+        },
+        "brief/prefix": {
+          "n": 244,
+          "n_intents": 244,
+          "hits": 244,
+          "misses": 0,
+          "vetoed_hits": 80,
+          "unjudgeable_hits": 0,
+          "median_full_cosine": 0.9773936497552471,
+          "hit_rate": 1.0,
+          "veto_given_hit": 0.32786885245901637,
+          "median_before_cosine": 0.9846930796235415,
+          "median_paired_cosine_delta": -0.0034662140103519645,
+          "fresh_only": {
+            "before_hit_and_dg_pass": 231,
+            "after_still_hit": 231,
+            "new_vetoed_hits": 69,
+            "new_veto_given_retained_hit": 0.2987012987012987
+          }
+        },
+        "one_sentence/prefix": {
+          "n": 244,
+          "n_intents": 244,
+          "hits": 244,
+          "misses": 0,
+          "vetoed_hits": 101,
+          "unjudgeable_hits": 0,
+          "median_full_cosine": 0.9788119315374386,
+          "hit_rate": 1.0,
+          "veto_given_hit": 0.4139344262295082,
+          "median_before_cosine": 0.9846930796235415,
+          "median_paired_cosine_delta": -0.004120447961695695,
+          "fresh_only": {
+            "before_hit_and_dg_pass": 231,
+            "after_still_hit": 231,
+            "new_vetoed_hits": 90,
+            "new_veto_given_retained_hit": 0.38961038961038963
+          }
+        },
+        "two_sentences/prefix": {
+          "n": 244,
+          "n_intents": 244,
+          "hits": 243,
+          "misses": 1,
+          "vetoed_hits": 225,
+          "unjudgeable_hits": 0,
+          "median_full_cosine": 0.9618534295604523,
+          "hit_rate": 0.9959016393442623,
+          "veto_given_hit": 0.9259259259259259,
+          "median_before_cosine": 0.9846930796235415,
+          "median_paired_cosine_delta": -0.01859709996235398,
+          "fresh_only": {
+            "before_hit_and_dg_pass": 231,
+            "after_still_hit": 230,
+            "new_vetoed_hits": 212,
+            "new_veto_given_retained_hit": 0.9217391304347826
+          }
+        },
+        "brief/suffix": {
+          "n": 244,
+          "n_intents": 244,
+          "hits": 244,
+          "misses": 0,
+          "vetoed_hits": 80,
+          "unjudgeable_hits": 0,
+          "median_full_cosine": 0.9767709524814899,
+          "hit_rate": 1.0,
+          "veto_given_hit": 0.32786885245901637,
+          "median_before_cosine": 0.9846930796235415,
+          "median_paired_cosine_delta": -0.004354687980816174,
+          "fresh_only": {
+            "before_hit_and_dg_pass": 231,
+            "after_still_hit": 231,
+            "new_vetoed_hits": 70,
+            "new_veto_given_retained_hit": 0.30303030303030304
+          }
+        },
+        "one_sentence/suffix": {
+          "n": 244,
+          "n_intents": 244,
+          "hits": 244,
+          "misses": 0,
+          "vetoed_hits": 167,
+          "unjudgeable_hits": 0,
+          "median_full_cosine": 0.9727517511562023,
+          "hit_rate": 1.0,
+          "veto_given_hit": 0.6844262295081968,
+          "median_before_cosine": 0.9846930796235415,
+          "median_paired_cosine_delta": -0.009413776397702633,
+          "fresh_only": {
+            "before_hit_and_dg_pass": 231,
+            "after_still_hit": 231,
+            "new_vetoed_hits": 156,
+            "new_veto_given_retained_hit": 0.6753246753246753
+          }
+        },
+        "two_sentences/suffix": {
+          "n": 244,
+          "n_intents": 244,
+          "hits": 241,
+          "misses": 3,
+          "vetoed_hits": 238,
+          "unjudgeable_hits": 0,
+          "median_full_cosine": 0.9508765651517532,
+          "hit_rate": 0.9877049180327869,
+          "veto_given_hit": 0.9875518672199171,
+          "median_before_cosine": 0.9846930796235415,
+          "median_paired_cosine_delta": -0.030479339886301138,
+          "fresh_only": {
+            "before_hit_and_dg_pass": 231,
+            "after_still_hit": 228,
+            "new_vetoed_hits": 225,
+            "new_veto_given_retained_hit": 0.9868421052631579
+          }
+        }
+      },
+      "retrieval_sensitivity_fixed_dg_threshold": {
+        "0.9": {
+          "n": 1464,
+          "n_intents": 244,
+          "hits": 1456,
+          "misses": 8,
+          "vetoed_hits": 695,
+          "unjudgeable_hits": 0,
+          "median_full_cosine": 0.9747199062541809,
+          "hit_rate": 0.994535519125683,
+          "veto_given_hit": 0.47733516483516486,
+          "median_before_cosine": 0.9846930796235415,
+          "median_paired_cosine_delta": -0.006031931322159456,
+          "fresh_only": {
+            "before_hit_and_dg_pass": 1386,
+            "after_still_hit": 1378,
+            "new_vetoed_hits": 634,
+            "new_veto_given_retained_hit": 0.46008708272859217
+          }
+        },
+        "0.95": {
+          "n": 1464,
+          "n_intents": 244,
+          "hits": 1174,
+          "misses": 290,
+          "vetoed_hits": 505,
+          "unjudgeable_hits": 0,
+          "median_full_cosine": 0.9747199062541809,
+          "hit_rate": 0.8019125683060109,
+          "veto_given_hit": 0.4301533219761499,
+          "median_before_cosine": 0.9846930796235415,
+          "median_paired_cosine_delta": -0.006031931322159456,
+          "fresh_only": {
+            "before_hit_and_dg_pass": 1254,
+            "after_still_hit": 1139,
+            "new_vetoed_hits": 475,
+            "new_veto_given_retained_hit": 0.4170324846356453
+          }
+        },
+        "0.97": {
+          "n": 1464,
+          "n_intents": 244,
+          "hits": 840,
+          "misses": 624,
+          "vetoed_hits": 269,
+          "unjudgeable_hits": 0,
+          "median_full_cosine": 0.9747199062541809,
+          "hit_rate": 0.5737704918032787,
+          "veto_given_hit": 0.3202380952380952,
+          "median_before_cosine": 0.9846930796235415,
+          "median_paired_cosine_delta": -0.006031931322159456,
+          "fresh_only": {
+            "before_hit_and_dg_pass": 1062,
+            "after_still_hit": 829,
+            "new_vetoed_hits": 262,
+            "new_veto_given_retained_hit": 0.316043425814234
+          }
+        },
+        "0.99": {
+          "n": 1464,
+          "n_intents": 244,
+          "hits": 188,
+          "misses": 1276,
+          "vetoed_hits": 9,
+          "unjudgeable_hits": 0,
+          "median_full_cosine": 0.9747199062541809,
+          "hit_rate": 0.1284153005464481,
+          "veto_given_hit": 0.047872340425531915,
+          "median_before_cosine": 0.9846930796235415,
+          "median_paired_cosine_delta": -0.006031931322159456,
+          "fresh_only": {
+            "before_hit_and_dg_pass": 504,
+            "after_still_hit": 187,
+            "new_vetoed_hits": 9,
+            "new_veto_given_retained_hit": 0.0481283422459893
+          }
+        }
+      },
+      "witness": {
+        "before": {
+          "record_id": "bfd853d17d634743ee1f",
+          "intent_id": "comqa-a6e6c2a5be4d67f6",
+          "corpus": "comqa",
+          "text": "what was john adams wifes' name?",
+          "anchor": "who was john adams wife?",
+          "anchor_id": "356a9c0830c7e819fa40",
+          "anchor_generator": "human_comqa",
+          "source_split": "train",
+          "source_file": "<server-workdir>/final500/eval/lmp_eval.jsonl",
+          "generator": "human_comqa",
+          "base_text": "what was john adams wifes' name?",
+          "base_anchor": "who was john adams wife?",
+          "split": "test",
+          "malicious": false,
+          "sample_id": "c889fd21d966301768fe141c",
+          "condition": "bare",
+          "template": "bare",
+          "kind": "bare",
+          "position": "none",
+          "reuse_label": "inherited_from_source_pair",
+          "pair_basis": "source_paraphrase",
+          "policy": "multi[count:4+width:2:cap16]/runs",
+          "base_cos": 0.9958031158382434,
+          "retrieval_cos": 0.9958356224062568,
+          "words": 6,
+          "n_variants": 9,
+          "judgeable": true,
+          "dg": -0.0010952123132111913,
+          "best_name": "count:4#4:run1_4",
+          "best_text": "john adams wifes' name?",
+          "core_only_gain": 0.0,
+          "best_is_core": false
+        },
+        "after": {
+          "record_id": "bfd853d17d634743ee1f",
+          "intent_id": "comqa-a6e6c2a5be4d67f6",
+          "corpus": "comqa",
+          "text": "Please tell me.\nwhat was john adams wifes' name?",
+          "anchor": "who was john adams wife?",
+          "anchor_id": "356a9c0830c7e819fa40",
+          "anchor_generator": "human_comqa",
+          "source_split": "train",
+          "source_file": "<server-workdir>/final500/eval/lmp_eval.jsonl",
+          "generator": "human_comqa",
+          "base_text": "what was john adams wifes' name?",
+          "base_anchor": "who was john adams wife?",
+          "split": "test",
+          "malicious": false,
+          "sample_id": "ab64b242c48ddfcefe848717",
+          "condition": "entry_only",
+          "template": "polite_tell",
+          "kind": "polite",
+          "position": "prefix",
+          "reuse_label": "inherited_from_source_pair",
+          "pair_basis": "source_paraphrase",
+          "policy": "multi[count:4+width:2:cap16]/runs",
+          "base_cos": 0.983245691976099,
+          "retrieval_cos": 0.9832730272804536,
+          "words": 9,
+          "n_variants": 18,
+          "judgeable": true,
+          "dg": 0.011498492967775165,
+          "best_name": "count:4#4:run2_4",
+          "best_text": "was john adams wifes' name?",
+          "core_only_gain": 0.012557423862144423,
+          "best_is_core": false
+        }
+      }
+    },
+    "nq": {
+      "dg_threshold": 0.0022688164079849695,
+      "groups": {
+        "bare": {
+          "n": 237,
+          "n_intents": 237,
+          "hits": 237,
+          "misses": 0,
+          "vetoed_hits": 14,
+          "unjudgeable_hits": 0,
+          "median_full_cosine": 0.9834069995405275,
+          "hit_rate": 1.0,
+          "veto_given_hit": 0.05907172995780591
+        },
+        "polite/entry_only": {
+          "n": 1422,
+          "n_intents": 237,
+          "hits": 1422,
+          "misses": 0,
+          "vetoed_hits": 1030,
+          "unjudgeable_hits": 0,
+          "median_full_cosine": 0.9718943155914359,
+          "hit_rate": 1.0,
+          "veto_given_hit": 0.7243319268635724,
+          "median_before_cosine": 0.9834069995405275,
+          "median_paired_cosine_delta": -0.0067080942611684735,
+          "fresh_only": {
+            "before_hit_and_dg_pass": 1338,
+            "after_still_hit": 1338,
+            "new_vetoed_hits": 958,
+            "new_veto_given_retained_hit": 0.7159940209267563
+          }
+        },
+        "polite/query_only": {
+          "n": 1422,
+          "n_intents": 237,
+          "hits": 1422,
+          "misses": 0,
+          "vetoed_hits": 58,
+          "unjudgeable_hits": 0,
+          "median_full_cosine": 0.9777350907022138,
+          "hit_rate": 1.0,
+          "veto_given_hit": 0.040787623066104076
+        },
+        "polite/both_same": {
+          "n": 1422,
+          "n_intents": 237,
+          "hits": 1422,
+          "misses": 0,
+          "vetoed_hits": 284,
+          "unjudgeable_hits": 0,
+          "median_full_cosine": 0.9815043677062023,
+          "hit_rate": 1.0,
+          "veto_given_hit": 0.19971870604781997
+        },
+        "polite/both_paraphrase": {
+          "n": 1422,
+          "n_intents": 237,
+          "hits": 1422,
+          "misses": 0,
+          "vetoed_hits": 474,
+          "unjudgeable_hits": 0,
+          "median_full_cosine": 0.9759836480009884,
+          "hit_rate": 1.0,
+          "veto_given_hit": 0.3333333333333333
+        },
+        "polite/exact_core": {
+          "n": 1422,
+          "n_intents": 237,
+          "hits": 1422,
+          "misses": 0,
+          "vetoed_hits": 1341,
+          "unjudgeable_hits": 0,
+          "median_full_cosine": 0.9884080644839367,
+          "hit_rate": 1.0,
+          "veto_given_hit": 0.9430379746835443
+        },
+        "constraint/entry_only": {
+          "n": 1422,
+          "n_intents": 237,
+          "hits": 1422,
+          "misses": 0,
+          "vetoed_hits": 1161,
+          "unjudgeable_hits": 0,
+          "median_full_cosine": 0.9690778319032664,
+          "hit_rate": 1.0,
+          "veto_given_hit": 0.8164556962025317,
+          "median_before_cosine": 0.9834069995405275,
+          "median_paired_cosine_delta": -0.010256576814128116,
+          "fresh_only": {
+            "before_hit_and_dg_pass": 1338,
+            "after_still_hit": 1338,
+            "new_vetoed_hits": 1085,
+            "new_veto_given_retained_hit": 0.8109118086696562
+          }
+        },
+        "constraint/query_only": {
+          "n": 1422,
+          "n_intents": 237,
+          "hits": 1422,
+          "misses": 0,
+          "vetoed_hits": 69,
+          "unjudgeable_hits": 0,
+          "median_full_cosine": 0.9730018234649429,
+          "hit_rate": 1.0,
+          "veto_given_hit": 0.04852320675105485
+        },
+        "constraint/both_same": {
+          "n": 1422,
+          "n_intents": 237,
+          "hits": 1422,
+          "misses": 0,
+          "vetoed_hits": 128,
+          "unjudgeable_hits": 0,
+          "median_full_cosine": 0.9838244690731077,
+          "hit_rate": 1.0,
+          "veto_given_hit": 0.090014064697609
+        },
+        "constraint/both_paraphrase": {
+          "n": 1422,
+          "n_intents": 237,
+          "hits": 1422,
+          "misses": 0,
+          "vetoed_hits": 348,
+          "unjudgeable_hits": 0,
+          "median_full_cosine": 0.9768292611439919,
+          "hit_rate": 1.0,
+          "veto_given_hit": 0.24472573839662448
+        },
+        "constraint/exact_core": {
+          "n": 1422,
+          "n_intents": 237,
+          "hits": 1422,
+          "misses": 0,
+          "vetoed_hits": 1359,
+          "unjudgeable_hits": 0,
+          "median_full_cosine": 0.9834043170296742,
+          "hit_rate": 1.0,
+          "veto_given_hit": 0.9556962025316456
+        }
+      },
+      "positions": {
+        "polite/prefix": {
+          "n": 711,
+          "n_intents": 237,
+          "hits": 711,
+          "misses": 0,
+          "vetoed_hits": 496,
+          "unjudgeable_hits": 0,
+          "median_full_cosine": 0.9734750100384966,
+          "hit_rate": 1.0,
+          "veto_given_hit": 0.6976090014064698,
+          "median_before_cosine": 0.9834069995405275,
+          "median_paired_cosine_delta": -0.005461340080203381,
+          "fresh_only": {
+            "before_hit_and_dg_pass": 669,
+            "after_still_hit": 669,
+            "new_vetoed_hits": 461,
+            "new_veto_given_retained_hit": 0.6890881913303438
+          }
+        },
+        "polite/suffix": {
+          "n": 711,
+          "n_intents": 237,
+          "hits": 711,
+          "misses": 0,
+          "vetoed_hits": 534,
+          "unjudgeable_hits": 0,
+          "median_full_cosine": 0.9706459377471204,
+          "hit_rate": 1.0,
+          "veto_given_hit": 0.7510548523206751,
+          "median_before_cosine": 0.9834069995405275,
+          "median_paired_cosine_delta": -0.00806787206157722,
+          "fresh_only": {
+            "before_hit_and_dg_pass": 669,
+            "after_still_hit": 669,
+            "new_vetoed_hits": 497,
+            "new_veto_given_retained_hit": 0.7428998505231689
+          }
+        },
+        "constraint/prefix": {
+          "n": 711,
+          "n_intents": 237,
+          "hits": 711,
+          "misses": 0,
+          "vetoed_hits": 545,
+          "unjudgeable_hits": 0,
+          "median_full_cosine": 0.9732148707280035,
+          "hit_rate": 1.0,
+          "veto_given_hit": 0.7665260196905767,
+          "median_before_cosine": 0.9834069995405275,
+          "median_paired_cosine_delta": -0.00710299536676795,
+          "fresh_only": {
+            "before_hit_and_dg_pass": 669,
+            "after_still_hit": 669,
+            "new_vetoed_hits": 508,
+            "new_veto_given_retained_hit": 0.7593423019431988
+          }
+        },
+        "constraint/suffix": {
+          "n": 711,
+          "n_intents": 237,
+          "hits": 711,
+          "misses": 0,
+          "vetoed_hits": 616,
+          "unjudgeable_hits": 0,
+          "median_full_cosine": 0.9639333552458242,
+          "hit_rate": 1.0,
+          "veto_given_hit": 0.8663853727144867,
+          "median_before_cosine": 0.9834069995405275,
+          "median_paired_cosine_delta": -0.014266513187789265,
+          "fresh_only": {
+            "before_hit_and_dg_pass": 669,
+            "after_still_hit": 669,
+            "new_vetoed_hits": 577,
+            "new_veto_given_retained_hit": 0.8624813153961136
+          }
+        }
+      },
+      "templates": {
+        "polite_answer/prefix": {
+          "n": 237,
+          "n_intents": 237,
+          "hits": 237,
+          "misses": 0,
+          "vetoed_hits": 134,
+          "unjudgeable_hits": 0,
+          "median_full_cosine": 0.9763270852755195,
+          "hit_rate": 1.0,
+          "veto_given_hit": 0.5654008438818565,
+          "median_before_cosine": 0.9834069995405275,
+          "median_paired_cosine_delta": -0.0035690933034503436,
+          "fresh_only": {
+            "before_hit_and_dg_pass": 223,
+            "after_still_hit": 223,
+            "new_vetoed_hits": 122,
+            "new_veto_given_retained_hit": 0.547085201793722
+          }
+        },
+        "polite_help/prefix": {
+          "n": 237,
+          "n_intents": 237,
+          "hits": 237,
+          "misses": 0,
+          "vetoed_hits": 183,
+          "unjudgeable_hits": 0,
+          "median_full_cosine": 0.9727723691644319,
+          "hit_rate": 1.0,
+          "veto_given_hit": 0.7721518987341772,
+          "median_before_cosine": 0.9834069995405275,
+          "median_paired_cosine_delta": -0.005681527348667004,
+          "fresh_only": {
+            "before_hit_and_dg_pass": 223,
+            "after_still_hit": 223,
+            "new_vetoed_hits": 170,
+            "new_veto_given_retained_hit": 0.7623318385650224
+          }
+        },
+        "polite_tell/prefix": {
+          "n": 237,
+          "n_intents": 237,
+          "hits": 237,
+          "misses": 0,
+          "vetoed_hits": 179,
+          "unjudgeable_hits": 0,
+          "median_full_cosine": 0.9712534818595001,
+          "hit_rate": 1.0,
+          "veto_given_hit": 0.7552742616033755,
+          "median_before_cosine": 0.9834069995405275,
+          "median_paired_cosine_delta": -0.00839809041733064,
+          "fresh_only": {
+            "before_hit_and_dg_pass": 223,
+            "after_still_hit": 223,
+            "new_vetoed_hits": 169,
+            "new_veto_given_retained_hit": 0.757847533632287
+          }
+        },
+        "polite_answer/suffix": {
+          "n": 237,
+          "n_intents": 237,
+          "hits": 237,
+          "misses": 0,
+          "vetoed_hits": 124,
+          "unjudgeable_hits": 0,
+          "median_full_cosine": 0.9764324704620005,
+          "hit_rate": 1.0,
+          "veto_given_hit": 0.5232067510548524,
+          "median_before_cosine": 0.9834069995405275,
+          "median_paired_cosine_delta": -0.0028887374383783637,
+          "fresh_only": {
+            "before_hit_and_dg_pass": 223,
+            "after_still_hit": 223,
+            "new_vetoed_hits": 112,
+            "new_veto_given_retained_hit": 0.5022421524663677
+          }
+        },
+        "polite_help/suffix": {
+          "n": 237,
+          "n_intents": 237,
+          "hits": 237,
+          "misses": 0,
+          "vetoed_hits": 223,
+          "unjudgeable_hits": 0,
+          "median_full_cosine": 0.9631012585041503,
+          "hit_rate": 1.0,
+          "veto_given_hit": 0.9409282700421941,
+          "median_before_cosine": 0.9834069995405275,
+          "median_paired_cosine_delta": -0.01603059190997147,
+          "fresh_only": {
+            "before_hit_and_dg_pass": 223,
+            "after_still_hit": 223,
+            "new_vetoed_hits": 210,
+            "new_veto_given_retained_hit": 0.9417040358744395
+          }
+        },
+        "polite_tell/suffix": {
+          "n": 237,
+          "n_intents": 237,
+          "hits": 237,
+          "misses": 0,
+          "vetoed_hits": 187,
+          "unjudgeable_hits": 0,
+          "median_full_cosine": 0.9710581156114659,
+          "hit_rate": 1.0,
+          "veto_given_hit": 0.7890295358649789,
+          "median_before_cosine": 0.9834069995405275,
+          "median_paired_cosine_delta": -0.007997839136315466,
+          "fresh_only": {
+            "before_hit_and_dg_pass": 223,
+            "after_still_hit": 223,
+            "new_vetoed_hits": 175,
+            "new_veto_given_retained_hit": 0.7847533632286996
+          }
+        },
+        "brief/prefix": {
+          "n": 237,
+          "n_intents": 237,
+          "hits": 237,
+          "misses": 0,
+          "vetoed_hits": 148,
+          "unjudgeable_hits": 0,
+          "median_full_cosine": 0.9752035119253268,
+          "hit_rate": 1.0,
+          "veto_given_hit": 0.6244725738396625,
+          "median_before_cosine": 0.9834069995405275,
+          "median_paired_cosine_delta": -0.004976524277726768,
+          "fresh_only": {
+            "before_hit_and_dg_pass": 223,
+            "after_still_hit": 223,
+            "new_vetoed_hits": 138,
+            "new_veto_given_retained_hit": 0.6188340807174888
+          }
+        },
+        "one_sentence/prefix": {
+          "n": 237,
+          "n_intents": 237,
+          "hits": 237,
+          "misses": 0,
+          "vetoed_hits": 183,
+          "unjudgeable_hits": 0,
+          "median_full_cosine": 0.9762459984891122,
+          "hit_rate": 1.0,
+          "veto_given_hit": 0.7721518987341772,
+          "median_before_cosine": 0.9834069995405275,
+          "median_paired_cosine_delta": -0.004498324607944637,
+          "fresh_only": {
+            "before_hit_and_dg_pass": 223,
+            "after_still_hit": 223,
+            "new_vetoed_hits": 170,
+            "new_veto_given_retained_hit": 0.7623318385650224
+          }
+        },
+        "two_sentences/prefix": {
+          "n": 237,
+          "n_intents": 237,
+          "hits": 237,
+          "misses": 0,
+          "vetoed_hits": 214,
+          "unjudgeable_hits": 0,
+          "median_full_cosine": 0.9684788815752702,
+          "hit_rate": 1.0,
+          "veto_given_hit": 0.9029535864978903,
+          "median_before_cosine": 0.9834069995405275,
+          "median_paired_cosine_delta": -0.01183476186500143,
+          "fresh_only": {
+            "before_hit_and_dg_pass": 223,
+            "after_still_hit": 223,
+            "new_vetoed_hits": 200,
+            "new_veto_given_retained_hit": 0.8968609865470852
+          }
+        },
+        "brief/suffix": {
+          "n": 237,
+          "n_intents": 237,
+          "hits": 237,
+          "misses": 0,
+          "vetoed_hits": 152,
+          "unjudgeable_hits": 0,
+          "median_full_cosine": 0.9745782583153382,
+          "hit_rate": 1.0,
+          "veto_given_hit": 0.6413502109704642,
+          "median_before_cosine": 0.9834069995405275,
+          "median_paired_cosine_delta": -0.005010506035734386,
+          "fresh_only": {
+            "before_hit_and_dg_pass": 223,
+            "after_still_hit": 223,
+            "new_vetoed_hits": 141,
+            "new_veto_given_retained_hit": 0.6322869955156951
+          }
+        },
+        "one_sentence/suffix": {
+          "n": 237,
+          "n_intents": 237,
+          "hits": 237,
+          "misses": 0,
+          "vetoed_hits": 227,
+          "unjudgeable_hits": 0,
+          "median_full_cosine": 0.9690415671299776,
+          "hit_rate": 1.0,
+          "veto_given_hit": 0.9578059071729957,
+          "median_before_cosine": 0.9834069995405275,
+          "median_paired_cosine_delta": -0.011748424436830884,
+          "fresh_only": {
+            "before_hit_and_dg_pass": 223,
+            "after_still_hit": 223,
+            "new_vetoed_hits": 213,
+            "new_veto_given_retained_hit": 0.9551569506726457
+          }
+        },
+        "two_sentences/suffix": {
+          "n": 237,
+          "n_intents": 237,
+          "hits": 237,
+          "misses": 0,
+          "vetoed_hits": 237,
+          "unjudgeable_hits": 0,
+          "median_full_cosine": 0.9519482556985975,
+          "hit_rate": 1.0,
+          "veto_given_hit": 1.0,
+          "median_before_cosine": 0.9834069995405275,
+          "median_paired_cosine_delta": -0.028285874764205077,
+          "fresh_only": {
+            "before_hit_and_dg_pass": 223,
+            "after_still_hit": 223,
+            "new_vetoed_hits": 223,
+            "new_veto_given_retained_hit": 1.0
+          }
+        }
+      },
+      "retrieval_sensitivity_fixed_dg_threshold": {
+        "0.9": {
+          "n": 1422,
+          "n_intents": 237,
+          "hits": 1422,
+          "misses": 0,
+          "vetoed_hits": 1030,
+          "unjudgeable_hits": 0,
+          "median_full_cosine": 0.9718943155914359,
+          "hit_rate": 1.0,
+          "veto_given_hit": 0.7243319268635724,
+          "median_before_cosine": 0.9834069995405275,
+          "median_paired_cosine_delta": -0.0067080942611684735,
+          "fresh_only": {
+            "before_hit_and_dg_pass": 1338,
+            "after_still_hit": 1338,
+            "new_vetoed_hits": 958,
+            "new_veto_given_retained_hit": 0.7159940209267563
+          }
+        },
+        "0.95": {
+          "n": 1422,
+          "n_intents": 237,
+          "hits": 1200,
+          "misses": 222,
+          "vetoed_hits": 824,
+          "unjudgeable_hits": 0,
+          "median_full_cosine": 0.9718943155914359,
+          "hit_rate": 0.8438818565400844,
+          "veto_given_hit": 0.6866666666666666,
+          "median_before_cosine": 0.9834069995405275,
+          "median_paired_cosine_delta": -0.0067080942611684735,
+          "fresh_only": {
+            "before_hit_and_dg_pass": 1296,
+            "after_still_hit": 1159,
+            "new_vetoed_hits": 794,
+            "new_veto_given_retained_hit": 0.6850733390854185
+          }
+        },
+        "0.97": {
+          "n": 1422,
+          "n_intents": 237,
+          "hits": 769,
+          "misses": 653,
+          "vetoed_hits": 443,
+          "unjudgeable_hits": 0,
+          "median_full_cosine": 0.9718943155914359,
+          "hit_rate": 0.5407876230661041,
+          "veto_given_hit": 0.576072821846554,
+          "median_before_cosine": 0.9834069995405275,
+          "median_paired_cosine_delta": -0.0067080942611684735,
+          "fresh_only": {
+            "before_hit_and_dg_pass": 1122,
+            "after_still_hit": 745,
+            "new_vetoed_hits": 428,
+            "new_veto_given_retained_hit": 0.574496644295302
+          }
+        },
+        "0.99": {
+          "n": 1422,
+          "n_intents": 237,
+          "hits": 85,
+          "misses": 1337,
+          "vetoed_hits": 9,
+          "unjudgeable_hits": 0,
+          "median_full_cosine": 0.9718943155914359,
+          "hit_rate": 0.05977496483825598,
+          "veto_given_hit": 0.10588235294117647,
+          "median_before_cosine": 0.9834069995405275,
+          "median_paired_cosine_delta": -0.0067080942611684735,
+          "fresh_only": {
+            "before_hit_and_dg_pass": 234,
+            "after_still_hit": 65,
+            "new_vetoed_hits": 9,
+            "new_veto_given_retained_hit": 0.13846153846153847
+          }
+        }
+      },
+      "witness": {
+        "before": {
+          "record_id": "a70850142acae0fd175e",
+          "intent_id": "comqaf1-a70850142aca",
+          "corpus": "nq",
+          "text": "how does the eighth amendment protect people found guilty of crimes",
+          "anchor": "In what ways does the Eighth Amendment safeguard individuals who have been convicted of criminal offenses?",
+          "anchor_id": "b93a35956d7049b0c049",
+          "anchor_generator": "nq_paraphrase_deepseek",
+          "source_split": "test",
+          "source_file": "<server-workdir>/final500/eval/kca_eval.jsonl",
+          "generator": "cacheattack_cleaned_qa",
+          "base_text": "how does the eighth amendment protect people found guilty of crimes",
+          "base_anchor": "In what ways does the Eighth Amendment safeguard individuals who have been convicted of criminal offenses?",
+          "split": "test",
+          "malicious": false,
+          "sample_id": "e5ad56b94f19337d4883b521",
+          "condition": "bare",
+          "template": "bare",
+          "kind": "bare",
+          "position": "none",
+          "reuse_label": "inherited_from_source_pair",
+          "pair_basis": "source_paraphrase",
+          "policy": "multi[count:4+width:2:cap16]/runs",
+          "base_cos": 0.9798831917595745,
+          "retrieval_cos": 0.9799253806559679,
+          "words": 11,
+          "n_variants": 24,
+          "judgeable": true,
+          "dg": -0.004474925771554061,
+          "best_name": "width:2:cap16#6:run1_6",
+          "best_text": "the eighth amendment protect people found guilty of crimes",
+          "core_only_gain": 0.0,
+          "best_is_core": false
+        },
+        "after": {
+          "record_id": "a70850142acae0fd175e",
+          "intent_id": "comqaf1-a70850142aca",
+          "corpus": "nq",
+          "text": "Please tell me.\nhow does the eighth amendment protect people found guilty of crimes",
+          "anchor": "In what ways does the Eighth Amendment safeguard individuals who have been convicted of criminal offenses?",
+          "anchor_id": "b93a35956d7049b0c049",
+          "anchor_generator": "nq_paraphrase_deepseek",
+          "source_split": "test",
+          "source_file": "<server-workdir>/final500/eval/kca_eval.jsonl",
+          "generator": "cacheattack_cleaned_qa",
+          "base_text": "how does the eighth amendment protect people found guilty of crimes",
+          "base_anchor": "In what ways does the Eighth Amendment safeguard individuals who have been convicted of criminal offenses?",
+          "split": "test",
+          "malicious": false,
+          "sample_id": "784ee96a5ba4bbb1694e8f3f",
+          "condition": "entry_only",
+          "template": "polite_tell",
+          "kind": "polite",
+          "position": "prefix",
+          "reuse_label": "inherited_from_source_pair",
+          "pair_basis": "source_paraphrase",
+          "policy": "multi[count:4+width:2:cap16]/runs",
+          "base_cos": 0.9754938648520346,
+          "retrieval_cos": 0.9754744930536158,
+          "words": 14,
+          "n_variants": 31,
+          "judgeable": true,
+          "dg": 0.005981093176659957,
+          "best_name": "count:4#4:run1_4",
+          "best_text": "does the eighth amendment protect people found guilty of crimes",
+          "core_only_gain": 0.004389326907539903,
+          "best_is_core": false
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "features": [
+    "intercept",
+    "cosine",
+    "log_words"
+  ],
+  "coefficients": [
+    0.008752171904804023,
+    -0.5333635147933031,
+    0.003034303947687404
+  ],
+  "centers": [
+    0.9808113285324234,
+    1.9718632907348268
+  ],
+  "budget": 0.05,
+  "direction": "entry",
+  "statistic": "excess_span",
+  "embedder": "thenlper/gte-small",
+  "policy": "multi[count:6+width:2:cap16]/runs",
+  "n_rows": 260,
+  "metadata": {
+    "cosine_span": [
+      0.9034309876685016,
+      0.9995585470705957
+    ],
+    "word_span": [
+      3,
+      14
+    ],
+    "distinct_words": 12
+  }
+}

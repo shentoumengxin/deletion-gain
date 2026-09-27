@@ -1,0 +1,103 @@
+{
+  "method": "Exact saved request hash join using original seed=index; existing pure strict predicate. No inference. Saved evades_joint uses separately acquired answers, so recomputed joint column is diagnostic only; it is not a fully aligned answer-check outcome if answer snapshots differ.",
+  "results": {
+    "append": {
+      "n": 200,
+      "matched_answers": 200,
+      "strict": 85,
+      "retrievable_strict": 84,
+      "strict_nonretrievable": 1,
+      "dg_served_strict_same_original_answer": 0,
+      "joint_served_strict_same_original_answer": 0,
+      "original_isr_count": 85,
+      "original_isr_reproduced": true,
+      "retrieval_aware_none_asr": 0.42,
+      "original_isr": 0.425
+    },
+    "prepend": {
+      "n": 200,
+      "matched_answers": 200,
+      "strict": 81,
+      "retrievable_strict": 80,
+      "strict_nonretrievable": 1,
+      "dg_served_strict_same_original_answer": 2,
+      "joint_served_strict_same_original_answer": 3,
+      "original_isr_count": 81,
+      "original_isr_reproduced": true,
+      "retrieval_aware_none_asr": 0.4,
+      "original_isr": 0.405
+    },
+    "bracket": {
+      "n": 200,
+      "matched_answers": 200,
+      "strict": 96,
+      "retrievable_strict": 89,
+      "strict_nonretrievable": 7,
+      "dg_served_strict_same_original_answer": 0,
+      "joint_served_strict_same_original_answer": 0,
+      "original_isr_count": 96,
+      "original_isr_reproduced": true,
+      "retrieval_aware_none_asr": 0.445,
+      "original_isr": 0.48
+    },
+    "interleave3": {
+      "n": 200,
+      "matched_answers": 200,
+      "strict": 5,
+      "retrievable_strict": 5,
+      "strict_nonretrievable": 0,
+      "dg_served_strict_same_original_answer": 0,
+      "joint_served_strict_same_original_answer": 1,
+      "original_isr_count": 5,
+      "original_isr_reproduced": true,
+      "retrieval_aware_none_asr": 0.025,
+      "original_isr": 0.025
+    },
+    "interleave2": {
+      "n": 200,
+      "matched_answers": 200,
+      "strict": 0,
+      "retrievable_strict": 0,
+      "strict_nonretrievable": 0,
+      "dg_served_strict_same_original_answer": 0,
+      "joint_served_strict_same_original_answer": 0,
+      "original_isr_count": 0,
+      "original_isr_reproduced": true,
+      "retrieval_aware_none_asr": 0.0,
+      "original_isr": 0.0
+    },
+    "repeat3": {
+      "n": 200,
+      "matched_answers": 200,
+      "strict": 82,
+      "retrievable_strict": 76,
+      "strict_nonretrievable": 6,
+      "dg_served_strict_same_original_answer": 0,
+      "joint_served_strict_same_original_answer": 0,
+      "original_isr_count": 82,
+      "original_isr_reproduced": true,
+      "retrieval_aware_none_asr": 0.38,
+      "original_isr": 0.41
+    },
+    "repeat4": {
+      "n": 200,
+      "matched_answers": 200,
+      "strict": 91,
+      "retrievable_strict": 81,
+      "strict_nonretrievable": 10,
+      "dg_served_strict_same_original_answer": 4,
+      "joint_served_strict_same_original_answer": 1,
+      "original_isr_count": 91,
+      "original_isr_reproduced": true,
+      "retrieval_aware_none_asr": 0.405,
+      "original_isr": 0.455
+    }
+  },
+  "source_sha256": {
+    "<repo>/experiments/paper/rq2_robustness/rq4_isr.py": "5b2fe1aeb00c5c005dc95ab14dda2a728d261984f2e7ebcfbd88d03acc209402",
+    "$SENTRY_DATA_ROOT/runs/answer_check_20260909/adaptive_joint/placement_rows.jsonl": "440be839d3d84f7f6b5258793160cc4e7b8eb26f3e0c54352d26ddc5500752e5",
+    "$SENTRY_DATA_ROOT/responses/local/rq4_isr.jsonl": "43aeab9ec102fe50f72e4e166db007b3097f378ec4fce2d4c642255dde3c55d4",
+    "$SENTRY_DATA_ROOT/responses/deletion-test-wave/rq4_isr.jsonl": "d7b24a23eff9d99b687c4a5e5ee49cd4fd81e429861a89dda5a1b29d8488a569",
+    "<repo>/experiments/paper/results/rq4_isr/rq4_isr_fixed.json": "3e96c74740f7c6ef77d165bcf0b011ded93c40ac34241db030762694bea5b6e1"
+  }
+}

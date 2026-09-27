@@ -1,0 +1,896 @@
+{
+  "scope": "Read-only frozen-score diagnostic; no new model calls or embeddings. ASR reuses archived directed-change judge labels; not a newly adjudicated correctness study.",
+  "policy": "multi[count:4+width:2:cap16]/runs",
+  "sources": {
+    "runs/answer_check_20260909/full/summary.json": {
+      "sha256": "21c592606cb92cdf6af98d06329356d1e6b1dc1c37c277f638b374397480649e",
+      "bytes": 7404474
+    },
+    "runs/answer_check_20260909/full/non_echo_asr.jsonl": {
+      "sha256": "219433f1878c616416089a1e5ec793b3d75751fb275268638a70c116296ef4a1",
+      "bytes": 455070
+    },
+    "responses/answer_check_20260909/answers/answers_non_echo.jsonl": {
+      "sha256": "c1e709e1b2d16b55603eff8b05c0c709569032f126f6ae9732f9a438a2811ebc",
+      "bytes": 400470
+    },
+    "runs/answer_check_20260909/full/scores.jsonl": {
+      "sha256": "f0d7841e7e6f0a4fa2359da94122d9366b80c86e5bad9e68b89efe938ad1a71b",
+      "bytes": 323705019
+    }
+  },
+  "rows_by_set": {
+    "instruction_benign": 63274,
+    "non_echo_attack": 600,
+    "fresh_benign": 3627,
+    "composition_native": 150,
+    "composition_wrapped": 600,
+    "rq5_qualified": 499,
+    "rq5_compound": 499,
+    "surface_form_attack": 1809,
+    "unseen_wrappers": 34632
+  },
+  "joined_attack_rows": 600,
+  "answer_hashes_verified": 600,
+  "judge_request_hash_matches": {
+    "matched_exact_requests_and_verdicts": 600
+  },
+  "calibrations": {
+    "comqa": {
+      "eta_dg": 0.006114191829593842,
+      "eta_a": 0.019975280761718745,
+      "eta_joint": 0.002598562232510436,
+      "cosine_floor": 0.9429867834819696,
+      "n_calibration_hits": 254,
+      "n_answer_fires": 54,
+      "calibration_rates": {
+        "n_rows": 254,
+        "n_hits": 254,
+        "n_intents": 254,
+        "n_hit_intents": 254,
+        "blocked_hits": {
+          "dg_only": 13,
+          "shared_answer_check": 9,
+          "joint_answer_check": 13,
+          "cosine_only": 13
+        },
+        "fpr_or_br_given_hit": {
+          "dg_only": 0.051181102362204724,
+          "shared_answer_check": 0.03543307086614173,
+          "joint_answer_check": 0.051181102362204724,
+          "cosine_only": 0.051181102362204724
+        }
+      }
+    },
+    "nq": {
+      "eta_dg": 0.0022688164079849695,
+      "eta_a": 0.017710876464843747,
+      "eta_joint": 0.00013137157948269731,
+      "cosine_floor": 0.953224745435384,
+      "n_calibration_hits": 262,
+      "n_answer_fires": 65,
+      "calibration_rates": {
+        "n_rows": 262,
+        "n_hits": 262,
+        "n_intents": 262,
+        "n_hit_intents": 262,
+        "blocked_hits": {
+          "dg_only": 14,
+          "shared_answer_check": 7,
+          "joint_answer_check": 13,
+          "cosine_only": 14
+        },
+        "fpr_or_br_given_hit": {
+          "dg_only": 0.05343511450381679,
+          "shared_answer_check": 0.026717557251908396,
+          "joint_answer_check": 0.04961832061068702,
+          "cosine_only": 0.05343511450381679
+        }
+      }
+    }
+  },
+  "wrappers": {
+    "comqa": {
+      "bare": {
+        "n_rows": 244,
+        "n_hits": 244,
+        "n_intents": 244,
+        "n_hit_intents": 244,
+        "blocked_hits": {
+          "dg_only": 13,
+          "shared_answer_check": 8,
+          "joint_answer_check": 13,
+          "cosine_only": 21
+        },
+        "fpr_or_br_given_hit": {
+          "dg_only": 0.05327868852459016,
+          "shared_answer_check": 0.03278688524590164,
+          "joint_answer_check": 0.05327868852459016,
+          "cosine_only": 0.0860655737704918
+        }
+      },
+      "Template": {
+        "n_rows": 1464,
+        "n_hits": 1456,
+        "n_intents": 244,
+        "n_hit_intents": 244,
+        "blocked_hits": {
+          "dg_only": 695,
+          "shared_answer_check": 140,
+          "joint_answer_check": 188,
+          "cosine_only": 210
+        },
+        "fpr_or_br_given_hit": {
+          "dg_only": 0.47733516483516486,
+          "shared_answer_check": 0.09615384615384616,
+          "joint_answer_check": 0.12912087912087913,
+          "cosine_only": 0.14423076923076922
+        }
+      },
+      "Same query": {
+        "n_rows": 1464,
+        "n_hits": 1464,
+        "n_intents": 244,
+        "n_hit_intents": 244,
+        "blocked_hits": {
+          "dg_only": 891,
+          "shared_answer_check": 57,
+          "joint_answer_check": 83,
+          "cosine_only": 10
+        },
+        "fpr_or_br_given_hit": {
+          "dg_only": 0.6086065573770492,
+          "shared_answer_check": 0.0389344262295082,
+          "joint_answer_check": 0.05669398907103825,
+          "cosine_only": 0.006830601092896175
+        }
+      },
+      "LLM-written": {
+        "n_rows": 17568,
+        "n_hits": 17552,
+        "n_intents": 244,
+        "n_hit_intents": 244,
+        "blocked_hits": {
+          "dg_only": 8854,
+          "shared_answer_check": 967,
+          "joint_answer_check": 1338,
+          "cosine_only": 1565
+        },
+        "fpr_or_br_given_hit": {
+          "dg_only": 0.5044439380127621,
+          "shared_answer_check": 0.05509343664539654,
+          "joint_answer_check": 0.0762306289881495,
+          "cosine_only": 0.08916362807657247
+        }
+      }
+    },
+    "nq": {
+      "bare": {
+        "n_rows": 237,
+        "n_hits": 237,
+        "n_intents": 237,
+        "n_hit_intents": 237,
+        "blocked_hits": {
+          "dg_only": 14,
+          "shared_answer_check": 8,
+          "joint_answer_check": 13,
+          "cosine_only": 20
+        },
+        "fpr_or_br_given_hit": {
+          "dg_only": 0.05907172995780591,
+          "shared_answer_check": 0.03375527426160337,
+          "joint_answer_check": 0.05485232067510549,
+          "cosine_only": 0.08438818565400844
+        }
+      },
+      "Template": {
+        "n_rows": 1422,
+        "n_hits": 1422,
+        "n_intents": 237,
+        "n_hit_intents": 237,
+        "blocked_hits": {
+          "dg_only": 1030,
+          "shared_answer_check": 130,
+          "joint_answer_check": 158,
+          "cosine_only": 274
+        },
+        "fpr_or_br_given_hit": {
+          "dg_only": 0.7243319268635724,
+          "shared_answer_check": 0.09142053445850915,
+          "joint_answer_check": 0.1111111111111111,
+          "cosine_only": 0.19268635724331926
+        }
+      },
+      "Same query": {
+        "n_rows": 1422,
+        "n_hits": 1422,
+        "n_intents": 237,
+        "n_hit_intents": 237,
+        "blocked_hits": {
+          "dg_only": 1341,
+          "shared_answer_check": 89,
+          "joint_answer_check": 91,
+          "cosine_only": 30
+        },
+        "fpr_or_br_given_hit": {
+          "dg_only": 0.9430379746835443,
+          "shared_answer_check": 0.06258790436005626,
+          "joint_answer_check": 0.0639943741209564,
+          "cosine_only": 0.02109704641350211
+        }
+      },
+      "LLM-written": {
+        "n_rows": 17064,
+        "n_hits": 17060,
+        "n_intents": 237,
+        "n_hit_intents": 237,
+        "blocked_hits": {
+          "dg_only": 12300,
+          "shared_answer_check": 1393,
+          "joint_answer_check": 1644,
+          "cosine_only": 1895
+        },
+        "fpr_or_br_given_hit": {
+          "dg_only": 0.7209847596717468,
+          "shared_answer_check": 0.08165298944900351,
+          "joint_answer_check": 0.09636576787807738,
+          "cosine_only": 0.11107854630715124
+        }
+      }
+    }
+  },
+  "implicit_attacks": {
+    "independent_original_split": {
+      "digit_swap": {
+        "n_rows": 100,
+        "n_hits": 99,
+        "n_intents": 100,
+        "n_hit_intents": 99,
+        "blocked_hits": {
+          "dg_only": 98,
+          "shared_answer_check": 92,
+          "joint_answer_check": 93,
+          "cosine_only": 22
+        },
+        "fpr_or_br_given_hit": {
+          "dg_only": 0.98989898989899,
+          "shared_answer_check": 0.9292929292929293,
+          "joint_answer_check": 0.9393939393939394,
+          "cosine_only": 0.2222222222222222
+        },
+        "response_successes": 38,
+        "undefended_retrieved_successes": 38,
+        "defended_successes": {
+          "dg_only": 1,
+          "shared_answer_check": 1,
+          "joint_answer_check": 0,
+          "cosine_only": 33
+        },
+        "asr": {
+          "dg_only": 0.01,
+          "shared_answer_check": 0.01,
+          "joint_answer_check": 0.0,
+          "cosine_only": 0.33
+        },
+        "answer_silent_hits": 6,
+        "answer_silent_successes": 0,
+        "shared_rescued_successes": 0,
+        "joint_recovered_successes": 1,
+        "fixed_fence_bootstrap95": {
+          "dg_only": [
+            0.0,
+            0.03
+          ],
+          "shared_answer_check": [
+            0.0,
+            0.03
+          ],
+          "joint_answer_check": [
+            0.0,
+            0.0
+          ],
+          "cosine_only": [
+            0.24,
+            0.42
+          ]
+        }
+      },
+      "negate": {
+        "n_rows": 100,
+        "n_hits": 99,
+        "n_intents": 100,
+        "n_hit_intents": 99,
+        "blocked_hits": {
+          "dg_only": 95,
+          "shared_answer_check": 91,
+          "joint_answer_check": 93,
+          "cosine_only": 25
+        },
+        "fpr_or_br_given_hit": {
+          "dg_only": 0.9595959595959596,
+          "shared_answer_check": 0.9191919191919192,
+          "joint_answer_check": 0.9393939393939394,
+          "cosine_only": 0.25252525252525254
+        },
+        "response_successes": 54,
+        "undefended_retrieved_successes": 53,
+        "defended_successes": {
+          "dg_only": 3,
+          "shared_answer_check": 6,
+          "joint_answer_check": 5,
+          "cosine_only": 38
+        },
+        "asr": {
+          "dg_only": 0.03,
+          "shared_answer_check": 0.06,
+          "joint_answer_check": 0.05,
+          "cosine_only": 0.38
+        },
+        "answer_silent_hits": 5,
+        "answer_silent_successes": 4,
+        "shared_rescued_successes": 3,
+        "joint_recovered_successes": 1,
+        "fixed_fence_bootstrap95": {
+          "dg_only": [
+            0.0,
+            0.07
+          ],
+          "shared_answer_check": [
+            0.02,
+            0.11
+          ],
+          "joint_answer_check": [
+            0.01,
+            0.1
+          ],
+          "cosine_only": [
+            0.28,
+            0.48
+          ]
+        }
+      },
+      "opposite_polarity": {
+        "n_rows": 100,
+        "n_hits": 99,
+        "n_intents": 100,
+        "n_hit_intents": 99,
+        "blocked_hits": {
+          "dg_only": 97,
+          "shared_answer_check": 48,
+          "joint_answer_check": 48,
+          "cosine_only": 27
+        },
+        "fpr_or_br_given_hit": {
+          "dg_only": 0.9797979797979798,
+          "shared_answer_check": 0.48484848484848486,
+          "joint_answer_check": 0.48484848484848486,
+          "cosine_only": 0.2727272727272727
+        },
+        "response_successes": 86,
+        "undefended_retrieved_successes": 85,
+        "defended_successes": {
+          "dg_only": 2,
+          "shared_answer_check": 43,
+          "joint_answer_check": 43,
+          "cosine_only": 64
+        },
+        "asr": {
+          "dg_only": 0.02,
+          "shared_answer_check": 0.43,
+          "joint_answer_check": 0.43,
+          "cosine_only": 0.64
+        },
+        "answer_silent_hits": 51,
+        "answer_silent_successes": 43,
+        "shared_rescued_successes": 41,
+        "joint_recovered_successes": 0,
+        "fixed_fence_bootstrap95": {
+          "dg_only": [
+            0.0,
+            0.05
+          ],
+          "shared_answer_check": [
+            0.33,
+            0.53
+          ],
+          "joint_answer_check": [
+            0.33,
+            0.53
+          ],
+          "cosine_only": [
+            0.54,
+            0.73
+          ]
+        }
+      },
+      "previous_year": {
+        "n_rows": 100,
+        "n_hits": 100,
+        "n_intents": 100,
+        "n_hit_intents": 100,
+        "blocked_hits": {
+          "dg_only": 87,
+          "shared_answer_check": 82,
+          "joint_answer_check": 89,
+          "cosine_only": 14
+        },
+        "fpr_or_br_given_hit": {
+          "dg_only": 0.87,
+          "shared_answer_check": 0.82,
+          "joint_answer_check": 0.89,
+          "cosine_only": 0.14
+        },
+        "response_successes": 38,
+        "undefended_retrieved_successes": 38,
+        "defended_successes": {
+          "dg_only": 5,
+          "shared_answer_check": 5,
+          "joint_answer_check": 3,
+          "cosine_only": 34
+        },
+        "asr": {
+          "dg_only": 0.05,
+          "shared_answer_check": 0.05,
+          "joint_answer_check": 0.03,
+          "cosine_only": 0.34
+        },
+        "answer_silent_hits": 7,
+        "answer_silent_successes": 1,
+        "shared_rescued_successes": 0,
+        "joint_recovered_successes": 2,
+        "fixed_fence_bootstrap95": {
+          "dg_only": [
+            0.01,
+            0.1
+          ],
+          "shared_answer_check": [
+            0.01,
+            0.1
+          ],
+          "joint_answer_check": [
+            0.0,
+            0.07
+          ],
+          "cosine_only": [
+            0.25,
+            0.43
+          ]
+        }
+      },
+      "second_best": {
+        "n_rows": 100,
+        "n_hits": 100,
+        "n_intents": 100,
+        "n_hit_intents": 100,
+        "blocked_hits": {
+          "dg_only": 56,
+          "shared_answer_check": 56,
+          "joint_answer_check": 80,
+          "cosine_only": 12
+        },
+        "fpr_or_br_given_hit": {
+          "dg_only": 0.56,
+          "shared_answer_check": 0.56,
+          "joint_answer_check": 0.8,
+          "cosine_only": 0.12
+        },
+        "response_successes": 91,
+        "undefended_retrieved_successes": 91,
+        "defended_successes": {
+          "dg_only": 40,
+          "shared_answer_check": 40,
+          "joint_answer_check": 19,
+          "cosine_only": 80
+        },
+        "asr": {
+          "dg_only": 0.4,
+          "shared_answer_check": 0.4,
+          "joint_answer_check": 0.19,
+          "cosine_only": 0.8
+        },
+        "answer_silent_hits": 4,
+        "answer_silent_successes": 4,
+        "shared_rescued_successes": 0,
+        "joint_recovered_successes": 21,
+        "fixed_fence_bootstrap95": {
+          "dg_only": [
+            0.31,
+            0.5
+          ],
+          "shared_answer_check": [
+            0.31,
+            0.5
+          ],
+          "joint_answer_check": [
+            0.12,
+            0.27
+          ],
+          "cosine_only": [
+            0.71,
+            0.88
+          ]
+        }
+      },
+      "unit_change": {
+        "n_rows": 100,
+        "n_hits": 99,
+        "n_intents": 100,
+        "n_hit_intents": 99,
+        "blocked_hits": {
+          "dg_only": 95,
+          "shared_answer_check": 17,
+          "joint_answer_check": 18,
+          "cosine_only": 22
+        },
+        "fpr_or_br_given_hit": {
+          "dg_only": 0.9595959595959596,
+          "shared_answer_check": 0.1717171717171717,
+          "joint_answer_check": 0.18181818181818182,
+          "cosine_only": 0.2222222222222222
+        },
+        "response_successes": 4,
+        "undefended_retrieved_successes": 4,
+        "defended_successes": {
+          "dg_only": 0,
+          "shared_answer_check": 2,
+          "joint_answer_check": 2,
+          "cosine_only": 4
+        },
+        "asr": {
+          "dg_only": 0.0,
+          "shared_answer_check": 0.02,
+          "joint_answer_check": 0.02,
+          "cosine_only": 0.04
+        },
+        "answer_silent_hits": 81,
+        "answer_silent_successes": 2,
+        "shared_rescued_successes": 2,
+        "joint_recovered_successes": 0,
+        "fixed_fence_bootstrap95": {
+          "dg_only": [
+            0.0,
+            0.0
+          ],
+          "shared_answer_check": [
+            0.0,
+            0.05
+          ],
+          "joint_answer_check": [
+            0.0,
+            0.05
+          ],
+          "cosine_only": [
+            0.01,
+            0.08
+          ]
+        }
+      }
+    },
+    "paper_full_benign_thresholds": {
+      "digit_swap": {
+        "n_rows": 100,
+        "n_hits": 99,
+        "n_intents": 100,
+        "n_hit_intents": 99,
+        "blocked_hits": {
+          "dg_only": 98,
+          "shared_answer_check": 92,
+          "joint_answer_check": 93,
+          "cosine_only": 18
+        },
+        "fpr_or_br_given_hit": {
+          "dg_only": 0.98989898989899,
+          "shared_answer_check": 0.9292929292929293,
+          "joint_answer_check": 0.9393939393939394,
+          "cosine_only": 0.18181818181818182
+        },
+        "response_successes": 38,
+        "undefended_retrieved_successes": 38,
+        "defended_successes": {
+          "dg_only": 1,
+          "shared_answer_check": 1,
+          "joint_answer_check": 0,
+          "cosine_only": 33
+        },
+        "asr": {
+          "dg_only": 0.01,
+          "shared_answer_check": 0.01,
+          "joint_answer_check": 0.0,
+          "cosine_only": 0.33
+        },
+        "answer_silent_hits": 6,
+        "answer_silent_successes": 0,
+        "shared_rescued_successes": 0,
+        "joint_recovered_successes": 1,
+        "fixed_fence_bootstrap95": {
+          "dg_only": [
+            0.0,
+            0.03
+          ],
+          "shared_answer_check": [
+            0.0,
+            0.03
+          ],
+          "joint_answer_check": [
+            0.0,
+            0.0
+          ],
+          "cosine_only": [
+            0.24,
+            0.42
+          ]
+        }
+      },
+      "negate": {
+        "n_rows": 100,
+        "n_hits": 99,
+        "n_intents": 100,
+        "n_hit_intents": 99,
+        "blocked_hits": {
+          "dg_only": 94,
+          "shared_answer_check": 90,
+          "joint_answer_check": 93,
+          "cosine_only": 17
+        },
+        "fpr_or_br_given_hit": {
+          "dg_only": 0.9494949494949495,
+          "shared_answer_check": 0.9090909090909091,
+          "joint_answer_check": 0.9393939393939394,
+          "cosine_only": 0.1717171717171717
+        },
+        "response_successes": 54,
+        "undefended_retrieved_successes": 53,
+        "defended_successes": {
+          "dg_only": 3,
+          "shared_answer_check": 6,
+          "joint_answer_check": 5,
+          "cosine_only": 43
+        },
+        "asr": {
+          "dg_only": 0.03,
+          "shared_answer_check": 0.06,
+          "joint_answer_check": 0.05,
+          "cosine_only": 0.43
+        },
+        "answer_silent_hits": 5,
+        "answer_silent_successes": 4,
+        "shared_rescued_successes": 3,
+        "joint_recovered_successes": 1,
+        "fixed_fence_bootstrap95": {
+          "dg_only": [
+            0.0,
+            0.07
+          ],
+          "shared_answer_check": [
+            0.02,
+            0.11
+          ],
+          "joint_answer_check": [
+            0.01,
+            0.1
+          ],
+          "cosine_only": [
+            0.34,
+            0.5202499999999987
+          ]
+        }
+      },
+      "opposite_polarity": {
+        "n_rows": 100,
+        "n_hits": 99,
+        "n_intents": 100,
+        "n_hit_intents": 99,
+        "blocked_hits": {
+          "dg_only": 97,
+          "shared_answer_check": 53,
+          "joint_answer_check": 53,
+          "cosine_only": 21
+        },
+        "fpr_or_br_given_hit": {
+          "dg_only": 0.9797979797979798,
+          "shared_answer_check": 0.5353535353535354,
+          "joint_answer_check": 0.5353535353535354,
+          "cosine_only": 0.21212121212121213
+        },
+        "response_successes": 86,
+        "undefended_retrieved_successes": 85,
+        "defended_successes": {
+          "dg_only": 2,
+          "shared_answer_check": 38,
+          "joint_answer_check": 38,
+          "cosine_only": 68
+        },
+        "asr": {
+          "dg_only": 0.02,
+          "shared_answer_check": 0.38,
+          "joint_answer_check": 0.38,
+          "cosine_only": 0.68
+        },
+        "answer_silent_hits": 46,
+        "answer_silent_successes": 38,
+        "shared_rescued_successes": 36,
+        "joint_recovered_successes": 0,
+        "fixed_fence_bootstrap95": {
+          "dg_only": [
+            0.0,
+            0.05
+          ],
+          "shared_answer_check": [
+            0.29,
+            0.47
+          ],
+          "joint_answer_check": [
+            0.29,
+            0.47
+          ],
+          "cosine_only": [
+            0.58,
+            0.77
+          ]
+        }
+      },
+      "previous_year": {
+        "n_rows": 100,
+        "n_hits": 100,
+        "n_intents": 100,
+        "n_hit_intents": 100,
+        "blocked_hits": {
+          "dg_only": 83,
+          "shared_answer_check": 78,
+          "joint_answer_check": 89,
+          "cosine_only": 13
+        },
+        "fpr_or_br_given_hit": {
+          "dg_only": 0.83,
+          "shared_answer_check": 0.78,
+          "joint_answer_check": 0.89,
+          "cosine_only": 0.13
+        },
+        "response_successes": 38,
+        "undefended_retrieved_successes": 38,
+        "defended_successes": {
+          "dg_only": 6,
+          "shared_answer_check": 6,
+          "joint_answer_check": 3,
+          "cosine_only": 34
+        },
+        "asr": {
+          "dg_only": 0.06,
+          "shared_answer_check": 0.06,
+          "joint_answer_check": 0.03,
+          "cosine_only": 0.34
+        },
+        "answer_silent_hits": 7,
+        "answer_silent_successes": 1,
+        "shared_rescued_successes": 0,
+        "joint_recovered_successes": 3,
+        "fixed_fence_bootstrap95": {
+          "dg_only": [
+            0.02,
+            0.11
+          ],
+          "shared_answer_check": [
+            0.02,
+            0.11
+          ],
+          "joint_answer_check": [
+            0.0,
+            0.07
+          ],
+          "cosine_only": [
+            0.25,
+            0.43
+          ]
+        }
+      },
+      "second_best": {
+        "n_rows": 100,
+        "n_hits": 100,
+        "n_intents": 100,
+        "n_hit_intents": 100,
+        "blocked_hits": {
+          "dg_only": 50,
+          "shared_answer_check": 50,
+          "joint_answer_check": 80,
+          "cosine_only": 9
+        },
+        "fpr_or_br_given_hit": {
+          "dg_only": 0.5,
+          "shared_answer_check": 0.5,
+          "joint_answer_check": 0.8,
+          "cosine_only": 0.09
+        },
+        "response_successes": 91,
+        "undefended_retrieved_successes": 91,
+        "defended_successes": {
+          "dg_only": 45,
+          "shared_answer_check": 45,
+          "joint_answer_check": 19,
+          "cosine_only": 83
+        },
+        "asr": {
+          "dg_only": 0.45,
+          "shared_answer_check": 0.45,
+          "joint_answer_check": 0.19,
+          "cosine_only": 0.83
+        },
+        "answer_silent_hits": 4,
+        "answer_silent_successes": 4,
+        "shared_rescued_successes": 0,
+        "joint_recovered_successes": 26,
+        "fixed_fence_bootstrap95": {
+          "dg_only": [
+            0.36,
+            0.55
+          ],
+          "shared_answer_check": [
+            0.36,
+            0.55
+          ],
+          "joint_answer_check": [
+            0.12,
+            0.27
+          ],
+          "cosine_only": [
+            0.75,
+            0.9
+          ]
+        }
+      },
+      "unit_change": {
+        "n_rows": 100,
+        "n_hits": 99,
+        "n_intents": 100,
+        "n_hit_intents": 99,
+        "blocked_hits": {
+          "dg_only": 95,
+          "shared_answer_check": 17,
+          "joint_answer_check": 18,
+          "cosine_only": 17
+        },
+        "fpr_or_br_given_hit": {
+          "dg_only": 0.9595959595959596,
+          "shared_answer_check": 0.1717171717171717,
+          "joint_answer_check": 0.18181818181818182,
+          "cosine_only": 0.1717171717171717
+        },
+        "response_successes": 4,
+        "undefended_retrieved_successes": 4,
+        "defended_successes": {
+          "dg_only": 0,
+          "shared_answer_check": 2,
+          "joint_answer_check": 2,
+          "cosine_only": 4
+        },
+        "asr": {
+          "dg_only": 0.0,
+          "shared_answer_check": 0.02,
+          "joint_answer_check": 0.02,
+          "cosine_only": 0.04
+        },
+        "answer_silent_hits": 81,
+        "answer_silent_successes": 2,
+        "shared_rescued_successes": 2,
+        "joint_recovered_successes": 0,
+        "fixed_fence_bootstrap95": {
+          "dg_only": [
+            0.0,
+            0.0
+          ],
+          "shared_answer_check": [
+            0.0,
+            0.05
+          ],
+          "joint_answer_check": [
+            0.0,
+            0.05
+          ],
+          "cosine_only": [
+            0.01,
+            0.08
+          ]
+        }
+      }
+    }
+  }
+}

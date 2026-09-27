@@ -1,0 +1,72 @@
+{
+  "policy": "multi[count:6+width:2:cap16]/runs",
+  "storage_dtype": "float16",
+  "embedder": "intfloat/e5-small-v2",
+  "n_genuine": 499,
+  "n_attack": 2175,
+  "excess_auroc": 0.9635505493746113,
+  "excess_auroc_cos_matched": 0.9386391215845137,
+  "matched_support": 1469,
+  "excess_block_rate": 0.8772413793103448,
+  "families": {
+    "ndss_matched_blend": {
+      "n_attack": 705,
+      "excess_auroc": 0.9749570062110036,
+      "excess_auroc_cos_matched": 0.9568463990503052,
+      "matched_support": 564,
+      "excess_block_rate": 0.9035460992907801
+    },
+    "ndss_matched_compress_append": {
+      "n_attack": 831,
+      "excess_auroc": 0.9696963119982444,
+      "excess_auroc_cos_matched": 0.9492916118889841,
+      "matched_support": 399,
+      "excess_block_rate": 0.927797833935018
+    },
+    "ndss_matched_fuse": {
+      "n_attack": 639,
+      "excess_auroc": 0.9429735841009091,
+      "excess_auroc_cos_matched": 0.9194414335919078,
+      "matched_support": 512,
+      "excess_block_rate": 0.7824726134585289
+    }
+  },
+  "achieved_benign_block_rate": 0.0502092050209205,
+  "n_fit_intents": 260,
+  "n_eval_intents": 239,
+  "cosine_auroc": 0.8487453067053647,
+  "cosine_block_rate": 0.2675862068965517,
+  "fence": {
+    "features": [
+      "intercept",
+      "cosine",
+      "log_words"
+    ],
+    "coefficients": [
+      0.007220889266597659,
+      -0.3939318269697849,
+      0.0034207315338355194
+    ],
+    "centers": [
+      0.9790794787468449,
+      1.9718632907348268
+    ],
+    "budget": 0.05,
+    "direction": "entry",
+    "statistic": "excess_span",
+    "embedder": "intfloat/e5-small-v2",
+    "policy": "multi[count:6+width:2:cap16]/runs",
+    "n_rows": 260,
+    "metadata": {
+      "cosine_span": [
+        0.8876963849727062,
+        0.9997246005955653
+      ],
+      "word_span": [
+        3,
+        14
+      ],
+      "distinct_words": 12
+    }
+  }
+}

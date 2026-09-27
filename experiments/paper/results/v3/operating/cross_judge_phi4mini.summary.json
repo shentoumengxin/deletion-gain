@@ -1,0 +1,45 @@
+{
+ "cross_model": "microsoft/Phi-4-mini-instruct",
+ "vendor_note": "third vendor: distinct from the DeepSeek primary judge and the Qwen3-8B victim",
+ "seed": 20260827,
+ "n_sampled": 504,
+ "n_answered": 504,
+ "n_cross_errors": 0,
+ "overall": {
+  "cohen_kappa": 0.6942,
+  "raw_agreement": 0.8452,
+  "n": 504,
+  "primary_pos_rate": 0.5337,
+  "cross_pos_rate": 0.4107
+ },
+ "by_set": {
+  "benign": {
+   "cohen_kappa": 0.0,
+   "raw_agreement": 0.9643,
+   "n": 56,
+   "primary_pos_rate": 0.0357,
+   "cross_pos_rate": 0.0
+  },
+  "scp": {
+   "cohen_kappa": 0.4861,
+   "raw_agreement": 0.7381,
+   "n": 168,
+   "primary_pos_rate": 0.7024,
+   "cross_pos_rate": 0.4762
+  },
+  "kca": {
+   "cohen_kappa": 1.0,
+   "raw_agreement": 1.0,
+   "n": 112,
+   "primary_pos_rate": 0.5804,
+   "cross_pos_rate": 0.5804
+  },
+  "lmp": {
+   "cohen_kappa": 0.619,
+   "raw_agreement": 0.8095,
+   "n": 168,
+   "primary_pos_rate": 0.5,
+   "cross_pos_rate": 0.369
+  }
+ }
+}

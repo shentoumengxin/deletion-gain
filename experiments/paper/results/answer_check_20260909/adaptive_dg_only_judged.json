@@ -1,0 +1,223 @@
+{
+  "embedder": "intfloat/e5-small-v2",
+  "policies": [
+    "multi[count:4+width:2:cap16]/runs"
+  ],
+  "lambdas": [
+    0.0,
+    0.5,
+    1.0,
+    2.0,
+    5.0,
+    10.0
+  ],
+  "n_targets": 48,
+  "n_fence_benign": 200,
+  "suffix_words": [
+    8
+  ],
+  "steps": 32,
+  "candidates_per_step": 32,
+  "topk": 256,
+  "retrieval_floor": 0.9,
+  "budget": 0.05,
+  "fences": {
+    "multi[count:4+width:2:cap16]/runs": 0.003194370766042901
+  },
+  "fences_heldout_intents": {
+    "multi[count:4+width:2:cap16]/runs": 0.005267166004213368
+  },
+  "composition": {
+    "canonical": {
+      "human_comqa": 500,
+      "human_paws": 1000,
+      "human_qqp": 3853
+    },
+    "legal": {
+      "human_comqa": 398,
+      "api": 1597
+    },
+    "benign_generator": "human_comqa"
+  },
+  "ppl_model": "distilgpt2",
+  "ppl_measured": true,
+  "ppl_screen": 4976.653417968741,
+  "cos_screen": 0.9426860936340442,
+  "rq2_ppl_screen": 2.9890410609780242,
+  "benign_cos_median": 0.9846701646386798,
+  "benign_ppl_median": 667.524169921875,
+  "n_benign_ppl": 200,
+  "max_fast_exact_delta": 2.6754158088948543e-07,
+  "isr_cap": 3,
+  "frontier": {
+    "multi[count:4+width:2:cap16]/runs": {
+      "lam0.0_M8": {
+        "n_targets": 48,
+        "median_cos_endpoint": 0.9643930258222186,
+        "median_excess_endpoint": 0.019239126457656408,
+        "best_excess_median": 0.017116463391444126,
+        "retrievable_any": 1.0,
+        "evades_any": 0.1875,
+        "collide_and_evade": 0.1875,
+        "collide_and_evade_dg_fence": 0.1875,
+        "and_poison_no_pushback": 0.10416666666666667,
+        "and_poison_strict": 0.041666666666666664,
+        "and_poison_strict_lowest_excess_only": 0.041666666666666664,
+        "n_survivors": 306,
+        "median_survivor_ppl": 1088.0136108398438,
+        "median_endpoint_ppl": 2118.5076904296875,
+        "ppl_screen_catch_survivors": 0.20261437908496732,
+        "ppl_screen_catch_endpoints": 0.08333333333333333,
+        "ppl_auroc_survivors": 0.6697712418300653,
+        "ppl_auroc_endpoints": 0.7717708333333333,
+        "cos_screen_catch_survivors": 0.30718954248366015,
+        "cos_screen_catch_endpoints": 0.10416666666666667,
+        "rq2_ppl_screen_catch_survivors": 0.29411764705882354,
+        "n_survivors_with_alt": 306,
+        "survives_alt_anchor": 0.23202614379084968,
+        "collide_and_evade_alt_per_target": 0.08333333333333333,
+        "survivors_caught_by_other_policy": 0.0,
+        "median_trajectory_rows": 63.0,
+        "n_trajectory_rows": 3023,
+        "collide_and_evade_by_step": {
+          "5": 0.16666666666666666,
+          "10": 0.16666666666666666,
+          "20": 0.1875,
+          "30": 0.1875,
+          "45": 0.1875,
+          "31": 0.1875
+        },
+        "median_base_max": 0.982758725890489,
+        "median_gap_to_floor": 0.01711644546488983,
+        "share_winner_touches_suffix": 0.08666887198147535,
+        "suffix_words": 8,
+        "lam": 0.0
+      },
+      "lam1.0_M8": {
+        "n_targets": 48,
+        "median_cos_endpoint": 0.9611670474730193,
+        "median_excess_endpoint": 0.022390541312436174,
+        "best_excess_median": 0.019886178495257423,
+        "retrievable_any": 1.0,
+        "evades_any": 0.1875,
+        "collide_and_evade": 0.1875,
+        "collide_and_evade_dg_fence": 0.1875,
+        "and_poison_no_pushback": 0.0625,
+        "and_poison_strict": 0.041666666666666664,
+        "and_poison_strict_lowest_excess_only": 0.041666666666666664,
+        "n_survivors": 378,
+        "median_survivor_ppl": 1149.7667236328125,
+        "median_endpoint_ppl": 1586.5079956054688,
+        "ppl_screen_catch_survivors": 0.16666666666666666,
+        "ppl_screen_catch_endpoints": 0.041666666666666664,
+        "ppl_auroc_survivors": 0.7041005291005291,
+        "ppl_auroc_endpoints": 0.7538541666666667,
+        "cos_screen_catch_survivors": 0.2698412698412698,
+        "cos_screen_catch_endpoints": 0.08333333333333333,
+        "rq2_ppl_screen_catch_survivors": 0.3544973544973545,
+        "n_survivors_with_alt": 378,
+        "survives_alt_anchor": 0.2962962962962963,
+        "collide_and_evade_alt_per_target": 0.0625,
+        "survivors_caught_by_other_policy": 0.0,
+        "median_trajectory_rows": 63.0,
+        "n_trajectory_rows": 3021,
+        "collide_and_evade_by_step": {
+          "5": 0.1875,
+          "10": 0.1875,
+          "20": 0.1875,
+          "30": 0.1875,
+          "45": 0.1875,
+          "31": 0.1875
+        },
+        "median_base_max": 0.982758725890489,
+        "median_gap_to_floor": 0.019886160568703126,
+        "share_winner_touches_suffix": 0.07811982787156571,
+        "suffix_words": 8,
+        "lam": 1.0
+      },
+      "lam5.0_M8": {
+        "n_targets": 48,
+        "median_cos_endpoint": 0.956591653285435,
+        "median_excess_endpoint": 0.02536481479329583,
+        "best_excess_median": 0.021892954157316347,
+        "retrievable_any": 1.0,
+        "evades_any": 0.14583333333333334,
+        "collide_and_evade": 0.14583333333333334,
+        "collide_and_evade_dg_fence": 0.14583333333333334,
+        "and_poison_no_pushback": 0.08333333333333333,
+        "and_poison_strict": 0.020833333333333332,
+        "and_poison_strict_lowest_excess_only": 0.020833333333333332,
+        "n_survivors": 330,
+        "median_survivor_ppl": 1280.2944946289062,
+        "median_endpoint_ppl": 1703.49462890625,
+        "ppl_screen_catch_survivors": 0.1606060606060606,
+        "ppl_screen_catch_endpoints": 0.0625,
+        "ppl_auroc_survivors": 0.7081969696969697,
+        "ppl_auroc_endpoints": 0.7572916666666667,
+        "cos_screen_catch_survivors": 0.29393939393939394,
+        "cos_screen_catch_endpoints": 0.16666666666666666,
+        "rq2_ppl_screen_catch_survivors": 0.403030303030303,
+        "n_survivors_with_alt": 330,
+        "survives_alt_anchor": 0.24848484848484848,
+        "collide_and_evade_alt_per_target": 0.041666666666666664,
+        "survivors_caught_by_other_policy": 0.0,
+        "median_trajectory_rows": 63.0,
+        "n_trajectory_rows": 3022,
+        "collide_and_evade_by_step": {
+          "5": 0.14583333333333334,
+          "10": 0.14583333333333334,
+          "20": 0.14583333333333334,
+          "30": 0.14583333333333334,
+          "45": 0.14583333333333334,
+          "31": 0.14583333333333334
+        },
+        "median_base_max": 0.982758725890489,
+        "median_gap_to_floor": 0.021892954157316347,
+        "share_winner_touches_suffix": 0.0943084050297816,
+        "suffix_words": 8,
+        "lam": 5.0
+      }
+    }
+  },
+  "template_control": {
+    "multi[count:4+width:2:cap16]/runs": {
+      "n": 48,
+      "median_cos": 0.9542286828510768,
+      "median_excess": 0.025730047033384884,
+      "retrievable": 0.9791666666666666,
+      "evades": 0.0,
+      "median_ppl": 312.31309509277344,
+      "ppl_screen_catch": 0.0,
+      "cos_screen_catch": 0.3125
+    }
+  },
+  "answer_rule": "none",
+  "thresholds": {},
+  "rounds": 1,
+  "surface_form": false,
+  "answer_rescore": {},
+  "judge": {
+    "n_rows": 117,
+    "judge_input": "<server-workdir>/answer_check_20260909/b2/dg_only_judged/judge_input.jsonl",
+    "mode": "semantic",
+    "n_verdicts_imported": 0,
+    "strict_tier": "string_match",
+    "judge_model": "deepseek-v4-flash",
+    "n_judged": 117,
+    "n_judge_errors": 0,
+    "poisoned": 0.4444444444444444,
+    "refused": 0.008547008547008548,
+    "no_pushback_string_tier": 0.3247863247863248
+  },
+  "oracle": {
+    "embedder_weights": true,
+    "deployed_cut": true,
+    "payload_boundaries": true,
+    "exact_anchor_vector": true,
+    "eta": null,
+    "eta_a": null,
+    "benign_calibration_arm": false,
+    "note": "query-aware rows are this oracle; the query-blind reading is the *_alt columns, scored against a held-out human paraphrase"
+  },
+  "rq6_ppl": null
+}

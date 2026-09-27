@@ -1,0 +1,212 @@
+{
+  "policy": "multi[count:4+width:2:cap16]/runs",
+  "n_intents": 400,
+  "poison_frac": 0.5,
+  "seed": 20260901,
+  "n_planted_intents": 78,
+  "n_entries": 478,
+  "n_requests": 800,
+  "cache_threshold": 0.9,
+  "fences": {
+    "dg_only": 0.006797628467845549,
+    "joint": {
+      "eta": 0.002645233293430393,
+      "eta_a": 0.01965637207031249
+    }
+  },
+  "runs": {
+    "off": {
+      "defended": false,
+      "profile_writer": false,
+      "n_entries": 478,
+      "n_requests": 800,
+      "insertion_ms_per_entry": 70.00884013328405,
+      "hit_rate": 1.0,
+      "planted_hit_rate": 0.01625,
+      "poisoned_answer_hit_rate": 0.00375,
+      "qps": 7.838743139353742,
+      "latency_ms_p50": 106.49532033130527,
+      "latency_ms_p95": 282.9571377485989,
+      "counters": {
+        "evaluated": 0,
+        "below_band": 0,
+        "no_profile": 0,
+        "config_mismatch": 0,
+        "unjudgeable": 0,
+        "non_finite": 0,
+        "safe_accepted": 0,
+        "no_fence": 0,
+        "blocked": 0,
+        "rescued": 0,
+        "no_answer_fields": 0,
+        "accepted": 0,
+        "errors": 0
+      },
+      "insertion_ms_per_entry_repeats": [
+        86.42391365013674,
+        50.98998344359163,
+        70.00884013328405
+      ],
+      "qps_repeats": [
+        7.838743139353742,
+        11.227290863780317,
+        7.330027738931748
+      ],
+      "latency_ms_p50_repeats": [
+        106.49532033130527,
+        80.11488430202007,
+        118.99355659261346
+      ],
+      "latency_ms_p95_repeats": [
+        282.9571377485989,
+        177.2158659994602,
+        305.72688551619626
+      ]
+    },
+    "undefended": {
+      "defended": false,
+      "profile_writer": true,
+      "n_entries": 478,
+      "n_requests": 800,
+      "insertion_ms_per_entry": 137.19831217298574,
+      "hit_rate": 1.0,
+      "planted_hit_rate": 0.01625,
+      "poisoned_answer_hit_rate": 0.00375,
+      "qps": 8.48278312989884,
+      "latency_ms_p50": 100.38939397782087,
+      "latency_ms_p95": 241.63195220753548,
+      "counters": {
+        "evaluated": 0,
+        "below_band": 0,
+        "no_profile": 0,
+        "config_mismatch": 0,
+        "unjudgeable": 0,
+        "non_finite": 0,
+        "safe_accepted": 0,
+        "no_fence": 0,
+        "blocked": 0,
+        "rescued": 0,
+        "no_answer_fields": 0,
+        "accepted": 0,
+        "errors": 0
+      },
+      "insertion_ms_per_entry_repeats": [
+        167.95605273574404,
+        134.15313147546172,
+        137.19831217298574
+      ],
+      "qps_repeats": [
+        6.397910919736137,
+        9.688349254552888,
+        8.48278312989884
+      ],
+      "latency_ms_p50_repeats": [
+        106.84018256142735,
+        81.90877828747034,
+        100.38939397782087
+      ],
+      "latency_ms_p95_repeats": [
+        496.7359960079192,
+        192.4891721457242,
+        241.63195220753548
+      ]
+    },
+    "dg_only": {
+      "defended": true,
+      "profile_writer": true,
+      "n_entries": 478,
+      "n_requests": 800,
+      "insertion_ms_per_entry": 178.1145587434922,
+      "hit_rate": 0.93625,
+      "planted_hit_rate": 0.005,
+      "poisoned_answer_hit_rate": 0.0,
+      "qps": 8.114545683213032,
+      "latency_ms_p50": 92.98553597182035,
+      "latency_ms_p95": 243.7687479890882,
+      "counters": {
+        "evaluated": 800,
+        "below_band": 2,
+        "no_profile": 0,
+        "config_mismatch": 0,
+        "unjudgeable": 0,
+        "non_finite": 0,
+        "safe_accepted": 0,
+        "no_fence": 0,
+        "blocked": 49,
+        "rescued": 0,
+        "no_answer_fields": 0,
+        "accepted": 749,
+        "errors": 0
+      },
+      "insertion_ms_per_entry_repeats": [
+        178.1145587434922,
+        135.63673422480915,
+        180.303760888016
+      ],
+      "qps_repeats": [
+        13.97749984646116,
+        8.114545683213032,
+        6.434973771014694
+      ],
+      "latency_ms_p50_repeats": [
+        57.97892902046442,
+        103.68462279438972,
+        92.98553597182035
+      ],
+      "latency_ms_p95_repeats": [
+        144.85007398761803,
+        243.7687479890882,
+        248.1854100245982
+      ]
+    },
+    "dg_answer_check": {
+      "defended": true,
+      "profile_writer": true,
+      "n_entries": 478,
+      "n_requests": 800,
+      "insertion_ms_per_entry": 161.4361396332166,
+      "hit_rate": 0.92625,
+      "planted_hit_rate": 0.00375,
+      "poisoned_answer_hit_rate": 0.0,
+      "qps": 10.442670996489435,
+      "latency_ms_p50": 88.834916241467,
+      "latency_ms_p95": 192.26255719549945,
+      "counters": {
+        "evaluated": 800,
+        "below_band": 2,
+        "no_profile": 0,
+        "config_mismatch": 0,
+        "unjudgeable": 0,
+        "non_finite": 0,
+        "safe_accepted": 0,
+        "no_fence": 0,
+        "blocked": 57,
+        "rescued": 23,
+        "no_answer_fields": 0,
+        "accepted": 741,
+        "errors": 0
+      },
+      "insertion_ms_per_entry_repeats": [
+        112.5512922661979,
+        161.4361396332166,
+        173.92214510207955
+      ],
+      "qps_repeats": [
+        12.414159381058798,
+        10.442670996489435,
+        9.440761214804674
+      ],
+      "latency_ms_p50_repeats": [
+        66.00493006408215,
+        88.834916241467,
+        99.73500808700919
+      ],
+      "latency_ms_p95_repeats": [
+        159.6189340576529,
+        198.38721114210784,
+        192.26255719549945
+      ]
+    }
+  },
+  "repeats": 3
+}

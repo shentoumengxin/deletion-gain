@@ -1,0 +1,7 @@
+{
+  "inputs_sha256": "cc73fe107245073950de29c250ff417a0f7fb789b1f4f2fcb9f4eb8ddb4aeb0d",
+  "cell_sha256": "a986120053eefd8e8e4008ece8e2d1c13943f7e81c46addbb29af41e59fa7345",
+  "scores_sha256": "62fbf45626e7e417d93c14024e6c298571d8fd07f6140f4b274074d1d7548582",
+  "cpu_override": true,
+  "authorization": "User explicitly selected cpu-server CPU replay in this thread."
+}

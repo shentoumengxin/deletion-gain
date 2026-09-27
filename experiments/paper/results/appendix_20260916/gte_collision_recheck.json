@@ -1,0 +1,19 @@
+{
+  "input_path": "$SENTRY_DATA_ROOT/runs/paper/perrow/pool_cap_gte.json",
+  "input_sha256": "a3625dc4265ce04660132714801fb21a7e805c643be032ca0cc1279d2d34cc1e",
+  "method": "native threshold = np.quantile(native benign cosines,1-CLS benign hit rate); collision uses >= threshold",
+  "n_benign": 499,
+  "n_attack": 800,
+  "finite_benign": 499,
+  "finite_attack": 800,
+  "cls_threshold": 0.9,
+  "cls_benign_hits": 499,
+  "cls_benign_hit_rate": 1.0,
+  "native_threshold_recomputed": 0.817868427357098,
+  "native_attack_hits": 783,
+  "native_collision_recomputed": 0.97875,
+  "stored_native_threshold": "NaN",
+  "stored_native_collision": 0.0,
+  "original_preserved": true,
+  "interpretation": "0.0 in original summary is a NaN-comparison artifact, not an empirical zero; recomputed .97875 rounds .979; threshold is data-calibrated, not fixed .90."
+}

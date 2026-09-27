@@ -1,0 +1,11 @@
+{
+  "name": "paper-legacy-dg-6plus2-control",
+  "policy": "multi[count:6+width:2:cap16]/runs",
+  "direction": "entry",
+  "storage_dtype": "float16",
+  "fence_form": "flat",
+  "answer_rule": "none",
+  "cache_threshold": 0.9,
+  "benign_budget": 0.05,
+  "usage": "Historical DG-only comparison and Figure 3a; thresholds remain those recorded with each original run."
+}

@@ -1,0 +1,23 @@
+{
+  "eval": "<server-workdir>/final500/eval/lmp_eval.jsonl",
+  "policy": "multi[count:6+width:2:cap16]/runs",
+  "n_judgeable": 1299,
+  "n_attack": 800,
+  "n_benign": 499,
+  "baselines_ppl_nli": {
+    "perplexity": {
+      "auroc": 0.5853682364729459,
+      "block_at_budget": 0.04625,
+      "ms_per_row": 78.70227603845476,
+      "n_attack": 800,
+      "n_benign": 499
+    },
+    "binli": {
+      "auroc": 0.9417159318637275,
+      "block_at_budget": 0.685,
+      "ms_per_row": 34.74937467760564,
+      "n_attack": 800,
+      "n_benign": 499
+    }
+  }
+}

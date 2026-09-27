@@ -1,0 +1,7 @@
+{
+  "deterministic_replay": "exact JSON equality",
+  "independent_formula_crosscheck": "all five methods, both calibrations",
+  "offline_gate": "278 passed, 34 warnings",
+  "model_calls": 0,
+  "script_sha256": "072310fb0a097ef4f8dfa06e82fd5adbf0a210bbe768d130a29b67f53c87fe62"
+}

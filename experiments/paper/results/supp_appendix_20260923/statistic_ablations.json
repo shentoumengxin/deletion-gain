@@ -1,0 +1,436 @@
+{
+  "task": "appendix Task 8: statistic ablations under 4+2",
+  "policy": "multi[count:4+width:2:cap16]/runs",
+  "encoder": "intfloat/e5-small-v2",
+  "pooling": "cls",
+  "port_check_policy": "count:6 (prefix/suffix spans)",
+  "published_six_segment": {
+    "CAP": {
+      "dg_count6": 0.9600450901803608,
+      "anchor_free_count6": 0.4233491983967936,
+      "span_cv_count6": 0.5779158316633266,
+      "span_range_count6": 0.6259757014028056
+    },
+    "SCP": {
+      "dg_count6": 0.9795103992446045,
+      "anchor_free_count6": 0.11096880477747476,
+      "span_cv_count6": 0.36140451328722606,
+      "span_range_count6": 0.666934118864295
+    }
+  },
+  "published_floor": 0.8556309342384338,
+  "classes": {
+    "CAP": {
+      "n_attack": 800,
+      "n_benign": 499,
+      "n_attack_intents": 191,
+      "n_benign_intents": 499,
+      "scores": {
+        "dg": {
+          "auc": 0.9630911823647295,
+          "auc_ci95": [
+            0.9498851105571454,
+            0.9748915740200034
+          ],
+          "block_at_5pct": 0.895
+        },
+        "cosine": {
+          "auc": 0.8440480961923847,
+          "auc_ci95": [
+            0.8137215194133187,
+            0.8732589612434982
+          ],
+          "block_at_5pct": 0.24
+        },
+        "anchor_free": {
+          "auc": 0.46884894789579157,
+          "auc_ci95": [
+            0.42567517201880106,
+            0.5129497566575579
+          ],
+          "block_at_5pct": 0.065
+        },
+        "span_cv": {
+          "auc": 0.6262099198396793,
+          "auc_ci95": [
+            0.5845946706047486,
+            0.6683074784934304
+          ],
+          "block_at_5pct": 0.12875
+        },
+        "span_range": {
+          "auc": 0.6268674849699398,
+          "auc_ci95": [
+            0.581399013517396,
+            0.6688620316805456
+          ],
+          "block_at_5pct": 0.085
+        },
+        "span_cv_raw": {
+          "auc": 0.6439679358717435,
+          "auc_ci95": [
+            0.5994293350838173,
+            0.6867040202451908
+          ],
+          "block_at_5pct": 0.08
+        },
+        "span_range_raw": {
+          "auc": 0.640938126252505,
+          "auc_ci95": [
+            0.5974538632528246,
+            0.6825044495158112
+          ],
+          "block_at_5pct": 0.10375
+        },
+        "dg_count6": {
+          "auc": 0.9600450901803608,
+          "auc_ci95": [
+            0.9463551914974634,
+            0.972275005439092
+          ],
+          "block_at_5pct": 0.88875
+        },
+        "anchor_free_count6": {
+          "auc": 0.42334669338677355,
+          "auc_ci95": [
+            0.37714322744417794,
+            0.4702873553745677
+          ],
+          "block_at_5pct": 0.0675
+        },
+        "span_cv_count6": {
+          "auc": 0.5779245991983968,
+          "auc_ci95": [
+            0.5349490751689715,
+            0.6208912104483918
+          ],
+          "block_at_5pct": 0.07875
+        },
+        "span_range_count6": {
+          "auc": 0.625999498997996,
+          "auc_ci95": [
+            0.5833826990026212,
+            0.665690089179121
+          ],
+          "block_at_5pct": 0.1475
+        }
+      },
+      "anisotropy_floor": 0.8556310376196037,
+      "parity": {
+        "max_abs_dg_minus_excess_span": 2.2415100428552215e-05,
+        "max_abs_base_cos": 9.166534999272002e-06,
+        "tolerance": 0.0001
+      },
+      "inputs": {
+        "rows": "<server-workdir>/supp_appendix_20260923/inputs/rows_lmp.jsonl",
+        "rows_sha256": "de5ce89e10b702d04994ac04a6ddca3d7959e8682c003b7d651b097aede091a9",
+        "eval": "<server-workdir>/final500/eval/lmp_eval.jsonl",
+        "eval_sha256": "5e25490e0acf53a2085315803cd25eda2ed34e2af8979ea1772cbd42a90e87be"
+      },
+      "per_row_output": {
+        "path": "<server-workdir>/supp_appendix_20260923/out/recovery/statistic_ablations_lmp.jsonl",
+        "sha256": "2a39bd255187c68b59c24564883a42158d2d48571d2a4d677f3a5173d0318abf"
+      },
+      "cut_points_quantiles": {
+        "5": 3.0,
+        "50": 4.0,
+        "95": 7.0
+      },
+      "segments_quantiles": {
+        "5": 4.0,
+        "50": 6.0,
+        "95": 10.0
+      },
+      "port_check": {
+        "dg_count6": {
+          "published": 0.9600450901803608,
+          "reproduced": 0.9600450901803608,
+          "abs_diff": 0.0
+        },
+        "anchor_free_count6": {
+          "published": 0.4233491983967936,
+          "reproduced": 0.42334669338677355,
+          "abs_diff": 2.5050100200263437e-06
+        },
+        "span_cv_count6": {
+          "published": 0.5779158316633266,
+          "reproduced": 0.5779245991983968,
+          "abs_diff": 8.76753507017547e-06
+        },
+        "span_range_count6": {
+          "published": 0.6259757014028056,
+          "reproduced": 0.625999498997996,
+          "abs_diff": 2.3797595190444554e-05
+        }
+      }
+    },
+    "SCP": {
+      "n_attack": 798,
+      "n_benign": 499,
+      "n_attack_intents": 498,
+      "n_benign_intents": 499,
+      "scores": {
+        "dg": {
+          "auc": 0.9911803556988664,
+          "auc_ci95": [
+            0.9860298165050086,
+            0.9952842597198024
+          ],
+          "block_at_5pct": 0.9774436090225563
+        },
+        "cosine": {
+          "auc": 0.9054173509927123,
+          "auc_ci95": [
+            0.8865619417273208,
+            0.9257460562592804
+          ],
+          "block_at_5pct": 0.37218045112781956
+        },
+        "anchor_free": {
+          "auc": 0.17918292725802482,
+          "auc_ci95": [
+            0.15718724233646134,
+            0.20289006939758913
+          ],
+          "block_at_5pct": 0.008771929824561403
+        },
+        "span_cv": {
+          "auc": 0.5524633226352454,
+          "auc_ci95": [
+            0.5197593488932917,
+            0.5867560462458431
+          ],
+          "block_at_5pct": 0.05263157894736842
+        },
+        "span_range": {
+          "auc": 0.7638648223765827,
+          "auc_ci95": [
+            0.7369440993804596,
+            0.7910871261962252
+          ],
+          "block_at_5pct": 0.2706766917293233
+        },
+        "span_cv_raw": {
+          "auc": 0.6409686541001803,
+          "auc_ci95": [
+            0.6077440202500765,
+            0.6724889996768023
+          ],
+          "block_at_5pct": 0.05012531328320802
+        },
+        "span_range_raw": {
+          "auc": 0.766186508355056,
+          "auc_ci95": [
+            0.7384265903946522,
+            0.7923287210896701
+          ],
+          "block_at_5pct": 0.2606516290726817
+        },
+        "dg_count6": {
+          "auc": 0.9795103992446045,
+          "auc_ci95": [
+            0.9708560714987311,
+            0.9873344444936737
+          ],
+          "block_at_5pct": 0.9461152882205514
+        },
+        "anchor_free_count6": {
+          "auc": 0.11096880477747476,
+          "auc_ci95": [
+            0.09352767113233496,
+            0.12929743085160236
+          ],
+          "block_at_5pct": 0.0
+        },
+        "span_cv_count6": {
+          "auc": 0.36140451328722606,
+          "auc_ci95": [
+            0.33246501868986195,
+            0.3924948898259563
+          ],
+          "block_at_5pct": 0.03884711779448621
+        },
+        "span_range_count6": {
+          "auc": 0.6669353745084153,
+          "auc_ci95": [
+            0.6353000671373803,
+            0.6986330252326894
+          ],
+          "block_at_5pct": 0.19423558897243107
+        }
+      },
+      "anisotropy_floor": 0.8556310376196037,
+      "parity": {
+        "max_abs_dg_minus_excess_span": 2.2415100428552215e-05,
+        "max_abs_base_cos": 1.836736909255343e-05,
+        "tolerance": 0.0001
+      },
+      "inputs": {
+        "rows": "<server-workdir>/supp_appendix_20260923/inputs/rows_scp.jsonl",
+        "rows_sha256": "ec3720fbf859209e4e69e3ebaf9d40d17e20446274dc1082d6971567f77322bb",
+        "eval": "<server-workdir>/final500/eval/scp_eval.jsonl",
+        "eval_sha256": "5b80b60a59eb747b08f1a9b50f6c7e1d47f0bf73cdcd042c75ccbf15f47d4e69"
+      },
+      "per_row_output": {
+        "path": "<server-workdir>/supp_appendix_20260923/out/recovery/statistic_ablations_scp.jsonl",
+        "sha256": "946719d57d28a625f760c6fa2de51f5077c666c8c3c34d81d9cc963a078a1ca1"
+      },
+      "cut_points_quantiles": {
+        "5": 3.0,
+        "50": 6.0,
+        "95": 15.0
+      },
+      "segments_quantiles": {
+        "5": 4.0,
+        "50": 9.0,
+        "95": 20.0
+      },
+      "port_check": {
+        "dg_count6": {
+          "published": 0.9795103992446045,
+          "reproduced": 0.9795103992446045,
+          "abs_diff": 0.0
+        },
+        "anchor_free_count6": {
+          "published": 0.11096880477747476,
+          "reproduced": 0.11096880477747476,
+          "abs_diff": 0.0
+        },
+        "span_cv_count6": {
+          "published": 0.36140451328722606,
+          "reproduced": 0.36140451328722606,
+          "abs_diff": 0.0
+        },
+        "span_range_count6": {
+          "published": 0.666934118864295,
+          "reproduced": 0.6669353745084153,
+          "abs_diff": 1.2556441203459556e-06
+        }
+      }
+    },
+    "KCA": {
+      "n_attack": 798,
+      "n_benign": 499,
+      "n_attack_intents": 499,
+      "n_benign_intents": 499,
+      "scores": {
+        "dg": {
+          "auc": 0.9923003902541926,
+          "auc_ci95": [
+            0.9879805427147941,
+            0.9956786311579032
+          ],
+          "block_at_5pct": 0.968671679197995
+        },
+        "cosine": {
+          "auc": 0.9859870116172194,
+          "auc_ci95": [
+            0.9780444796887979,
+            0.9925477304918479
+          ],
+          "block_at_5pct": 0.9548872180451128
+        },
+        "anchor_free": {
+          "auc": 0.3727053103701137,
+          "auc_ci95": [
+            0.34013600933273397,
+            0.4056102234585282
+          ],
+          "block_at_5pct": 0.013784461152882205
+        },
+        "span_cv": {
+          "auc": 0.8427707545416648,
+          "auc_ci95": [
+            0.819043966323711,
+            0.8665620167682038
+          ],
+          "block_at_5pct": 0.41478696741854637
+        },
+        "span_range": {
+          "auc": 0.6521350972621935,
+          "auc_ci95": [
+            0.6195036785730269,
+            0.684783786133459
+          ],
+          "block_at_5pct": 0.06015037593984962
+        },
+        "span_cv_raw": {
+          "auc": 0.5776741452830473,
+          "auc_ci95": [
+            0.5410607069760106,
+            0.612807018390359
+          ],
+          "block_at_5pct": 0.012531328320802004
+        },
+        "span_range_raw": {
+          "auc": 0.8359651634095259,
+          "auc_ci95": [
+            0.8112435005117328,
+            0.8585456966853676
+          ],
+          "block_at_5pct": 0.3308270676691729
+        },
+        "dg_count6": {
+          "auc": 0.9625968729438827,
+          "auc_ci95": [
+            0.9515088284681616,
+            0.9725409010430608
+          ],
+          "block_at_5pct": 0.8082706766917294
+        },
+        "anchor_free_count6": {
+          "auc": 0.09490158261384925,
+          "auc_ci95": [
+            0.07686819764125147,
+            0.11420340908663383
+          ],
+          "block_at_5pct": 0.0
+        },
+        "span_cv_count6": {
+          "auc": 0.38187402373669643,
+          "auc_ci95": [
+            0.3472723041391819,
+            0.4166677422076063
+          ],
+          "block_at_5pct": 0.018796992481203006
+        },
+        "span_range_count6": {
+          "auc": 0.6742155991180355,
+          "auc_ci95": [
+            0.6411222838735031,
+            0.7072102781209689
+          ],
+          "block_at_5pct": 0.10776942355889724
+        }
+      },
+      "anisotropy_floor": 0.872371585194216,
+      "parity": {
+        "max_abs_dg_minus_excess_span": 8.213999883044387e-05,
+        "max_abs_base_cos": 8.196818058792132e-05,
+        "tolerance": 0.0001
+      },
+      "inputs": {
+        "rows": "<server-workdir>/supp_appendix_20260923/inputs/rows_kca.jsonl",
+        "rows_sha256": "2b22cfe38d7b55eeb838d2dcb0866ccaca9b5fa069f308ebd4c6a912f6da2b58",
+        "eval": "<server-workdir>/final500/eval/kca_eval.jsonl",
+        "eval_sha256": "9671984c4f35e2c627ad641547200dec5dc89af24593dfa87e3b37e5cb528803"
+      },
+      "per_row_output": {
+        "path": "<server-workdir>/supp_appendix_20260923/out/recovery/statistic_ablations_kca.jsonl",
+        "sha256": "d4cfc0310b087381c71bd57fc4d67b614b80f9c46480bec6e4cc628c39126d81"
+      },
+      "cut_points_quantiles": {
+        "5": 3.0,
+        "50": 15.0,
+        "95": 15.0
+      },
+      "segments_quantiles": {
+        "5": 4.0,
+        "50": 20.0,
+        "95": 20.0
+      }
+    }
+  },
+  "n_texts_encoded": 167924,
+  "runtime_s": 117.2848306549713
+}

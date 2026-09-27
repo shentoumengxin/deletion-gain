@@ -1,0 +1,43 @@
+{
+ "dim": 384,
+ "repeats": 2000,
+ "numpy": "2.5.1",
+ "OMP_NUM_THREADS": "1",
+ "convention": "attack-arm mean span count, matching detection/excess_serving_ms.json",
+ "policies": {
+  "6+2": {
+   "LMP": {
+    "n_spans": 24,
+    "ms_median": 0.02078,
+    "ms_p95": 0.02119
+   },
+   "SCP": {
+    "n_spans": 76,
+    "ms_median": 0.06131,
+    "ms_p95": 0.06486
+   },
+   "KCA": {
+    "n_spans": 152,
+    "ms_median": 0.12016,
+    "ms_p95": 0.12423
+   }
+  },
+  "4+2": {
+   "LMP": {
+    "n_spans": 15,
+    "ms_median": 0.01398,
+    "ms_p95": 0.01421
+   },
+   "SCP": {
+    "n_spans": 65,
+    "ms_median": 0.05287,
+    "ms_p95": 0.05556
+   },
+   "KCA": {
+    "n_spans": 135,
+    "ms_median": 0.10656,
+    "ms_p95": 0.11051
+   }
+  }
+ }
+}

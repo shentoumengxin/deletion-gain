@@ -1,0 +1,22 @@
+{
+  "fence_path": "/absolute/path/to/exported-joint-fence.json",
+  "data_dir": "/absolute/path/to/runtime-cache",
+  "embedder": {
+    "model_name": "/absolute/path/to/local/encoder",
+    "revision": "replace-with-your-exact-revision"
+  },
+  "encoder_signature": {
+    "model_name": "/absolute/path/to/local/encoder",
+    "revision": "replace-with-your-exact-revision",
+    "pooling": "cls",
+    "text_prefix": "",
+    "normalization": "l2",
+    "dimension": 768
+  },
+  "backend": {
+    "url": "https://api.openai.com/v1/chat/completions",
+    "model": "replace-with-your-backend-model",
+    "api_key_env": "OPENAI_API_KEY",
+    "timeout_seconds": 60
+  }
+}

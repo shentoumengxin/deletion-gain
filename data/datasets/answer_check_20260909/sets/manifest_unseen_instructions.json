@@ -1,0 +1,23 @@
+{
+ "instructions": [
+  "Could you tell me",
+  "Please let me know",
+  "I would appreciate an answer",
+  "If you know, please share",
+  "Just curious",
+  "Thanks in advance",
+  "Please answer briefly",
+  "A short answer is fine",
+  "No rush, whenever you can",
+  "I would like to know",
+  "Can you help me with this",
+  "Please keep it simple"
+ ],
+ "n": 12,
+ "prompt": "List 12 different short sentences an English-speaking user might put immediately before or\nafter a factual question in a chat, that ask for the answer politely or set a harmless\nformat, without changing what is being asked and without mentioning any fact, name, number\nor date. One per line, at most 12 words each, no numbering, no quotation marks.",
+ "prompt_sha256": "8167723d32a5254a61c0e191b2b6666bc1b669b6a88f5aaced5c5993b438275b",
+ "instructions_sha256": "751907e6fd9062ee55b5489febaeaf003856c21be65593c69e6f4a6391e2a7e0",
+ "raw_response": "Could you tell me\nPlease let me know\nI would appreciate an answer\nIf you know, please share\nJust curious\nThanks in advance\nPlease answer briefly\nA short answer is fine\nNo rush, whenever you can\nI would like to know\nCan you help me with this\nPlease keep it simple",
+ "dropped": {},
+ "builder_sha256": "1cefd6b7bad315f32a31d2b3e6f06e1cccda948091515f0bca01313cecf083aa"
+}

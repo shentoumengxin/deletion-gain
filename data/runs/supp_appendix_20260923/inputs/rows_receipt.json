@@ -1,0 +1,23 @@
+{
+  "CAP": {
+    "rows_source": "$SENTRY_DATA_ROOT/runs/supp_appendix_20260923/aligned_rows/e5-small-v2__lmp.jsonl",
+    "rows_source_sha256": "48843ef4d868156b64a2557d74a714dcddf9d068b9982b4afb2d5c78cc309562",
+    "n": 1299,
+    "n_attack": 800,
+    "sha256": "de5ce89e10b702d04994ac04a6ddca3d7959e8682c003b7d651b097aede091a9"
+  },
+  "SCP": {
+    "rows_source": "$SENTRY_DATA_ROOT/runs/supp_appendix_20260923/aligned_rows/e5-small-v2__scp.jsonl",
+    "rows_source_sha256": "b22b79dc356d476bdfa89eaa3c68f095260df0677334a791772d5ba693a30a21",
+    "n": 1297,
+    "n_attack": 798,
+    "sha256": "ec3720fbf859209e4e69e3ebaf9d40d17e20446274dc1082d6971567f77322bb"
+  },
+  "KCA": {
+    "rows_source": "$SENTRY_DATA_ROOT/runs/sc_ipi_ablation_20260920/scores.jsonl",
+    "rows_source_sha256": "62fbf45626e7e417d93c14024e6c298571d8fd07f6140f4b274074d1d7548582",
+    "n": 1297,
+    "n_attack": 798,
+    "sha256": "2b22cfe38d7b55eeb838d2dcb0866ccaca9b5fa069f308ebd4c6a912f6da2b58"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "features": [
+    "intercept",
+    "cosine",
+    "log_words"
+  ],
+  "coefficients": [
+    0.03202847681397341,
+    -0.4339773312964382,
+    0.023211298562504774
+  ],
+  "centers": [
+    0.9078971137459781,
+    1.9718632907348268
+  ],
+  "budget": 0.05,
+  "direction": "entry",
+  "statistic": "excess_span",
+  "embedder": "BAAI/bge-small-en-v1.5",
+  "policy": "multi[count:6+width:2:cap16]/runs",
+  "n_rows": 260,
+  "metadata": {
+    "cosine_span": [
+      0.5601270965989682,
+      0.9985410086369837
+    ],
+    "word_span": [
+      3,
+      14
+    ],
+    "distinct_words": 12
+  }
+}

@@ -1,0 +1,596 @@
+{
+  "policy": "multi[count:4+width:2:cap16]/runs",
+  "storage_dtype": "float16",
+  "embedder": "sentence-transformers/all-MiniLM-L6-v2",
+  "budget": 0.05,
+  "holdout": 0.5,
+  "seed": 0,
+  "composition": {
+    "kept": {
+      "genuine": {
+        "cacheattack_cleaned_qa": 499
+      },
+      "attack": {
+        "cacheattack_gcg_f1": 499,
+        "cacheattack_gcg_f2": 299
+      }
+    },
+    "dropped_no_anchor": {
+      "genuine": 1,
+      "attack": 2
+    }
+  },
+  "n_genuine": 499,
+  "n_attack": 798,
+  "n_attack_flag_missing": 0,
+  "n_poisoned": 742,
+  "n_poisoned_strict": 0,
+  "excess_auroc": 0.9815621217372088,
+  "excess_auroc_cos_matched": NaN,
+  "matched_support": 0,
+  "excess_block_rate": 0.9385964912280702,
+  "tpr_all_planted": 0.9385964912280702,
+  "tpr_poisoned": 0.9339622641509434,
+  "tpr_poisoned_strict": NaN,
+  "fence_form": "flat",
+  "threshold_scoring": 0.013201898562877823,
+  "threshold_holdout": 0.01205877072063081,
+  "benign_block_rate_in_sample": 0.050100200400801605,
+  "achieved_benign_block_rate": 0.06934306569343066,
+  "n_fit_intents": 225,
+  "n_eval_intents": 274,
+  "cosine_auroc": 0.9854420620690002,
+  "cosine_block_rate": 0.9761904761904762,
+  "cosine_threshold": 0.900939012562459,
+  "families": {
+    "cacheattack_gcg_f1": {
+      "n_attack": 499,
+      "excess_auroc": 0.9842008666631861,
+      "excess_auroc_cos_matched": NaN,
+      "matched_support": 0,
+      "excess_block_rate": 0.9398797595190381,
+      "n_poisoned": 462,
+      "tpr_poisoned": 0.935064935064935,
+      "cosine_auroc": 0.9849839960482086,
+      "cosine_block_rate": 0.9739478957915831
+    },
+    "cacheattack_gcg_f2": {
+      "n_attack": 299,
+      "excess_auroc": 0.9771583300380025,
+      "excess_auroc_cos_matched": NaN,
+      "matched_support": 0,
+      "excess_block_rate": 0.9364548494983278,
+      "n_poisoned": 280,
+      "tpr_poisoned": 0.9321428571428572,
+      "cosine_auroc": 0.9862065267659064,
+      "cosine_block_rate": 0.979933110367893
+    }
+  },
+  "timing": {
+    "embed_wall_s": 216.5996582787484,
+    "n_encode_calls_anchor": 1297,
+    "n_entries_profiled": 1297
+  },
+  "fence_scoring": {
+    "features": [
+      "intercept",
+      "cosine",
+      "log_words"
+    ],
+    "coefficients": [
+      0.013201898562877823,
+      0.0,
+      0.0
+    ],
+    "centers": [
+      0.9633230469139142,
+      2.209314920821953
+    ],
+    "budget": 0.05,
+    "direction": "entry",
+    "statistic": "excess_span",
+    "embedder": "sentence-transformers/all-MiniLM-L6-v2",
+    "policy": "multi[count:4+width:2:cap16]/runs",
+    "n_rows": 499,
+    "metadata": {
+      "cosine_span": [
+        0.7121588727815077,
+        0.9956868860716075
+      ],
+      "word_span": [
+        6,
+        17
+      ],
+      "distinct_words": 12,
+      "form": "flat"
+    },
+    "answer_rule": "none",
+    "eta_a": null,
+    "echo_min": 1
+  },
+  "fence_holdout": {
+    "features": [
+      "intercept",
+      "cosine",
+      "log_words"
+    ],
+    "coefficients": [
+      0.01205877072063081,
+      0.0,
+      0.0
+    ],
+    "centers": [
+      0.9638771655017073,
+      2.205920856319537
+    ],
+    "budget": 0.05,
+    "direction": "entry",
+    "statistic": "excess_span",
+    "embedder": "sentence-transformers/all-MiniLM-L6-v2",
+    "policy": "multi[count:4+width:2:cap16]/runs",
+    "n_rows": 225,
+    "metadata": {
+      "cosine_span": [
+        0.7849238320327248,
+        0.9952566963858028
+      ],
+      "word_span": [
+        6,
+        17
+      ],
+      "distinct_words": 12,
+      "form": "flat"
+    },
+    "answer_rule": "none",
+    "eta_a": null,
+    "echo_min": 1
+  },
+  "answer_rules": {
+    "dg_only": {
+      "answer_rule": "none",
+      "fitted": true,
+      "echo_min": 1,
+      "eta_a": null,
+      "eta_a_holdout": null,
+      "n_answer_loss_rows": 499,
+      "n_answer_loss_rows_holdout": 225,
+      "n_attack_no_answer_fields": 0,
+      "n_benign_no_answer_fields": 0,
+      "n_benign_answer_fires": 499,
+      "answer_coverage": {
+        "benign": 1.0,
+        "attack": 1.0
+      },
+      "threshold_scoring": 0.013201898562877823,
+      "threshold_holdout": 0.01205877072063081,
+      "n_poisoned": 742,
+      "n_poisoned_strict": 0,
+      "excess_block_rate": 0.9385964912280702,
+      "tpr_all_planted": 0.9385964912280702,
+      "tpr_poisoned": 0.9339622641509434,
+      "tpr_poisoned_strict": NaN,
+      "benign_block_rate_in_sample": 0.050100200400801605,
+      "achieved_benign_block_rate": 0.06934306569343066,
+      "eta_shared": 0.013201898562877823,
+      "excess_block_rate_joint_eta": 0.9385964912280702,
+      "tpr_all_planted_joint_eta": 0.9385964912280702,
+      "tpr_poisoned_joint_eta": 0.9339622641509434,
+      "tpr_poisoned_strict_joint_eta": NaN,
+      "benign_block_rate_in_sample_joint_eta": 0.050100200400801605,
+      "achieved_benign_block_rate_joint_eta": 0.06934306569343066,
+      "eta_joint": 0.013201898562877823,
+      "eta_joint_holdout": 0.01205877072063081,
+      "joint_budget_reachable": true,
+      "joint_budget_reachable_holdout": true,
+      "families": {
+        "cacheattack_gcg_f1": {
+          "n_attack": 499,
+          "excess_block_rate": 0.9398797595190381,
+          "excess_block_rate_joint_eta": 0.9398797595190381,
+          "n_poisoned": 462,
+          "tpr_poisoned": 0.935064935064935,
+          "tpr_poisoned_joint_eta": 0.935064935064935
+        },
+        "cacheattack_gcg_f2": {
+          "n_attack": 299,
+          "excess_block_rate": 0.9364548494983278,
+          "excess_block_rate_joint_eta": 0.9364548494983278,
+          "n_poisoned": 280,
+          "tpr_poisoned": 0.9321428571428572,
+          "tpr_poisoned_joint_eta": 0.9321428571428572
+        }
+      }
+    },
+    "adl": {
+      "answer_rule": "adl",
+      "fitted": true,
+      "echo_min": 1,
+      "eta_a": 0.02967529296874999,
+      "eta_a_holdout": 0.020117187499999998,
+      "n_answer_loss_rows": 499,
+      "n_answer_loss_rows_holdout": 225,
+      "n_attack_no_answer_fields": 0,
+      "n_benign_no_answer_fields": 0,
+      "n_benign_answer_fires": 25,
+      "answer_coverage": {
+        "benign": 1.0,
+        "attack": 1.0
+      },
+      "threshold_scoring": 0.013201898562877823,
+      "threshold_holdout": 0.01205877072063081,
+      "n_poisoned": 742,
+      "n_poisoned_strict": 0,
+      "excess_block_rate": 0.9197994987468672,
+      "tpr_all_planted": 0.9197994987468672,
+      "tpr_poisoned": 0.9137466307277629,
+      "tpr_poisoned_strict": NaN,
+      "benign_block_rate_in_sample": 0.014028056112224449,
+      "achieved_benign_block_rate": 0.01824817518248175,
+      "eta_shared": 0.013201898562877823,
+      "excess_block_rate_joint_eta": 0.956140350877193,
+      "tpr_all_planted_joint_eta": 0.956140350877193,
+      "tpr_poisoned_joint_eta": 0.9528301886792453,
+      "tpr_poisoned_strict_joint_eta": NaN,
+      "benign_block_rate_in_sample_joint_eta": 0.04809619238476954,
+      "achieved_benign_block_rate_joint_eta": 0.08029197080291971,
+      "eta_joint": -0.07674691052378181,
+      "eta_joint_holdout": -0.04708671500273736,
+      "joint_budget_reachable": true,
+      "joint_budget_reachable_holdout": true,
+      "families": {
+        "cacheattack_gcg_f1": {
+          "n_attack": 499,
+          "excess_block_rate": 0.9298597194388778,
+          "excess_block_rate_joint_eta": 0.9679358717434869,
+          "n_poisoned": 462,
+          "tpr_poisoned": 0.9242424242424242,
+          "tpr_poisoned_joint_eta": 0.9653679653679653
+        },
+        "cacheattack_gcg_f2": {
+          "n_attack": 299,
+          "excess_block_rate": 0.903010033444816,
+          "excess_block_rate_joint_eta": 0.9364548494983278,
+          "n_poisoned": 280,
+          "tpr_poisoned": 0.8964285714285715,
+          "tpr_poisoned_joint_eta": 0.9321428571428572
+        }
+      }
+    },
+    "echo": {
+      "answer_rule": "echo",
+      "fitted": true,
+      "echo_min": 1,
+      "eta_a": null,
+      "eta_a_holdout": null,
+      "n_answer_loss_rows": 499,
+      "n_answer_loss_rows_holdout": 225,
+      "n_attack_no_answer_fields": 0,
+      "n_benign_no_answer_fields": 0,
+      "n_benign_answer_fires": 121,
+      "answer_coverage": {
+        "benign": 1.0,
+        "attack": 1.0
+      },
+      "threshold_scoring": 0.013201898562877823,
+      "threshold_holdout": 0.01205877072063081,
+      "n_poisoned": 742,
+      "n_poisoned_strict": 0,
+      "excess_block_rate": 0.9260651629072681,
+      "tpr_all_planted": 0.9260651629072681,
+      "tpr_poisoned": 0.9272237196765498,
+      "tpr_poisoned_strict": NaN,
+      "benign_block_rate_in_sample": 0.03006012024048096,
+      "achieved_benign_block_rate": 0.029197080291970802,
+      "eta_shared": 0.013201898562877823,
+      "excess_block_rate_joint_eta": 0.949874686716792,
+      "tpr_all_planted_joint_eta": 0.949874686716792,
+      "tpr_poisoned_joint_eta": 0.9528301886792453,
+      "tpr_poisoned_strict_joint_eta": NaN,
+      "benign_block_rate_in_sample_joint_eta": 0.050100200400801605,
+      "achieved_benign_block_rate_joint_eta": 0.040145985401459854,
+      "eta_joint": 0.005715383315502735,
+      "eta_joint_holdout": 0.007434624245653404,
+      "joint_budget_reachable": true,
+      "joint_budget_reachable_holdout": true,
+      "families": {
+        "cacheattack_gcg_f1": {
+          "n_attack": 499,
+          "excess_block_rate": 0.9318637274549099,
+          "excess_block_rate_joint_eta": 0.9559118236472945,
+          "n_poisoned": 462,
+          "tpr_poisoned": 0.9307359307359307,
+          "tpr_poisoned_joint_eta": 0.9567099567099567
+        },
+        "cacheattack_gcg_f2": {
+          "n_attack": 299,
+          "excess_block_rate": 0.9163879598662207,
+          "excess_block_rate_joint_eta": 0.939799331103679,
+          "n_poisoned": 280,
+          "tpr_poisoned": 0.9214285714285714,
+          "tpr_poisoned_joint_eta": 0.9464285714285714
+        }
+      }
+    },
+    "either": {
+      "answer_rule": "either",
+      "fitted": true,
+      "echo_min": 1,
+      "eta_a": 0.02967529296874999,
+      "eta_a_holdout": 0.020117187499999998,
+      "n_answer_loss_rows": 499,
+      "n_answer_loss_rows_holdout": 225,
+      "n_attack_no_answer_fields": 0,
+      "n_benign_no_answer_fields": 0,
+      "n_benign_answer_fires": 133,
+      "answer_coverage": {
+        "benign": 1.0,
+        "attack": 1.0
+      },
+      "threshold_scoring": 0.013201898562877823,
+      "threshold_holdout": 0.01205877072063081,
+      "n_poisoned": 742,
+      "n_poisoned_strict": 0,
+      "excess_block_rate": 0.9348370927318296,
+      "tpr_all_planted": 0.9348370927318296,
+      "tpr_poisoned": 0.9299191374663073,
+      "tpr_poisoned_strict": NaN,
+      "benign_block_rate_in_sample": 0.03006012024048096,
+      "achieved_benign_block_rate": 0.029197080291970802,
+      "eta_shared": 0.013201898562877823,
+      "excess_block_rate_joint_eta": 0.9598997493734336,
+      "tpr_all_planted_joint_eta": 0.9598997493734336,
+      "tpr_poisoned_joint_eta": 0.9568733153638814,
+      "tpr_poisoned_strict_joint_eta": NaN,
+      "benign_block_rate_in_sample_joint_eta": 0.050100200400801605,
+      "achieved_benign_block_rate_joint_eta": 0.040145985401459854,
+      "eta_joint": 0.005712420377832857,
+      "eta_joint_holdout": 0.007434572981993025,
+      "joint_budget_reachable": true,
+      "joint_budget_reachable_holdout": true,
+      "families": {
+        "cacheattack_gcg_f1": {
+          "n_attack": 499,
+          "excess_block_rate": 0.935871743486974,
+          "excess_block_rate_joint_eta": 0.9619238476953907,
+          "n_poisoned": 462,
+          "tpr_poisoned": 0.9307359307359307,
+          "tpr_poisoned_joint_eta": 0.9588744588744589
+        },
+        "cacheattack_gcg_f2": {
+          "n_attack": 299,
+          "excess_block_rate": 0.9331103678929766,
+          "excess_block_rate_joint_eta": 0.9565217391304348,
+          "n_poisoned": 280,
+          "tpr_poisoned": 0.9285714285714286,
+          "tpr_poisoned_joint_eta": 0.9535714285714286
+        }
+      }
+    },
+    "cosine_only": {
+      "excess_block_rate": 0.9761904761904762,
+      "tpr_all_planted": 0.9761904761904762,
+      "tpr_poisoned": 0.977088948787062,
+      "tpr_poisoned_strict": NaN,
+      "benign_block_rate_in_sample": 0.050100200400801605,
+      "achieved_benign_block_rate": 0.06569343065693431,
+      "auroc": 0.9854420620690002,
+      "cosine_threshold": 0.900939012562459,
+      "cosine_threshold_holdout": 0.9082099175886775
+    }
+  },
+  "answer_rules_pairing": {
+    "thresholds": {
+      "eta_a": {
+        "role": "answer ceiling",
+        "fitted_on": "benign_arm_all"
+      },
+      "eta_a_holdout": {
+        "role": "answer ceiling",
+        "fitted_on": "benign_fit_half"
+      },
+      "eta_shared": {
+        "role": "DG height, fitted for DG alone",
+        "fitted_on": "benign_arm_all",
+        "same_value_as": "threshold_scoring"
+      },
+      "threshold_scoring": {
+        "role": "DG height, fitted for DG alone",
+        "fitted_on": "benign_arm_all"
+      },
+      "threshold_holdout": {
+        "role": "DG height, fitted for DG alone",
+        "fitted_on": "benign_fit_half"
+      },
+      "eta_joint": {
+        "role": "DG height, re-fitted so the joint rule spends the budget",
+        "fitted_on": "benign_arm_all"
+      },
+      "eta_joint_holdout": {
+        "role": "DG height, re-fitted so the joint rule spends the budget",
+        "fitted_on": "benign_fit_half"
+      }
+    },
+    "rates": {
+      "excess_block_rate": {
+        "eta": "eta_shared",
+        "eta_a": "eta_a",
+        "read_on": "attack_rows"
+      },
+      "benign_block_rate_in_sample": {
+        "eta": "eta_shared",
+        "eta_a": "eta_a",
+        "read_on": "benign_arm_all"
+      },
+      "achieved_benign_block_rate": {
+        "eta": "threshold_holdout",
+        "eta_a": "eta_a_holdout",
+        "read_on": "benign_eval_half"
+      },
+      "excess_block_rate_joint_eta": {
+        "eta": "eta_joint",
+        "eta_a": "eta_a",
+        "read_on": "attack_rows"
+      },
+      "benign_block_rate_in_sample_joint_eta": {
+        "eta": "eta_joint",
+        "eta_a": "eta_a",
+        "read_on": "benign_arm_all"
+      },
+      "achieved_benign_block_rate_joint_eta": {
+        "eta": "eta_joint_holdout",
+        "eta_a": "eta_a_holdout",
+        "read_on": "benign_eval_half"
+      },
+      "tpr_all_planted": {
+        "eta": "eta_shared",
+        "eta_a": "eta_a",
+        "read_on": "attack_rows"
+      },
+      "tpr_all_planted_joint_eta": {
+        "eta": "eta_joint",
+        "eta_a": "eta_a",
+        "read_on": "attack_rows"
+      },
+      "tpr_poisoned": {
+        "eta": "eta_shared",
+        "eta_a": "eta_a",
+        "read_on": "attack_rows"
+      },
+      "tpr_poisoned_joint_eta": {
+        "eta": "eta_joint",
+        "eta_a": "eta_a",
+        "read_on": "attack_rows"
+      },
+      "tpr_poisoned_strict": {
+        "eta": "eta_shared",
+        "eta_a": "eta_a",
+        "read_on": "attack_rows"
+      },
+      "tpr_poisoned_strict_joint_eta": {
+        "eta": "eta_joint",
+        "eta_a": "eta_a",
+        "read_on": "attack_rows"
+      }
+    },
+    "rates_apply_to": [
+      "dg_only",
+      "adl",
+      "echo",
+      "either"
+    ],
+    "cosine_only": {
+      "thresholds": {
+        "cosine_threshold": {
+          "role": "cosine floor -- the cache's own similarity rule, used alone",
+          "fitted_on": "benign_arm_all"
+        },
+        "cosine_threshold_holdout": {
+          "role": "cosine floor",
+          "fitted_on": "benign_fit_half"
+        }
+      },
+      "rates": {
+        "excess_block_rate": {
+          "eta": "cosine_threshold",
+          "read_on": "attack_rows"
+        },
+        "benign_block_rate_in_sample": {
+          "eta": "cosine_threshold",
+          "read_on": "benign_arm_all"
+        },
+        "achieved_benign_block_rate": {
+          "eta": "cosine_threshold_holdout",
+          "read_on": "benign_eval_half"
+        },
+        "tpr_all_planted": {
+          "eta": "cosine_threshold",
+          "read_on": "attack_rows"
+        },
+        "tpr_poisoned": {
+          "eta": "cosine_threshold",
+          "read_on": "attack_rows"
+        },
+        "tpr_poisoned_strict": {
+          "eta": "cosine_threshold",
+          "read_on": "attack_rows"
+        }
+      }
+    },
+    "rows": {
+      "benign_arm_all": "every genuine entry scored in this cell",
+      "benign_fit_half": "the genuine entries whose intent_id fell in the fit half",
+      "benign_eval_half": "the genuine entries whose intent_id fell in the held-out half; never used to fit anything",
+      "attack_rows": "every planted entry scored in this cell"
+    },
+    "note": "The out-of-sample false-block rate belongs to the HOLDOUT fit, not to the scoring one printed beside it: pair `achieved_benign_block_rate` with `threshold_holdout`/`eta_a_holdout`, and the block rates with `eta_shared`/`eta_joint` and `eta_a`."
+  },
+  "answers": {
+    "echo_min": 1,
+    "hashes_loaded": 31105,
+    "rows_joined": 1297,
+    "rows_joined_unusable": 0,
+    "insertion_answer_encode_calls": 1297,
+    "scored": {
+      "genuine": {
+        "with_answer": 499,
+        "without_answer": 0
+      },
+      "attack": {
+        "with_answer": 798,
+        "without_answer": 0
+      }
+    },
+    "files": [
+      {
+        "path": "<server-workdir>/answer_check_20260909/answers/answers_non_echo.jsonl",
+        "n_rows": 600,
+        "n_non_empty": 600,
+        "sha256": "c1e709e1b2d16b55603eff8b05c0c709569032f126f6ae9732f9a438a2811ebc"
+      },
+      {
+        "path": "<server-workdir>/answer_check_20260909/answers/answers_non_echo_control.jsonl",
+        "n_rows": 100,
+        "n_non_empty": 100,
+        "sha256": "5c71833f042097ef127a7a99395c6479ef3b6c0ad80099b469fca0cf90ad0fa7"
+      },
+      {
+        "path": "<server-workdir>/answer_check_20260909/answers/answers_projection.jsonl",
+        "n_rows": 1569,
+        "n_non_empty": 1569,
+        "sha256": "2b1ab3c69f679f49b37512355f06762b56ecb41fbc6515cfe19be02622f74dcd"
+      },
+      {
+        "path": "<server-workdir>/answer_check_20260909/answers/answers_rq5.jsonl",
+        "n_rows": 998,
+        "n_non_empty": 998,
+        "sha256": "96fcac47b40f63fab9548521da5f497e680208f0b351c6afb42ec2dbd0bde179"
+      },
+      {
+        "path": "<server-workdir>/answer_check_20260909/answers/answers_surface_form.jsonl",
+        "n_rows": 930,
+        "n_non_empty": 930,
+        "sha256": "a97e8f0aa5820a6ad295efa636aea484ee8dfd6bfe85b97f3b6ea9a80a30d0ee"
+      },
+      {
+        "path": "<server-workdir>/answer_check_20260909/answers/answers_unseen_wrappers.jsonl",
+        "n_rows": 11544,
+        "n_non_empty": 11544,
+        "sha256": "3519f2792c0ea0f8e0adfcadad134de9706df4d5ca8b2c89e6cff89101318e40"
+      },
+      {
+        "path": "<server-workdir>/answer_check_20260909/answers/answers_v3_attacks.jsonl",
+        "n_rows": 3139,
+        "n_non_empty": 3139,
+        "sha256": "fe6f207aca1228c0cd069151605efd1ebcf342501bd656b52b901a229282b1c0"
+      },
+      {
+        "path": "<server-workdir>/answer_check_20260909/answers/answers_wrapped.jsonl",
+        "n_rows": 15370,
+        "n_non_empty": 15370,
+        "sha256": "93ec350d696f32ad774fa8065a4a62ce7f1fd8513dcd856fb33285f84e7cf53b"
+      }
+    ]
+  },
+  "pooling": "cls",
+  "text_prefix": ""
+}

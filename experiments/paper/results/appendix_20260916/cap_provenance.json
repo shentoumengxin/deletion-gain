@@ -1,0 +1,30 @@
+{
+  "checked_on": "2026-09-16",
+  "inspection": "read-only original cpu-server metadata and local frozen selection; no generation",
+  "source_path": "cpu-server:<server-workdir>/final500/datasets/validated_records.jsonl",
+  "source_role": "ndss",
+  "source_rows": 2175,
+  "whitespace_unique_texts": 1040,
+  "source_intents": 191,
+  "cache_hit_and_response_success_fields": "all null; not used as inclusion filters",
+  "attempts": 14970,
+  "nonempty_outputs": 6419,
+  "empty_error_outputs": 8551,
+  "length_pass_outputs": 2175,
+  "length_rule": "characters within +/-10% of same-intent benign median",
+  "selected_rows": 800,
+  "selected_unique_texts": 800,
+  "selected_intents": 191,
+  "selection_seed": 20260827,
+  "generation_model": {
+    "name": "deepseek-v4-flash",
+    "evidence": "author confirmation in current task,2026-09-16",
+    "present_in_retained_execution_metadata": false
+  },
+  "code_sources": {
+    "sentry/research/pipeline/generate.py": "da06345b37fa283810617c78435e3c46270ce08516ea57d09aa2b6f6364063cb",
+    "experiments/paper/rq1_detection/fix_sets.py": "497f2ca1b108e2dd46d8acb28fba88a568f61a949b79e12bab75ade2de99ea04"
+  },
+  "execution_time_code_identity": "not established; two preserved remote generator copies differ",
+  "note": "Detailed remote CAP count receipts are in the task audit; this small record does not imply a verified SHA for a source whose hash was not returned."
+}

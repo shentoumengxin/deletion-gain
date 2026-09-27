@@ -1,0 +1,198 @@
+{
+  "definition": "strict successes / candidates among retrievable search candidates (retrieved), those the deployed rule serves (accepted) and the rest (blocked); round1 = first attacker round, round2 = round rewritten after DG feedback; pooled over the three rule-informed draws",
+  "sources": [
+    {
+      "dump": "<server-workdir>/supp_appendix_20260923/out/search/draw1/viable.jsonl",
+      "sha256": "3e6b85ef27cb72c2a8a9828a381d52b5b280a1f633ca3c00709e5b602b38d0a1",
+      "n_rows": 2365
+    },
+    {
+      "dump": "<server-workdir>/supp_appendix_20260923/out/search/draw2/viable.jsonl",
+      "sha256": "a57e44599395e26fcddcd6e566bc85694d10e2691035a34d9199e432d1b9eaaa",
+      "n_rows": 2344
+    },
+    {
+      "dump": "<server-workdir>/supp_appendix_20260923/out/search/draw3/viable.jsonl",
+      "sha256": "8d4d1d25887c64127dbe7c92f8add1092cec0d6f8269f0e35a8a270db5caec7d",
+      "n_rows": 2347
+    }
+  ],
+  "pooled": {
+    "overall": {
+      "retrieved": {
+        "n_candidates": 7056,
+        "strict": 2062
+      },
+      "accepted": {
+        "n_candidates": 1360,
+        "strict": 17
+      },
+      "blocked": {
+        "n_candidates": 5696,
+        "strict": 2045
+      }
+    },
+    "round1": {
+      "retrieved": {
+        "n_candidates": 3539,
+        "strict": 966
+      },
+      "accepted": {
+        "n_candidates": 572,
+        "strict": 4
+      },
+      "blocked": {
+        "n_candidates": 2967,
+        "strict": 962
+      }
+    },
+    "round2": {
+      "retrieved": {
+        "n_candidates": 3517,
+        "strict": 1096
+      },
+      "accepted": {
+        "n_candidates": 788,
+        "strict": 13
+      },
+      "blocked": {
+        "n_candidates": 2729,
+        "strict": 1083
+      }
+    }
+  },
+  "per_draw": [
+    {
+      "overall": {
+        "retrieved": {
+          "n_candidates": 2365,
+          "strict": 718
+        },
+        "accepted": {
+          "n_candidates": 446,
+          "strict": 8
+        },
+        "blocked": {
+          "n_candidates": 1919,
+          "strict": 710
+        }
+      },
+      "round1": {
+        "retrieved": {
+          "n_candidates": 1191,
+          "strict": 336
+        },
+        "accepted": {
+          "n_candidates": 199,
+          "strict": 2
+        },
+        "blocked": {
+          "n_candidates": 992,
+          "strict": 334
+        }
+      },
+      "round2": {
+        "retrieved": {
+          "n_candidates": 1174,
+          "strict": 382
+        },
+        "accepted": {
+          "n_candidates": 247,
+          "strict": 6
+        },
+        "blocked": {
+          "n_candidates": 927,
+          "strict": 376
+        }
+      }
+    },
+    {
+      "overall": {
+        "retrieved": {
+          "n_candidates": 2344,
+          "strict": 615
+        },
+        "accepted": {
+          "n_candidates": 449,
+          "strict": 6
+        },
+        "blocked": {
+          "n_candidates": 1895,
+          "strict": 609
+        }
+      },
+      "round1": {
+        "retrieved": {
+          "n_candidates": 1175,
+          "strict": 304
+        },
+        "accepted": {
+          "n_candidates": 183,
+          "strict": 2
+        },
+        "blocked": {
+          "n_candidates": 992,
+          "strict": 302
+        }
+      },
+      "round2": {
+        "retrieved": {
+          "n_candidates": 1169,
+          "strict": 311
+        },
+        "accepted": {
+          "n_candidates": 266,
+          "strict": 4
+        },
+        "blocked": {
+          "n_candidates": 903,
+          "strict": 307
+        }
+      }
+    },
+    {
+      "overall": {
+        "retrieved": {
+          "n_candidates": 2347,
+          "strict": 729
+        },
+        "accepted": {
+          "n_candidates": 465,
+          "strict": 3
+        },
+        "blocked": {
+          "n_candidates": 1882,
+          "strict": 726
+        }
+      },
+      "round1": {
+        "retrieved": {
+          "n_candidates": 1173,
+          "strict": 326
+        },
+        "accepted": {
+          "n_candidates": 190,
+          "strict": 0
+        },
+        "blocked": {
+          "n_candidates": 983,
+          "strict": 326
+        }
+      },
+      "round2": {
+        "retrieved": {
+          "n_candidates": 1174,
+          "strict": 403
+        },
+        "accepted": {
+          "n_candidates": 275,
+          "strict": 3
+        },
+        "blocked": {
+          "n_candidates": 899,
+          "strict": 400
+        }
+      }
+    }
+  ]
+}

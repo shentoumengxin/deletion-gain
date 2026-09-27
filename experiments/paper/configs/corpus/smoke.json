@@ -1,0 +1,6 @@
+{
+  "name": "corpus-smoke-3",
+  "seed": 20260615,
+  "n_intents": 3,
+  "min_paraphrases": 2
+}

@@ -1,0 +1,53 @@
+{
+  "sources": {
+    "$SENTRY_DATA_ROOT/runs/answer_check_20260909/full/non_echo_asr.json": {
+      "sha256": "c7519aed2db35009a97ea948c6cd0c7f3ff00351d5b6d5cbd18f262740035bb9",
+      "bytes": 3503
+    },
+    "$SENTRY_DATA_ROOT/responses/answer_check_20260909/answers/answers_non_echo.jsonl": {
+      "sha256": "c1e709e1b2d16b55603eff8b05c0c709569032f126f6ae9732f9a438a2811ebc",
+      "bytes": 400470
+    },
+    "$SENTRY_DATA_ROOT/responses/answer_check_20260909/answers/answers_non_echo_control.jsonl": {
+      "sha256": "5c71833f042097ef127a7a99395c6479ef3b6c0ad80099b469fca0cf90ad0fa7",
+      "bytes": 80316
+    },
+    "$SENTRY_DATA_ROOT/responses/answer_check_20260909/answers/answers_projection.jsonl": {
+      "sha256": "2b1ab3c69f679f49b37512355f06762b56ecb41fbc6515cfe19be02622f74dcd",
+      "bytes": 1667621
+    },
+    "$SENTRY_DATA_ROOT/responses/answer_check_20260909/answers/answers_rq5.jsonl": {
+      "sha256": "96fcac47b40f63fab9548521da5f497e680208f0b351c6afb42ec2dbd0bde179",
+      "bytes": 1094720
+    },
+    "$SENTRY_DATA_ROOT/responses/answer_check_20260909/answers/answers_surface_form.jsonl": {
+      "sha256": "a97e8f0aa5820a6ad295efa636aea484ee8dfd6bfe85b97f3b6ea9a80a30d0ee",
+      "bytes": 650901
+    },
+    "$SENTRY_DATA_ROOT/responses/answer_check_20260909/answers/answers_unseen_wrappers.jsonl": {
+      "sha256": "3519f2792c0ea0f8e0adfcadad134de9706df4d5ca8b2c89e6cff89101318e40",
+      "bytes": 9962908
+    },
+    "$SENTRY_DATA_ROOT/responses/answer_check_20260909/answers/answers_v3_attacks.jsonl": {
+      "sha256": "fe6f207aca1228c0cd069151605efd1ebcf342501bd656b52b901a229282b1c0",
+      "bytes": 3039827
+    },
+    "$SENTRY_DATA_ROOT/responses/answer_check_20260909/answers/answers_wrapped.jsonl": {
+      "sha256": "93ec350d696f32ad774fa8065a4a62ce7f1fd8513dcd856fb33285f84e7cf53b",
+      "bytes": 12035327
+    },
+    "$SENTRY_DATA_ROOT/responses/answer_check_20260909/ortho_local/e2e/orbit_cache/judge_non_echo.jsonl": {
+      "sha256": "5d5bf1753b44bce071983aac29533576885c7bc136367b5a4976f9988a3fb345",
+      "bytes": 158064
+    },
+    "<repo>/experiments/paper/rq2_robustness/judge_reuse.py": {
+      "sha256": "51277853bbef373096577944542f0a2349ff7b54874a2756045bbbaa719d0ee4"
+    }
+  },
+  "n_verified": 600,
+  "parameters": {
+    "temperature": 0,
+    "seed": 0,
+    "max_tokens": 200
+  }
+}

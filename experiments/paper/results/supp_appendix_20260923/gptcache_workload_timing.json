@@ -1,0 +1,244 @@
+{
+  "policy": "multi[count:4+width:2:cap16]/runs",
+  "n_intents": 400,
+  "poison_frac": 0.5,
+  "seed": 20260901,
+  "n_planted_intents": 78,
+  "n_entries": 478,
+  "n_requests": 800,
+  "cache_threshold": 0.9,
+  "fences": {
+    "dg_only": 0.006797628467845549,
+    "joint": {
+      "eta": 0.002645233293430393,
+      "eta_a": 0.01965637207031249
+    }
+  },
+  "runs": {
+    "off": {
+      "defended": false,
+      "profile_writer": false,
+      "n_entries": 478,
+      "n_requests": 800,
+      "insertion_ms_per_entry": 79.51942754122253,
+      "hit_rate": 1.0,
+      "planted_hit_rate": 0.01625,
+      "poisoned_answer_hit_rate": 0.00375,
+      "qps": 10.0442313753014,
+      "latency_ms_p50": 91.36741515249014,
+      "latency_ms_p95": 197.08511950448153,
+      "counters": {
+        "evaluated": 0,
+        "below_band": 0,
+        "no_profile": 0,
+        "config_mismatch": 0,
+        "unjudgeable": 0,
+        "non_finite": 0,
+        "safe_accepted": 0,
+        "no_fence": 0,
+        "blocked": 0,
+        "rescued": 0,
+        "no_answer_fields": 0,
+        "accepted": 0,
+        "errors": 0
+      },
+      "insertion_ms_per_entry_repeats": [
+        105.24089332810256,
+        62.08511409797865,
+        79.51942754122253,
+        60.35910402794824,
+        83.99367604646287
+      ],
+      "qps_repeats": [
+        7.317202079127613,
+        11.883191573572606,
+        10.0442313753014,
+        10.238860436889514,
+        8.816898339819998
+      ],
+      "latency_ms_p50_repeats": [
+        117.2420340590179,
+        76.60540798678994,
+        86.97218401357532,
+        91.36741515249014,
+        101.20526468381286
+      ],
+      "latency_ms_p95_repeats": [
+        289.89588608965244,
+        171.50855185464016,
+        197.08511950448153,
+        181.18991218507284,
+        226.399491680786
+      ]
+    },
+    "undefended": {
+      "defended": false,
+      "profile_writer": true,
+      "n_entries": 478,
+      "n_requests": 800,
+      "insertion_ms_per_entry": 181.96253413841066,
+      "hit_rate": 1.0,
+      "planted_hit_rate": 0.01625,
+      "poisoned_answer_hit_rate": 0.00375,
+      "qps": 7.48210307010729,
+      "latency_ms_p50": 112.0732887648046,
+      "latency_ms_p95": 264.32653651572747,
+      "counters": {
+        "evaluated": 0,
+        "below_band": 0,
+        "no_profile": 0,
+        "config_mismatch": 0,
+        "unjudgeable": 0,
+        "non_finite": 0,
+        "safe_accepted": 0,
+        "no_fence": 0,
+        "blocked": 0,
+        "rescued": 0,
+        "no_answer_fields": 0,
+        "accepted": 0,
+        "errors": 0
+      },
+      "insertion_ms_per_entry_repeats": [
+        181.24651052369484,
+        212.7834543542913,
+        181.96253413841066,
+        196.43868485886495,
+        171.43433927616815
+      ],
+      "qps_repeats": [
+        8.03270880627721,
+        8.77824839823124,
+        7.476782372929314,
+        7.414182767073624,
+        7.48210307010729
+      ],
+      "latency_ms_p50_repeats": [
+        108.05756226181984,
+        104.33239536359906,
+        112.0732887648046,
+        113.54411765933037,
+        117.91101144626737
+      ],
+      "latency_ms_p95_repeats": [
+        256.93035940639663,
+        215.80197075381864,
+        264.32653651572747,
+        290.84463436156506,
+        269.37810154631734
+      ]
+    },
+    "dg_only": {
+      "defended": true,
+      "profile_writer": true,
+      "n_entries": 478,
+      "n_requests": 800,
+      "insertion_ms_per_entry": 180.92062134124245,
+      "hit_rate": 0.93625,
+      "planted_hit_rate": 0.005,
+      "poisoned_answer_hit_rate": 0.0,
+      "qps": 7.6882030685758345,
+      "latency_ms_p50": 98.89353113248944,
+      "latency_ms_p95": 286.80496681481554,
+      "counters": {
+        "evaluated": 800,
+        "below_band": 2,
+        "no_profile": 0,
+        "config_mismatch": 0,
+        "unjudgeable": 0,
+        "non_finite": 0,
+        "safe_accepted": 0,
+        "no_fence": 0,
+        "blocked": 49,
+        "rescued": 0,
+        "no_answer_fields": 0,
+        "accepted": 749,
+        "errors": 0
+      },
+      "insertion_ms_per_entry_repeats": [
+        180.92062134124245,
+        194.38518760102377,
+        255.4080148858786,
+        171.4956403172197,
+        155.2234797146187
+      ],
+      "qps_repeats": [
+        10.55825219191111,
+        7.6882030685758345,
+        6.56980838498303,
+        6.927732726175904,
+        10.18446323922616
+      ],
+      "latency_ms_p50_repeats": [
+        86.28054894506931,
+        98.89353113248944,
+        111.62822227925062,
+        119.36023319140077,
+        92.18175383284688
+      ],
+      "latency_ms_p95_repeats": [
+        180.19386800006023,
+        286.80496681481554,
+        337.6048300880939,
+        320.9552633110434,
+        172.59610556066036
+      ]
+    },
+    "dg_answer_check": {
+      "defended": true,
+      "profile_writer": true,
+      "n_entries": 478,
+      "n_requests": 800,
+      "insertion_ms_per_entry": 195.8132039981594,
+      "hit_rate": 0.92625,
+      "planted_hit_rate": 0.00375,
+      "poisoned_answer_hit_rate": 0.0,
+      "qps": 7.3517295081034355,
+      "latency_ms_p50": 113.60280681401491,
+      "latency_ms_p95": 286.0656446777284,
+      "counters": {
+        "evaluated": 800,
+        "below_band": 2,
+        "no_profile": 0,
+        "config_mismatch": 0,
+        "unjudgeable": 0,
+        "non_finite": 0,
+        "safe_accepted": 0,
+        "no_fence": 0,
+        "blocked": 57,
+        "rescued": 23,
+        "no_answer_fields": 0,
+        "accepted": 741,
+        "errors": 0
+      },
+      "insertion_ms_per_entry_repeats": [
+        202.54958329028662,
+        171.20163565088515,
+        205.81816191196629,
+        195.8132039981594,
+        191.3207079163094
+      ],
+      "qps_repeats": [
+        6.954218613019139,
+        7.3517295081034355,
+        8.515543018946175,
+        8.623915936178173,
+        7.1928721644353635
+      ],
+      "latency_ms_p50_repeats": [
+        125.57827541604638,
+        118.34155302494764,
+        96.25361254438758,
+        100.24782223626971,
+        113.60280681401491
+      ],
+      "latency_ms_p95_repeats": [
+        294.51516666449595,
+        286.0656446777284,
+        251.4372673816978,
+        243.54529627598797,
+        287.19765907153464
+      ]
+    }
+  },
+  "repeats": 5
+}

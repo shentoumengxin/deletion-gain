@@ -1,0 +1,18 @@
+{
+  "python": "3.12.3 (main, Jun 19 2026, 12:46:00) [GCC 13.3.0]",
+  "executable": "<server-home>/venvs/paper/bin/python",
+  "platform": "Linux-6.8.0-134-generic-x86_64-with-glibc2.39",
+  "packages": {
+    "torch": "2.13.0+cpu",
+    "transformers": "5.14.1",
+    "numpy": "2.5.1"
+  },
+  "e5_revision": "ffb93f3bd4047442299a41ebb6fa998a38507c52",
+  "source_hashes": {
+    "sentry/research/pipeline/instruction_benign.py": "379ba4df4328c0a7de4a34121369fbde0c08116e2968007b3586eb2fd50d6811",
+    "sentry/research/pipeline/instruction_benign_analysis.py": "e99b623ca741562479541453bdbcbffc960fc92711d188ef5fb5e373f8edf3d9",
+    "sentry/cache/defense/spans.py": "cdc3e65a25d8f2261217e3138289252772d65292bc9391b5da2f0e6700f73117",
+    "sentry/cache/defense/deletion.py": "132c05ac3f0f93ff16ebc38ee75c029fb5134ab483ee87d824c115d26aa4cbcf",
+    "sentry/research/pipeline/embed.py": "00513e0d90e5290975e5e1c1981104e41f358a815845e14418de2da908fa6545"
+  }
+}

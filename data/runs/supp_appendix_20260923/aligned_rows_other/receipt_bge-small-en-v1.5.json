@@ -1,0 +1,24 @@
+{
+  "policy": "multi[count:4+width:2:cap16]/runs",
+  "encoder": "BAAI/bge-small-en-v1.5",
+  "pooling": "cls",
+  "text_prefix": "",
+  "storage_dtype": "float16",
+  "sets": {
+    "lmp": {
+      "n_rows": 1299,
+      "n_attack": 800,
+      "n_attack_answer_changed": 283,
+      "max_abs_diff": {
+        "excess_span": 8.265848827626598e-08,
+        "base_cos": 1.1158896606744406e-07,
+        "unchanged_answer_adl": 0.0
+      },
+      "unchanged_answer_echo_mismatches": 0,
+      "published_dump_sha256": "bd6e1af8b5f694e1f62ff1786ec9fe6bb159503986acc1cbd5c734d2f433294a",
+      "seconds": 68.5,
+      "output_sha256": "9bd253208a9fc50ecef10f5be172b7ca0eab538a59d18399235ac927cd91dad9",
+      "judged_sha256": "6e3d7240003c2266f928cbaba81db32fb8a549b3f4e49cc1b3596dae69d47907"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "features": [
+    "intercept",
+    "cosine",
+    "log_words"
+  ],
+  "coefficients": [
+    0.007220889266597659,
+    -0.3939318269697849,
+    0.0034207315338355194
+  ],
+  "centers": [
+    0.9790794787468449,
+    1.9718632907348268
+  ],
+  "budget": 0.05,
+  "direction": "entry",
+  "statistic": "excess_span",
+  "embedder": "intfloat/e5-small-v2",
+  "policy": "multi[count:6+width:2:cap16]/runs",
+  "n_rows": 260,
+  "metadata": {
+    "cosine_span": [
+      0.8876963849727062,
+      0.9997246005955653
+    ],
+    "word_span": [
+      3,
+      14
+    ],
+    "distinct_words": 12
+  }
+}

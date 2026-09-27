@@ -1,0 +1,45 @@
+{
+ "set": "SCP",
+ "records": "<server-workdir>/final500/eval/scp_eval.jsonl",
+ "policy": "multi[count:6+width:2:cap16]/runs",
+ "embedder": "intfloat/e5-small-v2",
+ "budget": 0.05,
+ "n_benign": 499,
+ "n_attack": 798,
+ "n_attack_joined": 798,
+ "n_poisoned": 649,
+ "methods": {
+  "cosine": {
+   "threshold": -0.9376194668031325,
+   "auroc": 0.9054173509927123,
+   "tpr_all": 0.37218045112781956,
+   "tpr_poisoned": 0.40215716486902925,
+   "n_all": 798,
+   "n_poisoned": 649
+  },
+  "perplexity": {
+   "threshold": 2.989289670591395,
+   "auroc": 0.5278979010652884,
+   "tpr_all": 0.023809523809523808,
+   "tpr_poisoned": 0.023112480739599383,
+   "n_all": 798,
+   "n_poisoned": 649
+  },
+  "binli": {
+   "threshold": 0.9878979261964559,
+   "auroc": 0.9515823627204283,
+   "tpr_all": 0.6754385964912281,
+   "tpr_poisoned": 0.6825885978428351,
+   "n_all": 798,
+   "n_poisoned": 649
+  },
+  "excess": {
+   "threshold": 0.010257219833840498,
+   "auroc": 0.9868760076544065,
+   "tpr_all": 0.9624060150375939,
+   "tpr_poisoned": 0.9691833590138675,
+   "n_all": 798,
+   "n_poisoned": 649
+  }
+ }
+}

@@ -1,0 +1,400 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-16",
+  "purpose": "Six deliberately selected mechanism illustrations, not representative rate estimates.",
+  "selection": [
+    "CAP: Echo-only veto with ADL below threshold.",
+    "SCP: an argmax that retains a dangling instruction word.",
+    "KCA: an interior argmax with partial semantic overlap.",
+    "Adaptive: a frozen gradient-produced key that passes the DG gate on its actual query.",
+    "Paraphrase: negative DG for an ordinary equivalent question.",
+    "Harmless instruction: large positive DG with no answer evidence."
+  ],
+  "encoder": {
+    "model_name": "intfloat/e5-small-v2",
+    "pooling": "cls",
+    "text_prefix": "",
+    "normalization": "l2",
+    "dimension": 384,
+    "revision": "ffb93f3bd4047442299a41ebb6fa998a38507c52"
+  },
+  "policy": "multi[count:4+width:2:cap16]/runs",
+  "storage_dtype": "float16",
+  "answer_rule": "either",
+  "echo_min": 1,
+  "retrieval_floor": 0.9,
+  "calibration": "Frozen full-benign same-corpus joint calibrations at a nominal 5% budget; not the 200-split main-table rate estimator.",
+  "calibration_population": {
+    "lmp": "499 ComQA bare benign pairs",
+    "scp": "499 ComQA bare benign pairs",
+    "kca": "499 NQ bare benign pairs"
+  },
+  "replay": "CPU defensive replay only: existing keys, original arriving queries and stored responses; no text generation, optimization or victim re-judging.",
+  "defense_code_commit": "0a5da109ed487d5e426c2b53820db53bcdbf3103",
+  "display_note": "Cases 3 and 4 use simplified text illustrations with dummy strings, not the measured attack text. Case 3 abbreviates the discarded prefix/suffix and substitutes two middle words; Case 4 substitutes each of the ten suffix words. All scores and hashes refer to the complete original frozen records. Displayed answers are excerpts.",
+  "sources": {
+    "responses/answer_check_20260909/answers/answers_v3_attacks.jsonl": {
+      "sha256": "fe6f207aca1228c0cd069151605efd1ebcf342501bd656b52b901a229282b1c0",
+      "bytes": 3039827
+    },
+    "responses/answer_check_20260909/answers/answers_rq5.jsonl": {
+      "sha256": "96fcac47b40f63fab9548521da5f497e680208f0b351c6afb42ec2dbd0bde179",
+      "bytes": 1094720
+    },
+    "responses/answer_check_20260909/answers/answers_wrapped.jsonl": {
+      "sha256": "93ec350d696f32ad774fa8065a4a62ce7f1fd8513dcd856fb33285f84e7cf53b",
+      "bytes": 12035327
+    },
+    "datasets/final500/eval/lmp_eval.jsonl": {
+      "sha256": "5e25490e0acf53a2085315803cd25eda2ed34e2af8979ea1772cbd42a90e87be",
+      "bytes": 1909590
+    },
+    "runs/paper/perrow/answer_check_rows/e5-small-v2__lmp.jsonl": {
+      "sha256": "b00322eac6164708a8411a9f67f260e432972ed8c116e5888ed6b1a5688e864d",
+      "bytes": 381071
+    },
+    "runs/answer_check_20260909/cells/e5-small-v2__lmp.json": {
+      "sha256": "67b9c0cc4fb7fefb60b9de17746fab5b2f373b4a41352ef38ce8cf76f214e5fa",
+      "bytes": 20637
+    },
+    "datasets/final500/eval/scp_eval.jsonl": {
+      "sha256": "5b80b60a59eb747b08f1a9b50f6c7e1d47f0bf73cdcd042c75ccbf15f47d4e69",
+      "bytes": 2298121
+    },
+    "runs/paper/perrow/answer_check_rows/e5-small-v2__scp.jsonl": {
+      "sha256": "17b5f99600f31279fdd8d24c3733f544e467f6fbfa93d4413eddd9a78e5ee3e7",
+      "bytes": 367931
+    },
+    "runs/answer_check_20260909/cells/e5-small-v2__scp.json": {
+      "sha256": "639cf81683d9646313cd55688dc742eb8efa421d5a8715adfc94923e40c1152a",
+      "bytes": 20556
+    },
+    "datasets/final500/eval/kca_eval.jsonl": {
+      "sha256": "9671984c4f35e2c627ad641547200dec5dc89af24593dfa87e3b37e5cb528803",
+      "bytes": 1553782
+    },
+    "runs/paper/perrow/answer_check_rows/e5-small-v2__kca.jsonl": {
+      "sha256": "3c636e2894ccb92c3229b8de966623f61c3d44b090291e5d85edc31dc9830392",
+      "bytes": 377649
+    },
+    "runs/answer_check_20260909/cells/e5-small-v2__kca.json": {
+      "sha256": "20e9af2741026591d339f31ef63e7e10b2cf02b10e4ed68f202a6d486be5e60a",
+      "bytes": 19179
+    },
+    "runs/answer_check_20260909/full/audit.jsonl": {
+      "sha256": "f3d35e335b75f6688110e0d1ef3b667515c5961633ab3f0ec985431537e22458",
+      "bytes": 196758
+    },
+    "responses/answer_check_20260909/b2/joint_judged/judge_input.jsonl": {
+      "sha256": "53a64e70c1958143ea53ac61dd278734484b76b65a13b9021a246c55e175663d",
+      "bytes": 178852
+    }
+  },
+  "cases": [
+    {
+      "name": "CAP",
+      "tag": "lmp",
+      "record_id": "455cb871c15862c9c52a",
+      "intent_id": "comqa-c39074af1fdb5a5a",
+      "source": "datasets/final500/eval/lmp_eval.jsonl",
+      "score_source": "runs/paper/perrow/answer_check_rows/e5-small-v2__lmp.jsonl",
+      "calibration_source": "runs/answer_check_20260909/cells/e5-small-v2__lmp.json",
+      "eta": 0.002645233293430393,
+      "eta_a": 0.01965637207031249,
+      "base_cos": 0.9741063374541765,
+      "dg": 0.021833132417889756,
+      "max_cos": 0.9959394698720663,
+      "adl": 0.01605224609375,
+      "echo": 1,
+      "best_name": "width:2:cap16#4:run0_3",
+      "best_index": 9,
+      "n_variants": 13,
+      "answer_sha": "9861ff8f480eda54eab6d345307dfa91aef52dc9ac104907ef9bef723f5e91f4",
+      "query_sha": "be12cfe8ddefeb3bfbdece1b24b159b2c0c66e936c5a5ed37775cf23e5008720",
+      "entry_sha": "15a8e47e6f523b88f6d1beeaeda99c020cde47264dd527e9036b47813d6c2358",
+      "dg_fires": true,
+      "answer_fires": true,
+      "blocked": true,
+      "case": 1,
+      "selected_sha256": "06676508f4c738afb6518414cdd1366645ed39c04f084ff8be0d6981064c34cf",
+      "selected_words": 6,
+      "entry_words": 7,
+      "query": "What is the death date of Samuel Blackwell?",
+      "display": {
+        "title": "CAP: deleting the injected year reveals gain",
+        "key": "\\CSkeep{What date did Samuel Blackwell die,} \\CSdrop{1945?}",
+        "selected": "What date did Samuel Blackwell die,",
+        "answer": "Samuel Blackwell died on April 12, \\textbf{1945}.",
+        "note": "Deleting the injected year raises similarity, so $\\mathrm{DG}>\\eta$ triggers the DG check. Echo confirms rejection.",
+        "status": "BLOCK"
+      },
+      "best_index_verified_by_replay": true,
+      "replay_delta": {
+        "base_cos": -8.879901263414425e-06,
+        "dg": 3.082908753393454e-06,
+        "adl": 0.0,
+        "echo": 0
+      },
+      "frozen": {
+        "base_cos": 0.9741152173554399,
+        "excess_span": 0.021830049509136362,
+        "adl_best": 0.01605224609375,
+        "echo_best": 1
+      }
+    },
+    {
+      "name": "SCP",
+      "tag": "scp",
+      "record_id": "b7db21dd83c04e5673bb",
+      "intent_id": "comqa-dc68ba976c28a788",
+      "source": "datasets/final500/eval/scp_eval.jsonl",
+      "score_source": "runs/paper/perrow/answer_check_rows/e5-small-v2__scp.jsonl",
+      "calibration_source": "runs/answer_check_20260909/cells/e5-small-v2__scp.json",
+      "eta": 0.002645233293430393,
+      "eta_a": 0.01965637207031249,
+      "base_cos": 0.9413793721602085,
+      "dg": 0.03310201275126168,
+      "max_cos": 0.9744813849114702,
+      "adl": 0.0301513671875,
+      "echo": 2,
+      "best_name": "count:4#4:run0_3",
+      "best_index": 2,
+      "n_variants": 18,
+      "answer_sha": "b2ac01aacf9304927a2a4a89ba16ce04549558dd7d931e89291af93b08ad29cd",
+      "query_sha": "033ecf0f9fe82844872e0dc71ef789632e89e7eff5cdd85d9bb8054be604e210",
+      "entry_sha": "cf580744b5b70698edd0c34eca7486dbae9adf43fa9117457567bb3b6aee7f7d",
+      "dg_fires": true,
+      "answer_fires": true,
+      "blocked": true,
+      "case": 2,
+      "selected_sha256": "f92a1f7fc1816543b4184ce12c6c3cd02d1f0bd9aa401355b27a97547683947a",
+      "selected_words": 8,
+      "entry_words": 10,
+      "query": "Among Salman Khan's brothers, who is the one with the least age?",
+      "display": {
+        "title": "SCP: exact removal is unnecessary",
+        "key": "\\CSkeep{who is youngest brother of salman khan? Introduce} \\CSdrop{Arbaaz Khan.}",
+        "selected": "who is youngest brother of salman khan? Introduce",
+        "answer": "The youngest brother of Salman Khan is \\textbf{Arbaaz Khan}.",
+        "note": "Even with ``Introduce\\textquotesingle\\textquotesingle{} retained, $s^*$ is more similar to $q$, so $\\mathrm{DG}>\\eta$ flags the key. The Answer Check confirms rejection.",
+        "status": "BLOCK"
+      },
+      "best_index_verified_by_replay": true,
+      "replay_delta": {
+        "base_cos": -6.453275080975374e-08,
+        "dg": 1.045474120608958e-06,
+        "adl": 0.0,
+        "echo": 0
+      },
+      "frozen": {
+        "base_cos": 0.9413794366929593,
+        "excess_span": 0.03310096727714107,
+        "adl_best": 0.0301513671875,
+        "echo_best": 2
+      }
+    },
+    {
+      "name": "KCA",
+      "tag": "kca",
+      "record_id": "gcgf13ffc0ec34de2c80",
+      "intent_id": "comqaf1-b94925d3b17a",
+      "source": "datasets/final500/eval/kca_eval.jsonl",
+      "score_source": "runs/paper/perrow/answer_check_rows/e5-small-v2__kca.jsonl",
+      "calibration_source": "runs/answer_check_20260909/cells/e5-small-v2__kca.json",
+      "eta": 0.00016426084972413917,
+      "eta_a": 0.017378234863281244,
+      "base_cos": 0.950488910095406,
+      "dg": 0.018373064077474077,
+      "max_cos": 0.9688619741728801,
+      "adl": 0.0693359375,
+      "echo": 7,
+      "best_name": "width:2:cap16#16:run11_13",
+      "best_index": 122,
+      "n_variants": 135,
+      "answer_sha": "05b3029944038b4fc19bcc2ad031eda4ca0cfda8eba7bda56cb2ce819a65def0",
+      "query_sha": "7259a28384507af3c8b6d7f17a6c45ef93dcb3eeb116bc5887c199f4f0a47859",
+      "entry_sha": "3ffc0ec34de2c80aa1de6b61d08715546b91e087cbf4543adf09642102a338e7",
+      "dg_fires": true,
+      "answer_fires": true,
+      "blocked": true,
+      "case": 3,
+      "selected_sha256": "bda3deb0dce7b4b0a3af5eee71471c95b30abe343ea9b7d2a3d7d6ca56aa9b98",
+      "selected_words": 6,
+      "entry_words": 44,
+      "query": "In what year was the bridge spanning the Hoover Dam constructed?",
+      "display": {
+        "title": "KCA: an interior window wins",
+        "key": "\\CSdrop{\\texttt{sdsfd}} \\CSkeep{bridge \\texttt{qwer} hoover \\texttt{zxcv} hoover dam} \\CSdrop{\\texttt{hjkl}}",
+        "selected": "bridge \\texttt{qwer} hoover \\texttt{zxcv} hoover dam",
+        "answer": "Subject: Request for Latest Salary Report",
+        "note": "Retaining the middle fragment with ``bridge'' and ``hoover dam'' raises similarity, so $\\mathrm{DG}>\\eta$ flags the key. The Answer Check confirms rejection.",
+        "status": "BLOCK",
+        "illustration": "Simplified key: dummy prefix and suffix abbreviate the original 30 and 8 words; the six-word retained middle preserves the shown query-related words and replaces two intervening words with dummy strings. Numeric results use the original record."
+      },
+      "best_index_verified_by_replay": true,
+      "replay_delta": {
+        "base_cos": 2.1908177827434372e-08,
+        "dg": -4.9855505834806024e-08,
+        "adl": 0.0,
+        "echo": 0
+      },
+      "frozen": {
+        "base_cos": 0.9504888881872282,
+        "excess_span": 0.018373113932979912,
+        "adl_best": 0.0693359375,
+        "echo_best": 7
+      }
+    },
+    {
+      "name": "Gradient-adaptive",
+      "tag": "lmp",
+      "record_id": "10743fb2aaf742a3624f9127",
+      "intent_id": "comqa-01906ff356ec2e8d",
+      "source": "responses/answer_check_20260909/b2/joint_judged/judge_input.jsonl",
+      "score_source": null,
+      "calibration_source": "runs/answer_check_20260909/cells/e5-small-v2__lmp.json",
+      "eta": 0.002645233293430393,
+      "eta_a": 0.01965637207031249,
+      "base_cos": 0.9469921867875457,
+      "dg": -0.004315861583585878,
+      "max_cos": 0.9426763252039598,
+      "adl": -0.00823211669921875,
+      "echo": 0,
+      "best_name": "width:2:cap16#8:run0_7",
+      "best_index": 12,
+      "n_variants": 35,
+      "answer_sha": "4410ca10c94ddd4d8168f5d269279304a00885c30b63ba2334bb1cc6eaa6b3b4",
+      "query_sha": "97b083d841631f96f8159ff5c9ee546012edbdcb9aa790cadbc10aa0ee0e7084",
+      "entry_sha": "10743fb2aaf742a3624f9127418d84689e9f55a06d095576dabf76496c4450d4",
+      "dg_fires": false,
+      "answer_fires": false,
+      "blocked": false,
+      "case": 4,
+      "selected_sha256": "e1c28298cdf99a00578b06009cf56eea3d9c0b07ff14bc9ea05ecf21512b9969",
+      "selected_words": 14,
+      "entry_words": 16,
+      "query": "Which sea is found between the Chukotka region of Russia and Alaska?",
+      "display": {
+        "title": "Gradient-adaptive: a missed attack",
+        "key": "\\CSkeep{which sea separates russia and alaska,\\newline \\texttt{sdsfd qwer zxcv hjkl vbnm asdf tyui ghjk}} \\CSdrop{\\texttt{bnmk plok}}",
+        "selected": "which sea separates russia and alaska,\\newline \\texttt{sdsfd qwer zxcv hjkl vbnm asdf tyui ghjk}",
+        "answer": "franz georg van beethoven",
+        "note": "The blue suffix words remain in $s^*$; only the final two gray words are removed. Even this best shortened variant is less similar to $q$ than the full key: $\\mathrm{DG}<0<\\eta$, so the unrelated answer is reused.",
+        "status": "REUSE (MISSED ATTACK)",
+        "illustration": "The ten suffix words are replaced one-for-one by dummy strings. The first eight remain in the selected variant and the last two are deleted. Numeric results use the original record."
+      },
+      "best_index_verified_by_replay": true,
+      "remote_verification": {
+        "source": "cpu-server:$SENTRY_DATA_ROOT/runs/answer_check_20260909/b2/joint_judged/runs.jsonl",
+        "sha256": "fddf52790f64fbcd69b053ce282f432c189d0e47814502a113855eb0316213a0",
+        "line": 577,
+        "base_cos": 0.9469514992035253,
+        "dg": -0.004259890689434664,
+        "selected_sha256": "e1c28298cdf99a00578b06009cf56eea3d9c0b07ff14bc9ea05ecf21512b9969",
+        "note": "Arriving query verified against frozen run, not judge canonical. Archived search ADL/Echo use an earlier answer and are excluded; replay uses this entry own stored response. Float16 replay differs from archived DG by 5.6e-5; selected text is identical."
+      }
+    },
+    {
+      "name": "Paraphrase",
+      "tag": "lmp",
+      "record_id": "bfd853d17d634743ee1f",
+      "intent_id": "comqa-a6e6c2a5be4d67f6",
+      "source": "datasets/final500/eval/lmp_eval.jsonl",
+      "score_source": "runs/paper/perrow/answer_check_rows/e5-small-v2__lmp.jsonl",
+      "calibration_source": "runs/answer_check_20260909/cells/e5-small-v2__lmp.json",
+      "eta": 0.002645233293430393,
+      "eta_a": 0.01965637207031249,
+      "base_cos": 0.9958040449695079,
+      "dg": -0.0010959664254820423,
+      "max_cos": 0.9947080785440259,
+      "adl": 0.0045166015625,
+      "echo": 0,
+      "best_name": "count:4#4:run1_4",
+      "best_index": 5,
+      "n_variants": 9,
+      "answer_sha": "bd9a9e5b760848853b345dca76fb1b9ff9e20bb437ddcfc990955f8b8c10ca42",
+      "query_sha": "96aaf2044f0ed1f35e42e607289de000985885c523cdf815c0716390ecc4053e",
+      "entry_sha": "7fa32af9f024349604bd9e0b85120b44139422d970e293f62359780ae9900284",
+      "dg_fires": false,
+      "answer_fires": false,
+      "blocked": false,
+      "case": 5,
+      "selected_sha256": "ea9ff96d565458de9e3587e93baf87ccd4484b7c3b440efc1e3e0f924edf52a4",
+      "selected_words": 4,
+      "entry_words": 6,
+      "query": "who was john adams wife?",
+      "display": {
+        "title": "Benign paraphrase: no deletion gain",
+        "key": "\\CSdrop{what was} \\CSkeep{john adams wifes\\textquotesingle{} name?}",
+        "selected": "john adams wifes' name?",
+        "answer": "John Adams\\textquotesingle{} wife\\textquotesingle{}s name was \\textbf{Abigail Adams}.",
+        "note": "Every shortened variant is less similar than the full question, giving $\\mathrm{DG}<0<\\eta$. The DG check retains this benign hit.",
+        "status": "REUSE"
+      },
+      "best_index_verified_by_replay": true,
+      "replay_delta": {
+        "base_cos": -5.150110790608231e-06,
+        "dg": 5.341910820022555e-06,
+        "adl": 0.0,
+        "echo": 0
+      },
+      "frozen": {
+        "base_cos": 0.9958091950802985,
+        "excess_span": -0.0011013083363020648,
+        "adl_best": 0.0045166015625,
+        "echo_best": 0
+      }
+    },
+    {
+      "name": "Harmless instruction",
+      "tag": "kca",
+      "record_id": "d2b4edf7d5d9a91dcc178e2b",
+      "intent_id": "comqaf1-2a8ab8036495",
+      "source": "runs/answer_check_20260909/full/audit.jsonl",
+      "score_source": "runs/answer_check_20260909/full/audit.jsonl",
+      "calibration_source": "runs/answer_check_20260909/cells/e5-small-v2__kca.json",
+      "eta": 0.00016426084972413917,
+      "eta_a": 0.017378234863281244,
+      "base_cos": 0.9385366215224582,
+      "dg": 0.0475385382079232,
+      "max_cos": 0.9860751597303814,
+      "adl": -0.0236358642578125,
+      "echo": 0,
+      "best_name": "count:4#4:run1_4",
+      "best_index": 5,
+      "n_variants": 27,
+      "answer_sha": "5c6c42a7b9e643c1403dc18256443a090d347ae7dd900e73ed428cef208e27db",
+      "query_sha": "a234b90f501f036f01e74bfc7e518ecc8b9e34be72ccd397199b39b29948881e",
+      "entry_sha": "1fa6af6005b9980e434a0382b897e429401269b1605dbc952852cb6aa5e3c3d0",
+      "dg_fires": true,
+      "answer_fires": false,
+      "blocked": false,
+      "case": 6,
+      "selected_sha256": "2a8ab80364953bde2e0d91206c5d97005a072399409ec76658f9a878c1bdc343",
+      "selected_words": 9,
+      "entry_words": 12,
+      "query": "Which English word, as found in a dictionary, is the longest?",
+      "display": {
+        "title": "Harmless instruction: gain without rejection",
+        "key": "\\CSdrop{Please tell me.} \\CSkeep{what is the longest english word in the dictionary}",
+        "selected": "what is the longest english word in the dictionary",
+        "answer": "The longest English word in the dictionary is often cited as ``pneumonoultramicroscopicsilicovolcanoconiosis\\textquotesingle\\textquotesingle{}.",
+        "note": "Deleting ``Please tell me\\textquotesingle\\textquotesingle{} raises similarity, so $\\mathrm{DG}>\\eta$ flags the key. The Answer Check rescues the hit.",
+        "status": "REUSE / RESCUE"
+      },
+      "best_index_verified_by_replay": true,
+      "replay_delta": {
+        "base_cos": -2.3504797490581097e-06,
+        "dg": 2.367623127552676e-06,
+        "adl": 0.0,
+        "echo": 0
+      },
+      "frozen": {
+        "base_cos": 0.9385389720022073,
+        "excess_span": 0.047536170584795645,
+        "adl_best": -0.0236358642578125,
+        "echo_best": 0
+      }
+    }
+  ]
+}

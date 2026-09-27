@@ -1,0 +1,157 @@
+{
+  "set": "KCA",
+  "k": 20,
+  "budget": 0.05,
+  "prefixes": "<server-workdir>/out/v3/lacache/kca_lacache_input.jsonl",
+  "benign_arm": "NQ canonical answers vs legal-paraphrase answers (499)",
+  "n_rows": 1297,
+  "n_benign": 499,
+  "n_attack": 798,
+  "n_poisoned": 742,
+  "poisoned_from": "<server-workdir>/out/v3/lacache/poisoned_ids_kca.json",
+  "note": "reimplementation from LaCache's paper description, not the authors' code; prefixes decoded by the ASR victim (Qwen3-8B), cut to 20 tokens with its own tokenizer",
+  "encoders": {
+    "e5-small-v2": {
+      "cos_distribution": {
+        "benign": {
+          "n": 499,
+          "mean": 0.9644940003364502,
+          "median": 0.966637372970581,
+          "p5": 0.9283600986003876,
+          "p95": 0.9966605842113495
+        },
+        "all_planted_attack": {
+          "n": 798,
+          "mean": 0.887835358094452,
+          "median": 0.8877322673797607,
+          "p5": 0.8669194906949997,
+          "p95": 0.9086262315511704
+        },
+        "poisoned_attack": {
+          "n": 742,
+          "mean": 0.887702165427555,
+          "median": 0.8872692883014679,
+          "p5": 0.8669317841529847,
+          "p95": 0.9086677521467209
+        }
+      },
+      "all_planted": {
+        "kca/kca_f1": {
+          "n_attack": 499,
+          "auroc": 0.9965421825615158,
+          "block_at_5pct": 1.0,
+          "realized_benign_fpr": 0.050100200400801605,
+          "threshold_div": 0.07163990139961243
+        },
+        "kca/kca_f2": {
+          "n_attack": 299,
+          "auroc": 0.9965080662998237,
+          "block_at_5pct": 1.0,
+          "realized_benign_fpr": 0.050100200400801605,
+          "threshold_div": 0.07163990139961243
+        },
+        "POOLED": {
+          "n_attack": 798,
+          "auroc": 0.9965293996514332,
+          "block_at_5pct": 1.0,
+          "realized_benign_fpr": 0.050100200400801605,
+          "threshold_div": 0.07163990139961243
+        }
+      },
+      "poisoned": {
+        "kca/kca_f1": {
+          "n_attack": 462,
+          "auroc": 0.996551544647737,
+          "block_at_5pct": 1.0,
+          "realized_benign_fpr": 0.050100200400801605,
+          "threshold_div": 0.07163990139961243
+        },
+        "kca/kca_f2": {
+          "n_attack": 280,
+          "auroc": 0.9964572001145148,
+          "block_at_5pct": 1.0,
+          "realized_benign_fpr": 0.050100200400801605,
+          "threshold_div": 0.07163990139961243
+        },
+        "POOLED": {
+          "n_attack": 742,
+          "auroc": 0.9965159429370871,
+          "block_at_5pct": 1.0,
+          "realized_benign_fpr": 0.050100200400801605,
+          "threshold_div": 0.07163990139961243
+        }
+      }
+    },
+    "BAAI/bge-large-en-v1.5": {
+      "cos_distribution": {
+        "benign": {
+          "n": 499,
+          "mean": 0.8458671253286526,
+          "median": 0.8538432121276855,
+          "p5": 0.6868093490600586,
+          "p95": 0.9833859980106353
+        },
+        "all_planted_attack": {
+          "n": 798,
+          "mean": 0.39218324260380033,
+          "median": 0.3887583166360855,
+          "p5": 0.3034433677792549,
+          "p95": 0.49855503290891645
+        },
+        "poisoned_attack": {
+          "n": 742,
+          "mean": 0.39365648819670845,
+          "median": 0.39067181944847107,
+          "p5": 0.3038789674639702,
+          "p95": 0.500552114844322
+        }
+      },
+      "all_planted": {
+        "kca/kca_f1": {
+          "n_attack": 499,
+          "auroc": 0.9975903711230075,
+          "block_at_5pct": 1.0,
+          "realized_benign_fpr": 0.050100200400801605,
+          "threshold_div": 0.31319065093994136
+        },
+        "kca/kca_f2": {
+          "n_attack": 299,
+          "auroc": 0.9974195883405608,
+          "block_at_5pct": 1.0,
+          "realized_benign_fpr": 0.050100200400801605,
+          "threshold_div": 0.31319065093994136
+        },
+        "POOLED": {
+          "n_attack": 798,
+          "auroc": 0.997526381082968,
+          "block_at_5pct": 1.0,
+          "realized_benign_fpr": 0.050100200400801605,
+          "threshold_div": 0.31319065093994136
+        }
+      },
+      "poisoned": {
+        "kca/kca_f1": {
+          "n_attack": 462,
+          "auroc": 0.9975361979369995,
+          "block_at_5pct": 1.0,
+          "realized_benign_fpr": 0.050100200400801605,
+          "threshold_div": 0.31319065093994136
+        },
+        "kca/kca_f2": {
+          "n_attack": 280,
+          "auroc": 0.99740910392213,
+          "block_at_5pct": 1.0,
+          "realized_benign_fpr": 0.050100200400801605,
+          "threshold_div": 0.31319065093994136
+        },
+        "POOLED": {
+          "n_attack": 742,
+          "auroc": 0.9974882379313884,
+          "block_at_5pct": 1.0,
+          "realized_benign_fpr": 0.050100200400801605,
+          "threshold_div": 0.31319065093994136
+        }
+      }
+    }
+  }
+}

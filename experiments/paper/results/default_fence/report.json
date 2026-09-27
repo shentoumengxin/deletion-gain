@@ -1,0 +1,35 @@
+{
+  "n_hits": 998,
+  "n_used": 997,
+  "skipped": {
+    "below_min_cosine": 1
+  },
+  "budget": 0.05,
+  "min_cosine": 0.9,
+  "policy": "multi[count:4+width:2:cap16]/runs",
+  "eta": 0.0014560788341500693,
+  "eta_a": 0.01859421159275214,
+  "joint_budget_reachable": true,
+  "in_sample_false_rejection": 0.05015045135406219,
+  "heldout_false_rejection": 0.049891317473735056,
+  "attack_block_rate_at_retrieval": {
+    "CAP": {
+      "retrieved": 771,
+      "block_rate": 0.8274967574578469
+    },
+    "SCP": {
+      "retrieved": 788,
+      "block_rate": 0.9581218274111675
+    },
+    "KCA": {
+      "retrieved": 787,
+      "block_rate": 0.9720457433290979
+    }
+  },
+  "max_drift_from_stored_readings": {
+    "base_cos": 9.53070179481319e-05,
+    "excess_span": 0.00013224190674065994,
+    "adl": 0.03130275963414242,
+    "echo": 7
+  }
+}

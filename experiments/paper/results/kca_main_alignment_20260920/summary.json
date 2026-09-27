@@ -1,0 +1,237 @@
+{
+  "scope": "e5 KCA main-table answer alignment; full cohort, original calibration",
+  "protocol": {
+    "n_attack": 798,
+    "n_benign": 499,
+    "bootstrap_replicates": 2000,
+    "bootstrap_unit": "intent_id",
+    "bootstrap_refits_thresholds": true,
+    "bootstrap_seeds": "unchanged: SHA256(KCA) for ASR; original boot_rule key for BR",
+    "retrieval_floor": 0.9,
+    "nominal_fpr": 0.05,
+    "model_calls": 0
+  },
+  "sources": {
+    "runs/paper/perrow/answer_check_rows/e5-small-v2__kca.jsonl": "3c636e2894ccb92c3229b8de966623f61c3d44b090291e5d85edc31dc9830392",
+    "runs/sc_ipi_ablation_20260920/scores.jsonl": "62fbf45626e7e417d93c14024e6c298571d8fd07f6140f4b274074d1d7548582",
+    "runs/sc_ipi_ablation_20260920/inputs.json": "cc73fe107245073950de29c250ff417a0f7fb789b1f4f2fcb9f4eb8ddb4aeb0d",
+    "runs/sc_ipi_ablation_20260920/receipt.json": "50f102ea8aceaa26d8be04b45513a77257c319f3e1d968ad73975f2a4ea4593c"
+  },
+  "previous_summary_sha256": "8f075a4fb4bf583ec8e7242256bf1272be31870c9faa17680aa5fa7485cd0499",
+  "source_code_sha256": "f80225656364d806abf69dcf885bef5e3833d6649c112784c2da62a0a90ae8c4",
+  "answer_identity_mismatches": 439,
+  "changed_decisions": {
+    "total": 2,
+    "newly_accepted": 1,
+    "newly_blocked": 1
+  },
+  "checks": {
+    "previous_point_estimates_and_asr_intervals": "exact equality",
+    "benign_rows": "exact equality",
+    "non_answer_fields": "exact equality",
+    "thresholds": "exact equality",
+    "cosine_and_undefended": "exact equality",
+    "vectorized_bootstrap_vs_shipped_rule": "full sample and first three draws",
+    "sc_ipi_full_cohort_parity": true
+  },
+  "before": {
+    "n": 798,
+    "n_benign": 499,
+    "n_attack_intents": 499,
+    "n_poisoned_backend": 742,
+    "thresholds": {
+      "eta": 0.00016426084972413917,
+      "eta_a": 0.017378234863281244,
+      "cosine_floor": 0.9509755723521418
+    },
+    "methods": {
+      "None": {
+        "successes": 731,
+        "n": 798,
+        "asr": 0.9160401002506265,
+        "ci95": [
+          0.8927668854683215,
+          0.9375780274656679
+        ]
+      },
+      "Cosine": {
+        "successes": 33,
+        "n": 798,
+        "asr": 0.041353383458646614,
+        "ci95": [
+          0.011194029850746268,
+          0.06658500837520936
+        ]
+      },
+      "Ours": {
+        "successes": 12,
+        "n": 798,
+        "asr": 0.015037593984962405,
+        "ci95": [
+          0.007370781266486788,
+          0.031487138723274494
+        ]
+      }
+    },
+    "families": {
+      "cacheattack_gcg_f1": {
+        "n": 499,
+        "br": 0.9839679358717435,
+        "None": {
+          "successes": 458,
+          "asr": 0.9178356713426854
+        },
+        "Cosine": {
+          "successes": 21,
+          "asr": 0.04208416833667335
+        },
+        "Ours": {
+          "successes": 6,
+          "asr": 0.012024048096192385
+        }
+      },
+      "cacheattack_gcg_f2": {
+        "n": 299,
+        "br": 0.979933110367893,
+        "None": {
+          "successes": 273,
+          "asr": 0.9130434782608695
+        },
+        "Cosine": {
+          "successes": 12,
+          "asr": 0.04013377926421405
+        },
+        "Ours": {
+          "successes": 6,
+          "asr": 0.020066889632107024
+        }
+      }
+    },
+    "budgets": {
+      "0.1": {
+        "ours_br": 0.9862155388471178,
+        "cosine_br": 0.9962406015037594
+      },
+      "0.05": {
+        "ours_br": 0.9824561403508771,
+        "cosine_br": 0.9548872180451128
+      },
+      "0.02": {
+        "ours_br": 0.9411027568922306,
+        "cosine_br": 0.8057644110275689
+      },
+      "0.01": {
+        "ours_br": 0.9060150375939849,
+        "cosine_br": 0.568922305764411
+      }
+    },
+    "br": {
+      "blocked": 784,
+      "rate": 0.9824561403508771,
+      "ci95": [
+        0.965559655596556,
+        0.9912395956868683
+      ]
+    }
+  },
+  "after": {
+    "n": 798,
+    "n_benign": 499,
+    "n_attack_intents": 499,
+    "n_poisoned_backend": 742,
+    "thresholds": {
+      "eta": 0.00016426084972413917,
+      "eta_a": 0.017378234863281244,
+      "cosine_floor": 0.9509755723521418
+    },
+    "methods": {
+      "None": {
+        "successes": 731,
+        "n": 798,
+        "asr": 0.9160401002506265,
+        "ci95": [
+          0.8927668854683215,
+          0.9375780274656679
+        ]
+      },
+      "Cosine": {
+        "successes": 33,
+        "n": 798,
+        "asr": 0.041353383458646614,
+        "ci95": [
+          0.011194029850746268,
+          0.06658500837520936
+        ]
+      },
+      "Ours": {
+        "successes": 11,
+        "n": 798,
+        "asr": 0.013784461152882205,
+        "ci95": [
+          0.006257822277847309,
+          0.030419215996603032
+        ]
+      }
+    },
+    "families": {
+      "cacheattack_gcg_f1": {
+        "n": 499,
+        "br": 0.9819639278557114,
+        "None": {
+          "successes": 458,
+          "asr": 0.9178356713426854
+        },
+        "Cosine": {
+          "successes": 21,
+          "asr": 0.04208416833667335
+        },
+        "Ours": {
+          "successes": 6,
+          "asr": 0.012024048096192385
+        }
+      },
+      "cacheattack_gcg_f2": {
+        "n": 299,
+        "br": 0.9832775919732442,
+        "None": {
+          "successes": 273,
+          "asr": 0.9130434782608695
+        },
+        "Cosine": {
+          "successes": 12,
+          "asr": 0.04013377926421405
+        },
+        "Ours": {
+          "successes": 5,
+          "asr": 0.016722408026755852
+        }
+      }
+    },
+    "budgets": {
+      "0.1": {
+        "ours_br": 0.9849624060150376,
+        "cosine_br": 0.9962406015037594
+      },
+      "0.05": {
+        "ours_br": 0.9824561403508771,
+        "cosine_br": 0.9548872180451128
+      },
+      "0.02": {
+        "ours_br": 0.9411027568922306,
+        "cosine_br": 0.8057644110275689
+      },
+      "0.01": {
+        "ours_br": 0.9047619047619048,
+        "cosine_br": 0.568922305764411
+      }
+    },
+    "br": {
+      "blocked": 784,
+      "rate": 0.9824561403508771,
+      "ci95": [
+        0.9654721196046857,
+        0.9912502730961298
+      ]
+    }
+  }
+}

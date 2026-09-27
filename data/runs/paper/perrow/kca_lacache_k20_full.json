@@ -1,0 +1,123 @@
+{
+  "unit": "tokens",
+  "k": 20,
+  "budget": 0.05,
+  "prefixes": "<server-workdir>/out/v3/lacache/kca_lacache_input.jsonl",
+  "policy": "multi[count:4+width:2:cap16]/runs",
+  "encoders": {
+    "main": "intfloat/e5-small-v2",
+    "second": "<server-home>/models/BAAI__bge-large-en-v1.5"
+  },
+  "n_rows": 1297,
+  "n_benign": 499,
+  "n_attack": 798,
+  "n_poisoned": 742,
+  "poisoned_from": "<server-workdir>/out/v3/lacache/poisoned_ids_kca.json",
+  "note": "reimplementation from the paper's description, not the authors' code; prefixes decoded by the ASR victim, cut with its tokenizer",
+  "all_planted": {
+    "lacache_main": {
+      "kca/kca_f1": {
+        "n_attack": 499,
+        "auroc": 0.9965421825615158,
+        "block": 1.0
+      },
+      "kca/kca_f2": {
+        "n_attack": 299,
+        "auroc": 0.9965080662998237,
+        "block": 1.0
+      },
+      "POOLED": {
+        "n_attack": 798,
+        "auroc": 0.9965293996514332,
+        "block": 1.0
+      }
+    },
+    "lacache_second": {
+      "kca/kca_f1": {
+        "n_attack": 499,
+        "auroc": 0.9975903711230075,
+        "block": 1.0
+      },
+      "kca/kca_f2": {
+        "n_attack": 299,
+        "auroc": 0.9974195883405608,
+        "block": 1.0
+      },
+      "POOLED": {
+        "n_attack": 798,
+        "auroc": 0.997526381082968,
+        "block": 1.0
+      }
+    },
+    "excess": {
+      "kca/kca_f1": {
+        "n_attack": 499,
+        "auroc": 0.9925341665294517,
+        "block": 0.9659318637274549
+      },
+      "kca/kca_f2": {
+        "n_attack": 299,
+        "auroc": 0.9918298134731001,
+        "block": 0.9732441471571907
+      },
+      "POOLED": {
+        "n_attack": 798,
+        "auroc": 0.9922702547953048,
+        "block": 0.968671679197995
+      }
+    }
+  },
+  "poisoned": {
+    "lacache_main": {
+      "kca/kca_f1": {
+        "n_attack": 462,
+        "auroc": 0.996551544647737,
+        "block": 1.0
+      },
+      "kca/kca_f2": {
+        "n_attack": 280,
+        "auroc": 0.9964572001145148,
+        "block": 1.0
+      },
+      "POOLED": {
+        "n_attack": 742,
+        "auroc": 0.9965159429370871,
+        "block": 1.0
+      }
+    },
+    "lacache_second": {
+      "kca/kca_f1": {
+        "n_attack": 462,
+        "auroc": 0.9975361979369995,
+        "block": 1.0
+      },
+      "kca/kca_f2": {
+        "n_attack": 280,
+        "auroc": 0.99740910392213,
+        "block": 1.0
+      },
+      "POOLED": {
+        "n_attack": 742,
+        "auroc": 0.9974882379313884,
+        "block": 1.0
+      }
+    },
+    "excess": {
+      "kca/kca_f1": {
+        "n_attack": 462,
+        "auroc": 0.9926953474047663,
+        "block": 0.9675324675324676
+      },
+      "kca/kca_f2": {
+        "n_attack": 280,
+        "auroc": 0.991640423704552,
+        "block": 0.9714285714285714
+      },
+      "POOLED": {
+        "n_attack": 742,
+        "auroc": 0.9922972629895911,
+        "block": 0.9690026954177897
+      }
+    }
+  }
+}

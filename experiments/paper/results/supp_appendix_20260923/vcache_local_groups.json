@@ -1,0 +1,152 @@
+{
+  "protocol": "recalibrated_joint_reference of vcache_replay.py, grouped by length",
+  "datasets": {
+    "lmarena": {
+      "fpr_mean": 0.052955789406648995,
+      "hit_rate_loss_mean": 0.3063741050263318,
+      "by_key_words": [
+        {
+          "bin": "1-8",
+          "fpr": 0.07438832772166105,
+          "valid_hits_per_split": 222.75,
+          "hit_rate_loss": 0.21542095121160962
+        },
+        {
+          "bin": "9-16",
+          "fpr": 0.04634071849429251,
+          "valid_hits_per_split": 2357.43,
+          "hit_rate_loss": 0.24708598327503542
+        },
+        {
+          "bin": "17-32",
+          "fpr": 0.05344444947687848,
+          "valid_hits_per_split": 1766.32,
+          "hit_rate_loss": 0.3570129208275981
+        },
+        {
+          "bin": "33-64",
+          "fpr": 0.06367472190257001,
+          "valid_hits_per_split": 495.33,
+          "hit_rate_loss": 0.28923076248738006
+        },
+        {
+          "bin": "65+",
+          "fpr": 0.08672507485860043,
+          "valid_hits_per_split": 135.255,
+          "hit_rate_loss": 0.4268124121725909
+        }
+      ],
+      "by_answer_words": [
+        {
+          "bin": "1",
+          "fpr": 0.03821405121470781,
+          "valid_hits_per_split": 38.075,
+          "hit_rate_loss": 0.041236110300270495
+        },
+        {
+          "bin": "2-20",
+          "fpr": 0.05956388999505243,
+          "valid_hits_per_split": 414.345,
+          "hit_rate_loss": 0.19677577240746405
+        },
+        {
+          "bin": "21-100",
+          "fpr": 0.06956659142212189,
+          "valid_hits_per_split": 1107.5,
+          "hit_rate_loss": 0.333970282811394
+        },
+        {
+          "bin": "101-300",
+          "fpr": 0.04449275690528493,
+          "valid_hits_per_split": 1987.065,
+          "hit_rate_loss": 0.3277523507189651
+        },
+        {
+          "bin": "300+",
+          "fpr": 0.05027270820222362,
+          "valid_hits_per_split": 1430.1,
+          "hit_rate_loss": 0.29694213311457085
+        }
+      ],
+      "reproduces_summary_fpr_mean": 0.052955789406648995
+    },
+    "search": {
+      "fpr_mean": 0.05024905542059239,
+      "hit_rate_loss_mean": 0.03499860380695427,
+      "by_key_words": [
+        {
+          "bin": "1-8",
+          "fpr": 0.05063682722285327,
+          "valid_hits_per_split": 4137.7,
+          "hit_rate_loss": 0.03417294697112145
+        },
+        {
+          "bin": "9-16",
+          "fpr": 0.00031065548306927616,
+          "valid_hits_per_split": 32.19,
+          "hit_rate_loss": 0.0896309556595979
+        },
+        {
+          "bin": "17-32",
+          "fpr": null,
+          "valid_hits_per_split": 0.0,
+          "hit_rate_loss": 0.0
+        }
+      ],
+      "by_answer_words": [
+        {
+          "bin": "2-20",
+          "fpr": 0.0,
+          "valid_hits_per_split": 8.01,
+          "hit_rate_loss": 0.06139112903225807
+        },
+        {
+          "bin": "21-100",
+          "fpr": 0.05034503637779081,
+          "valid_hits_per_split": 4161.88,
+          "hit_rate_loss": 0.03481571243535329
+        }
+      ],
+      "reproduces_summary_fpr_mean": 0.05024905542059239
+    },
+    "classification": {
+      "fpr_mean": 0.059466145086656576,
+      "hit_rate_loss_mean": 0.07368147170836573,
+      "by_key_words": [
+        {
+          "bin": "9-16",
+          "fpr": 0.05025658738774302,
+          "valid_hits_per_split": 810.64,
+          "hit_rate_loss": 0.11899355300859599
+        },
+        {
+          "bin": "17-32",
+          "fpr": 0.023156633940075857,
+          "valid_hits_per_split": 1928.605,
+          "hit_rate_loss": 0.06996252033095254
+        },
+        {
+          "bin": "33-64",
+          "fpr": 0.05426869166924958,
+          "valid_hits_per_split": 1451.85,
+          "hit_rate_loss": 0.054237855867374014
+        },
+        {
+          "bin": "65+",
+          "fpr": 0.0669533666157083,
+          "valid_hits_per_split": 8101.385,
+          "hit_rate_loss": 0.06452770545971057
+        }
+      ],
+      "by_answer_words": [
+        {
+          "bin": "1",
+          "fpr": 0.0574827048732233,
+          "valid_hits_per_split": 12292.48,
+          "hit_rate_loss": 0.06772396224481157
+        }
+      ],
+      "reproduces_summary_fpr_mean": 0.059466145086656576
+    }
+  }
+}

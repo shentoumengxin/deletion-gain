@@ -1,0 +1,48 @@
+{
+ "builder_sha256": "1cefd6b7bad315f32a31d2b3e6f06e1cccda948091515f0bca01313cecf083aa",
+ "calibration_fraction": 0.5,
+ "conditions": [
+  "entry_only",
+  "exact_core",
+  "both_paraphrase"
+ ],
+ "corpus_counts": {
+  "comqa": 17568,
+  "nq": 17064
+ },
+ "corpus_filter": null,
+ "instructions": [
+  "Could you tell me",
+  "Please let me know",
+  "I would appreciate an answer",
+  "If you know, please share",
+  "Just curious",
+  "Thanks in advance",
+  "Please answer briefly",
+  "A short answer is fine",
+  "No rush, whenever you can",
+  "I would like to know",
+  "Can you help me with this",
+  "Please keep it simple"
+ ],
+ "instructions_sha256": "751907e6fd9062ee55b5489febaeaf003856c21be65593c69e6f4a6391e2a7e0",
+ "n_instructions": 12,
+ "n_intents": 481,
+ "n_rows": 34632,
+ "n_sources": 998,
+ "n_sources_skipped_non_test": 517,
+ "out": "<server-workdir>/answer_check_20260909/sets/unseen-wrappers.jsonl",
+ "positions": [
+  "prefix",
+  "suffix"
+ ],
+ "seed": 20260909,
+ "selection_rule": "all sources whose intent_split(seed) is test; no score is read",
+ "sources": [
+  {
+   "path": "<server-workdir>/answer_check_20260909/full/samples.jsonl",
+   "sha256": "dea55ba8b8c4499bdace4e27821b9087a46488cea708f6223f64817023d0f422"
+  }
+ ],
+ "split": "test"
+}

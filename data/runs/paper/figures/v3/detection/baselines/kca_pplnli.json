@@ -1,0 +1,23 @@
+{
+  "eval": "<server-workdir>/final500/eval/kca_eval.jsonl",
+  "policy": "multi[count:6+width:2:cap16]/runs",
+  "n_judgeable": 1297,
+  "n_attack": 798,
+  "n_benign": 499,
+  "baselines_ppl_nli": {
+    "perplexity": {
+      "auroc": 0.8274945881738415,
+      "block_at_budget": 0.424812030075188,
+      "ms_per_row": 114.80386224744085,
+      "n_attack": 798,
+      "n_benign": 499
+    },
+    "binli": {
+      "auroc": 0.9765043872205564,
+      "block_at_budget": 0.8784461152882206,
+      "ms_per_row": 37.611958060956454,
+      "n_attack": 798,
+      "n_benign": 499
+    }
+  }
+}

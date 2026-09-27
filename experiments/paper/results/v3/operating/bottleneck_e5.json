@@ -1,0 +1,145 @@
+{
+  "embedder": "intfloat/e5-small-v2",
+  "n_train": 40000,
+  "n_paws_test": 8000,
+  "n_paper_rows": 981,
+  "features": "[u, v, |u-v|, u*v, cos] in both arms; identical dimension",
+  "baselines": {
+    "cosine_paper_rows": 0.7553367983367983,
+    "cosine_paws_test": 0.618693198174638,
+    "logistic_on_cos_only": {
+      "paper_rows": 0.7553367983367983,
+      "paws_test": 0.618693198174638
+    },
+    "sanity_gap_paws_test": 0.0,
+    "nli_cross_encoder_paper_rows": 0.6471351351351351,
+    "nli_ms_per_row": 17.56630682981707
+  },
+  "arms": {
+    "Z (pair of embeddings)": {
+      "logistic": {
+        "paper_rows": 0.6991101871101871,
+        "paws_test": 0.6373758101513972
+      },
+      "mlp": {
+        "paper_rows": 0.7135384615384616,
+        "paws_test": 0.6426265896401985
+      }
+    },
+    "X (joint text)": {
+      "logistic": {
+        "paper_rows": 0.6223617463617463,
+        "paws_test": 0.6998861366041453
+      },
+      "mlp": {
+        "paper_rows": 0.6140873180873181,
+        "paws_test": 0.6996913277562886
+      }
+    }
+  },
+  "learning_curve": {
+    "500": {
+      "Z (pair of embeddings)": {
+        "logistic": {
+          "paper_rows": 0.7243825363825364,
+          "paws_test": 0.6142323289686015
+        },
+        "mlp": {
+          "paper_rows": 0.6597338877338877,
+          "paws_test": 0.5873644193771388
+        }
+      },
+      "X (joint text)": {
+        "logistic": {
+          "paper_rows": 0.6275384615384615,
+          "paws_test": 0.6834352104417035
+        },
+        "mlp": {
+          "paper_rows": 0.5885239085239086,
+          "paws_test": 0.6171067255996692
+        }
+      }
+    },
+    "2000": {
+      "Z (pair of embeddings)": {
+        "logistic": {
+          "paper_rows": 0.7175634095634096,
+          "paws_test": 0.6139627642051444
+        },
+        "mlp": {
+          "paper_rows": 0.6341372141372141,
+          "paws_test": 0.5996146332550804
+        }
+      },
+      "X (joint text)": {
+        "logistic": {
+          "paper_rows": 0.6361621621621621,
+          "paws_test": 0.6877637046599037
+        },
+        "mlp": {
+          "paper_rows": 0.5771975051975052,
+          "paws_test": 0.6636298343003455
+        }
+      }
+    },
+    "8000": {
+      "Z (pair of embeddings)": {
+        "logistic": {
+          "paper_rows": 0.7135925155925156,
+          "paws_test": 0.6227275785469275
+        },
+        "mlp": {
+          "paper_rows": 0.665051975051975,
+          "paws_test": 0.6261041068619342
+        }
+      },
+      "X (joint text)": {
+        "logistic": {
+          "paper_rows": 0.6508274428274429,
+          "paws_test": 0.6916866797122074
+        },
+        "mlp": {
+          "paper_rows": 0.590037422037422,
+          "paws_test": 0.665153366195527
+        }
+      }
+    },
+    "32000": {
+      "Z (pair of embeddings)": {
+        "logistic": {
+          "paper_rows": 0.7073970893970895,
+          "paws_test": 0.6351265440264195
+        },
+        "mlp": {
+          "paper_rows": 0.7393471933471933,
+          "paws_test": 0.6379581460634295
+        }
+      },
+      "X (joint text)": {
+        "logistic": {
+          "paper_rows": 0.625089397089397,
+          "paws_test": 0.6970492129595842
+        },
+        "mlp": {
+          "paper_rows": 0.6143451143451143,
+          "paws_test": 0.698638378014564
+        }
+      }
+    }
+  },
+  "cv_paper_rows": {
+    "cos only": {
+      "logistic": 0.720941787941788,
+      "mlp": 0.7401580041580041
+    },
+    "Z (pair of embeddings)": {
+      "logistic": 0.7826735966735967,
+      "mlp": 0.7707297297297298
+    },
+    "X (joint text)": {
+      "logistic": 0.7560956340956341,
+      "mlp": 0.7387276507276507
+    },
+    "cosine (no fit)": 0.7553367983367983
+  }
+}

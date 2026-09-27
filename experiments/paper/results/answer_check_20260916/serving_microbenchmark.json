@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "measured_at": "2026-09-16T09:11:10.383301+00:00",
+  "purpose": "Table 1, per-class cost, and Figure 3: DG plus Answer Check on cpu-server",
+  "measurement_kind": "synthetic serving microbenchmark; no model calls, cache lookup or backend generation",
+  "hardware": {
+    "host": "cpu-server",
+    "cpu": "AMD EPYC 9754 128-Core Processor",
+    "platform": "Linux-6.8.0-134-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3",
+    "numpy": "2.5.1"
+  },
+  "threads": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1"
+  },
+  "code_revision": "fa6eadd629388e07d88cd2096064da83a419365e",
+  "script": "experiments/paper/rq4_system/bench_answer_check_ms.py",
+  "script_sha256": "89faa4297bfef9c5262d46569d4ad49a39290911d39302103fef47d10d5d3589",
+  "textnorm_sha256": "fa4ce9b789e46ee9819648e02146229eda743d814553e456977cd0884726a868",
+  "span_count_source": "experiments/paper/results/v3/granularity32/serving_ms_42.json",
+  "span_count_source_sha256": "d5d8db4d33467fc5c0f82894e23df1a3dfa5c06b58467f2762d61123b8c13991",
+  "raw_samples_path": "runs/serving_20260916/raw_samples.json",
+  "raw_samples_sha256": "bcaf05d3e39ba2ce1a14866af811f8e6369fbdafa462e644ddede24f51388d90",
+  "raw_measurement_path": "runs/serving_20260916/measurement.json",
+  "raw_measurement_sha256": "7a0f362a8f3610dd56b573db8cb799f3292b01e28dbfbd3a4e568d9433bc1e29",
+  "remote_work_root": "cpu-server:<server-home>/sentry-work/serving-20260916-appendix-concision",
+  "reproduction": "OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 python experiments/paper/rq4_system/bench_answer_check_ms.py --in experiments/paper/results/v3/detection/excess_serving_ms.json --n-spans 15 --n-spans 65 --n-spans 135 --repeats 2000 --out WORK_ROOT/serving_microbenchmark.json",
+  "policy": "multi[count:4+width:2:cap16]/runs",
+  "answer_rule": "either",
+  "echo_min": 1,
+  "eta_a_for_timing": 0.02,
+  "dim": 384,
+  "storage_dtype": "float16",
+  "repeats": 2000,
+  "query": "when did mariah carey and nick cannon get married in the caribbean",
+  "echo_set_size": 3,
+  "query_tokenise_ms": {
+    "ms_median": 0.00569,
+    "ms_p95": 0.0059
+  },
+  "serving_ms": {
+    "15": {
+      "n_spans": 15,
+      "dg_only": {
+        "ms_median": 0.01401,
+        "ms_p95": 0.01428
+      },
+      "answer_checked": {
+        "ms_median": 0.02092,
+        "ms_p95": 0.02162
+      },
+      "delta_ms_median": 0.00691
+    },
+    "65": {
+      "n_spans": 65,
+      "dg_only": {
+        "ms_median": 0.05306,
+        "ms_p95": 0.05693
+      },
+      "answer_checked": {
+        "ms_median": 0.06036,
+        "ms_p95": 0.06481
+      },
+      "delta_ms_median": 0.0073
+    },
+    "135": {
+      "n_spans": 135,
+      "dg_only": {
+        "ms_median": 0.10702,
+        "ms_p95": 0.11189
+      },
+      "answer_checked": {
+        "ms_median": 0.11471,
+        "ms_p95": 0.11988
+      },
+      "delta_ms_median": 0.00769
+    }
+  },
+  "sets": {
+    "LMP": {
+      "n_spans": 15,
+      "dg_only": {
+        "ms_median": 0.01401,
+        "ms_p95": 0.01428
+      },
+      "answer_checked": {
+        "ms_median": 0.02092,
+        "ms_p95": 0.02162
+      },
+      "delta_ms_median": 0.00691
+    },
+    "SCP": {
+      "n_spans": 65,
+      "dg_only": {
+        "ms_median": 0.05306,
+        "ms_p95": 0.05693
+      },
+      "answer_checked": {
+        "ms_median": 0.06036,
+        "ms_p95": 0.06481
+      },
+      "delta_ms_median": 0.0073
+    },
+    "KCA": {
+      "n_spans": 135,
+      "dg_only": {
+        "ms_median": 0.10702,
+        "ms_p95": 0.11189
+      },
+      "answer_checked": {
+        "ms_median": 0.11471,
+        "ms_p95": 0.11988
+      },
+      "delta_ms_median": 0.00769
+    }
+  },
+  "notes": [
+    "DG-only and answer-checked measurements use the same server and harness.",
+    "Table 1 uses the CAP-arm median, preserving its existing span-count convention.",
+    "Figure 3 keeps the equal-weight mean over the three classes; baseline hardware remains unmatched.",
+    "All 12000 raw hit timings are retained externally and independently reaggregated."
+  ]
+}

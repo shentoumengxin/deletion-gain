@@ -1,0 +1,51 @@
+{
+  "salt": "salting, compressive k=128",
+  "flags": "experiments/paper/final500/eval/poisoned_flags.jsonl",
+  "sets": {
+    "LMP": {
+      "n_attack": 800,
+      "n_poisoned": 252,
+      "n_flag_missing": 0,
+      "at": {
+        "0.05": {
+          "block_all": 0.26,
+          "block_poisoned": 0.2976190476190476
+        },
+        "0.01": {
+          "block_all": 0.11625,
+          "block_poisoned": 0.1349206349206349
+        }
+      }
+    },
+    "SCP": {
+      "n_attack": 798,
+      "n_poisoned": 649,
+      "n_flag_missing": 0,
+      "at": {
+        "0.05": {
+          "block_all": 0.45363408521303256,
+          "block_poisoned": 0.5038520801232665
+        },
+        "0.01": {
+          "block_all": 0.16290726817042606,
+          "block_poisoned": 0.1864406779661017
+        }
+      }
+    },
+    "KCA": {
+      "n_attack": 798,
+      "n_poisoned": 742,
+      "n_flag_missing": 0,
+      "at": {
+        "0.05": {
+          "block_all": 0.9761904761904762,
+          "block_poisoned": 0.9757412398921833
+        },
+        "0.01": {
+          "block_all": 0.6553884711779449,
+          "block_poisoned": 0.6644204851752021
+        }
+      }
+    }
+  }
+}

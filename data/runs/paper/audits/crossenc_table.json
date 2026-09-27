@@ -1,0 +1,78 @@
+{
+  "table": "tab/crossenc.tex",
+  "scalar_values_verified": 20,
+  "result_sources": [
+    "runs/paper/table4.json",
+    "code:experiments/paper/results/answer_check_20260909/main_table.json"
+  ],
+  "rows": [
+    {
+      "encoder": "e5",
+      "matched_auc": 0.9393007844496717,
+      "matched_support": 562,
+      "dg_only_fpr_mean": 0.054540982156190035,
+      "dg_only_fpr_sd": 0.01976698453954363,
+      "joint_all_br": 0.82,
+      "joint_success_br": 0.9603174603174603,
+      "printed_values": [
+        0.939,
+        5.5,
+        2.0,
+        0.82,
+        0.96
+      ],
+      "exact_at_display_precision": true
+    },
+    {
+      "encoder": "bge",
+      "matched_auc": 0.9130610521235523,
+      "matched_support": 112,
+      "dg_only_fpr_mean": 0.056096711153868516,
+      "dg_only_fpr_sd": 0.022808934064117464,
+      "joint_all_br": 0.8,
+      "joint_success_br": 0.9246031746031746,
+      "printed_values": [
+        0.913,
+        5.6,
+        2.3,
+        0.8,
+        0.925
+      ],
+      "exact_at_display_precision": true
+    },
+    {
+      "encoder": "gte",
+      "matched_auc": 0.9079667073981397,
+      "matched_support": 530,
+      "dg_only_fpr_mean": 0.05323168201983659,
+      "dg_only_fpr_sd": 0.019784512946013535,
+      "joint_all_br": 0.74,
+      "joint_success_br": 0.8531746031746031,
+      "printed_values": [
+        0.908,
+        5.3,
+        2.0,
+        0.74,
+        0.853
+      ],
+      "exact_at_display_precision": true
+    },
+    {
+      "encoder": "minilm",
+      "matched_auc": 0.9016987431750088,
+      "matched_support": 336,
+      "dg_only_fpr_mean": 0.051418324548150894,
+      "dg_only_fpr_sd": 0.019934507363243963,
+      "joint_all_br": 0.705,
+      "joint_success_br": 0.7857142857142857,
+      "printed_values": [
+        0.902,
+        5.1,
+        2.0,
+        0.705,
+        0.786
+      ],
+      "exact_at_display_precision": true
+    }
+  ]
+}

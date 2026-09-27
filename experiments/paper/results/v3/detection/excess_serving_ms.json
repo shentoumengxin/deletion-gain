@@ -1,0 +1,59 @@
+{
+ "dim": 384,
+ "repeats": 2000,
+ "numpy": "2.5.1",
+ "note": "serving path only: stored span vectors dotted with the arriving query's embedding, which the cache already computed for retrieval, then a max. No model call.",
+ "sets": {
+  "LMP": {
+   "median": {
+    "n_spans": 20,
+    "ms_median": 0.01777,
+    "ms_p95": 0.01807
+   },
+   "p95": {
+    "n_spans": 31,
+    "ms_median": 0.02624,
+    "ms_p95": 0.02678
+   },
+   "mean_spans": {
+    "n_spans": 24,
+    "ms_median": 0.02076,
+    "ms_p95": 0.02107
+   }
+  },
+  "SCP": {
+   "median": {
+    "n_spans": 42,
+    "ms_median": 0.03461,
+    "ms_p95": 0.03554
+   },
+   "p95": {
+    "n_spans": 153,
+    "ms_median": 0.12066,
+    "ms_p95": 0.125
+   },
+   "mean_spans": {
+    "n_spans": 76,
+    "ms_median": 0.06142,
+    "ms_p95": 0.0647
+   }
+  },
+  "KCA": {
+   "median": {
+    "n_spans": 153,
+    "ms_median": 0.12038,
+    "ms_p95": 0.12474
+   },
+   "p95": {
+    "n_spans": 153,
+    "ms_median": 0.12029,
+    "ms_p95": 0.12465
+   },
+   "mean_spans": {
+    "n_spans": 152,
+    "ms_median": 0.11974,
+    "ms_p95": 0.12406
+   }
+  }
+ }
+}

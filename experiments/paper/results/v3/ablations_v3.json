@@ -1,0 +1,155 @@
+{
+  "what": "RQ3 mechanism ablations on the v3 sets. Reference excess and winning-deletion position under the deployed cut; the two destructive ablations under count:6 (the cut the old values used).",
+  "old_values": {
+    "no_anchor_auroc": 0.434,
+    "spans_alone_cv_auroc": 0.555,
+    "prefix_share_gt_90pct": true,
+    "source": "rq3_ablations/rq3_ablations.json (LMP full-2175, count:6)"
+  },
+  "sets": {
+    "SCP": {
+      "set": "SCP",
+      "embedder": "intfloat/e5-small-v2",
+      "policy": "multi[count:6+width:2:cap16]/runs",
+      "attack_role": [
+        "scp"
+      ],
+      "benign_generator": [
+        "human_comqa",
+        "human_comqa"
+      ],
+      "anisotropy_floor": 0.8556309342384338,
+      "budget": 0.05,
+      "n_benign": 499,
+      "n_attack": 798,
+      "variants": {
+        "excess_deployed": {
+          "auroc": 0.9868885640956098,
+          "block": 0.9624060150375939
+        },
+        "excess_count6": {
+          "auroc": 0.9795103992446045,
+          "block": 0.9461152882205514
+        },
+        "no_anchor_split": {
+          "auroc": 0.11096880477747476,
+          "block": 0.0
+        },
+        "span_cv": {
+          "auroc": 0.36140451328722606,
+          "block": 0.03884711779448621
+        },
+        "span_range": {
+          "auroc": 0.666934118864295,
+          "block": 0.19423558897243107
+        },
+        "span_gini": {
+          "auroc": 0.3578209049678304,
+          "block": 0.03634085213032581
+        },
+        "span_dead_frac": {
+          "auroc": 0.32432785370239225,
+          "block": 0.0012531328320802004
+        }
+      },
+      "mechanism": {
+        "scp_i": {
+          "n": 266,
+          "prefix_share": 0.32706766917293234,
+          "median_kept": 0.0625
+        },
+        "scp_p": {
+          "n": 265,
+          "prefix_share": 0.8377358490566038,
+          "median_kept": 0.5
+        },
+        "scp_z": {
+          "n": 267,
+          "prefix_share": 0.9026217228464419,
+          "median_kept": 0.6666666666666666
+        },
+        "POOLED_attack": {
+          "n": 798,
+          "prefix_share": 0.6892230576441103,
+          "median_kept": 0.5
+        },
+        "canonical": {
+          "n": 499,
+          "prefix_share": 0.13226452905811623,
+          "median_kept": 0.8333333333333334
+        }
+      }
+    },
+    "LMP": {
+      "set": "LMP",
+      "embedder": "intfloat/e5-small-v2",
+      "policy": "multi[count:6+width:2:cap16]/runs",
+      "attack_role": null,
+      "benign_generator": [
+        "human_comqa",
+        "human_comqa"
+      ],
+      "anisotropy_floor": 0.8556309342384338,
+      "budget": 0.05,
+      "n_benign": 499,
+      "n_attack": 800,
+      "variants": {
+        "excess_deployed": {
+          "auroc": 0.9623709919839679,
+          "block": 0.8675
+        },
+        "excess_count6": {
+          "auroc": 0.9600450901803608,
+          "block": 0.88875
+        },
+        "no_anchor_split": {
+          "auroc": 0.4233491983967936,
+          "block": 0.0675
+        },
+        "span_cv": {
+          "auroc": 0.5779158316633266,
+          "block": 0.07875
+        },
+        "span_range": {
+          "auroc": 0.6259757014028056,
+          "block": 0.1475
+        },
+        "span_gini": {
+          "auroc": 0.5792998496993988,
+          "block": 0.07625
+        },
+        "span_dead_frac": {
+          "auroc": 0.5425839178356714,
+          "block": 0.02
+        }
+      },
+      "mechanism": {
+        "ndss_matched_blend": {
+          "n": 267,
+          "prefix_share": 0.9213483146067416,
+          "median_kept": 0.75
+        },
+        "ndss_matched_compress_append": {
+          "n": 267,
+          "prefix_share": 0.9176029962546817,
+          "median_kept": 0.6
+        },
+        "ndss_matched_fuse": {
+          "n": 266,
+          "prefix_share": 0.8609022556390977,
+          "median_kept": 0.8333333333333334
+        },
+        "POOLED_attack": {
+          "n": 800,
+          "prefix_share": 0.9,
+          "median_kept": 0.6666666666666666
+        },
+        "canonical": {
+          "n": 499,
+          "prefix_share": 0.13226452905811623,
+          "median_kept": 0.8333333333333334
+        }
+      }
+    }
+  }
+}

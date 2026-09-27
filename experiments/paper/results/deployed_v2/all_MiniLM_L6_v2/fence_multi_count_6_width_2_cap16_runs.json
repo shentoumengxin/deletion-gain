@@ -1,0 +1,33 @@
+{
+  "features": [
+    "intercept",
+    "cosine",
+    "log_words"
+  ],
+  "coefficients": [
+    0.017835787126733296,
+    -0.48891473262288443,
+    0.006952977523237433
+  ],
+  "centers": [
+    0.9607835732424612,
+    1.9718632907348268
+  ],
+  "budget": 0.05,
+  "direction": "entry",
+  "statistic": "excess_span",
+  "embedder": "sentence-transformers/all-MiniLM-L6-v2",
+  "policy": "multi[count:6+width:2:cap16]/runs",
+  "n_rows": 260,
+  "metadata": {
+    "cosine_span": [
+      0.7031512111696614,
+      0.9996847288897082
+    ],
+    "word_span": [
+      3,
+      14
+    ],
+    "distinct_words": 12
+  }
+}

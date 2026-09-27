@@ -1,0 +1,8 @@
+{
+  "model": "deepseek-v4-flash",
+  "votes": 10,
+  "temperature": 1.0,
+  "rows": 3394,
+  "uncached_calls": 33940,
+  "ms_per_call_median": 647.0737960189581
+}

@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "measured_at": "2026-09-13T07:19:41.311676+00:00",
+  "purpose": "Figure 3b: DG + Answer check serving microbenchmark, replacing the DG-only point",
+  "measurement_kind": "synthetic serving microbenchmark; no model calls, cache lookup or backend generation",
+  "hardware": {
+    "host": "user-ASUS-Zenbook-S-14-UX5406SA-UX5406SA",
+    "cpu": "Intel(R) Core(TM) Ultra 7 258V",
+    "platform": "Linux-7.0.0-31-generic-x86_64-with-glibc2.43",
+    "python": "3.13.9",
+    "numpy": "2.3.5"
+  },
+  "threads": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1"
+  },
+  "code_revision": "4c1868a020182cd5563dfc72f8b3ad473133bef8",
+  "script": "experiments/paper/rq4_system/bench_answer_check_ms.py",
+  "script_sha256": "89faa4297bfef9c5262d46569d4ad49a39290911d39302103fef47d10d5d3589",
+  "span_count_source": "experiments/paper/results/v3/granularity32/serving_ms_42.json",
+  "span_count_source_sha256": "d5d8db4d33467fc5c0f82894e23df1a3dfa5c06b58467f2762d61123b8c13991",
+  "raw_measurement_sha256": "bbfc359e7c4e7261a037adaf7e502a8a253049ea45bcaffdf5e0f275d249fe9d",
+  "reproduction": "OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 python experiments/paper/rq4_system/bench_answer_check_ms.py --in experiments/paper/results/v3/detection/excess_serving_ms.json --n-spans 15 --n-spans 65 --n-spans 135 --repeats 2000 --out /absolute/work-root/serving_microbenchmark.json",
+  "policy": "multi[count:4+width:2:cap16]/runs",
+  "answer_rule": "either",
+  "echo_min": 1,
+  "eta_a_for_timing": 0.02,
+  "dim": 384,
+  "storage_dtype": "float16",
+  "repeats": 2000,
+  "query": "when did mariah carey and nick cannon get married in the caribbean",
+  "echo_set_size": 3,
+  "query_tokenise_ms": {
+    "ms_median": 0.00353,
+    "ms_p95": 0.004
+  },
+  "serving_ms": {
+    "15": {
+      "n_spans": 15,
+      "dg_only": {
+        "ms_median": 0.00488,
+        "ms_p95": 0.0062
+      },
+      "answer_checked": {
+        "ms_median": 0.00977,
+        "ms_p95": 0.01133
+      },
+      "delta_ms_median": 0.00489
+    },
+    "65": {
+      "n_spans": 65,
+      "dg_only": {
+        "ms_median": 0.01614,
+        "ms_p95": 0.01824
+      },
+      "answer_checked": {
+        "ms_median": 0.0214,
+        "ms_p95": 0.02438
+      },
+      "delta_ms_median": 0.00526
+    },
+    "135": {
+      "n_spans": 135,
+      "dg_only": {
+        "ms_median": 0.03503,
+        "ms_p95": 0.03864
+      },
+      "answer_checked": {
+        "ms_median": 0.03951,
+        "ms_p95": 0.04528
+      },
+      "delta_ms_median": 0.00448
+    }
+  },
+  "sets": {
+    "LMP": {
+      "n_spans": 15,
+      "dg_only": {
+        "ms_median": 0.00488,
+        "ms_p95": 0.0062
+      },
+      "answer_checked": {
+        "ms_median": 0.00977,
+        "ms_p95": 0.01133
+      },
+      "delta_ms_median": 0.00489
+    },
+    "SCP": {
+      "n_spans": 65,
+      "dg_only": {
+        "ms_median": 0.01614,
+        "ms_p95": 0.01824
+      },
+      "answer_checked": {
+        "ms_median": 0.0214,
+        "ms_p95": 0.02438
+      },
+      "delta_ms_median": 0.00526
+    },
+    "KCA": {
+      "n_spans": 135,
+      "dg_only": {
+        "ms_median": 0.03503,
+        "ms_p95": 0.03864
+      },
+      "answer_checked": {
+        "ms_median": 0.03951,
+        "ms_p95": 0.04528
+      },
+      "delta_ms_median": 0.00448
+    }
+  },
+  "notes": [
+    "Uses the historical attack-arm mean span counts: CAP 15, SCP 65, KCA 135.",
+    "Before and after are measured on this same local CPU; use answer_checked.ms_median for the joint point. Do not add these local increments to a different host’s historical DG latency.",
+    "Baselines in Figure 3b retain their recorded measurement sources; the figure is not a controlled same-hardware comparison.",
+    "Queries and span matrices are deterministic microbenchmark inputs, not newly generated attack samples."
+  ]
+}

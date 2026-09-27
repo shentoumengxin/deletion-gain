@@ -1,0 +1,29 @@
+{
+  "canonicals": 500,
+  "written": 500,
+  "kept_from_prior": 495,
+  "recomputed": 5,
+  "url_answers_decoded": 347,
+  "rejects_by_stage": {
+    "string_reject_first_draw": 5,
+    "string_reject_after_regen_hard": 1,
+    "judge_flagged_yes_first": 1,
+    "judge_flag_after_regen_kept": 1
+  },
+  "hard_rejects_final": 1,
+  "judge_flagged_kept": 94,
+  "y_star_words": {
+    "min": 1,
+    "max": 8,
+    "mean": 1.814
+  },
+  "ctx_words": {
+    "min": 79,
+    "max": 202,
+    "mean": 107.86,
+    "in_50_100": 195,
+    "n": 499
+  },
+  "api_calls": 55,
+  "served_from_cache": 10
+}

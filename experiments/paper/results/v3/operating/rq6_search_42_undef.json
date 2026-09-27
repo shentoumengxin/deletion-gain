@@ -1,0 +1,54 @@
+{
+  "fence": 0.006797628467845549,
+  "fence_overridden": true,
+  "fence_local_p95": 0.003194451238278554,
+  "n_targets": 200,
+  "policy": "multi[count:4+width:2:cap16]/runs",
+  "candidates_per_round": 6,
+  "rounds": 2,
+  "retrieval_floor": 0.9,
+  "undefended_collide": 1.0,
+  "undefended_poison_no_pushback": 0.425,
+  "undefended_poison_strict": 0.12,
+  "collide_and_evade": 0.185,
+  "and_poison_no_pushback": 0.1,
+  "and_poison_strict": 0.025,
+  "median_candidates": 12.0,
+  "surviving_candidates_tested": 118,
+  "and_poison_strict_lowest_excess_only": 0.015,
+  "baseline_rq4_repeat4_strict_joint": 0.03,
+  "by_payload_words": {
+    "<=2": {
+      "n": 66,
+      "poisoned": 16,
+      "strict": 0,
+      "median_excess": 0.0019490624705289505,
+      "median_cos": 0.9705835580825806,
+      "strict_rate": 0.0
+    },
+    "3-6": {
+      "n": 31,
+      "poisoned": 17,
+      "strict": 3,
+      "median_excess": 0.004345437600535962,
+      "median_cos": 0.9622040390968323,
+      "strict_rate": 0.0967741935483871
+    },
+    ">10": {
+      "n": 11,
+      "poisoned": 9,
+      "strict": 1,
+      "median_excess": 0.002076757745052338,
+      "median_cos": 0.9606951475143433,
+      "strict_rate": 0.09090909090909091
+    },
+    "7-10": {
+      "n": 10,
+      "poisoned": 7,
+      "strict": 4,
+      "median_excess": 0.004208345883151776,
+      "median_cos": 0.9542866051197052,
+      "strict_rate": 0.4
+    }
+  }
+}

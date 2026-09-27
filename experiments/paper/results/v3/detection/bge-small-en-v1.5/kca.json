@@ -1,0 +1,142 @@
+{
+  "policy": "multi[count:6+width:2:cap16]/runs",
+  "storage_dtype": "float16",
+  "embedder": "BAAI/bge-small-en-v1.5",
+  "budget": 0.05,
+  "holdout": 0.5,
+  "seed": 0,
+  "composition": {
+    "kept": {
+      "genuine": {
+        "cacheattack_cleaned_qa": 499
+      },
+      "attack": {
+        "cacheattack_gcg_f1": 499,
+        "cacheattack_gcg_f2": 299
+      }
+    },
+    "dropped_no_anchor": {
+      "genuine": 1,
+      "attack": 2
+    }
+  },
+  "n_genuine": 499,
+  "n_attack": 798,
+  "n_attack_flag_missing": 0,
+  "n_poisoned": 742,
+  "n_poisoned_strict": 0,
+  "excess_auroc": 0.8385492790091461,
+  "excess_auroc_cos_matched": 0.7993703108252947,
+  "matched_support": 311,
+  "excess_block_rate": 0.2606516290726817,
+  "tpr_all_planted": 0.2606516290726817,
+  "tpr_poisoned": 0.25471698113207547,
+  "tpr_poisoned_strict": NaN,
+  "fence_form": "flat",
+  "threshold_scoring": 0.01911587174880824,
+  "threshold_holdout": 0.018617186349031575,
+  "benign_block_rate_in_sample": 0.050100200400801605,
+  "achieved_benign_block_rate": 0.05474452554744526,
+  "n_fit_intents": 225,
+  "n_eval_intents": 274,
+  "cosine_auroc": 0.8291369706832211,
+  "cosine_block_rate": 0.24060150375939848,
+  "cosine_threshold": 0.8082544719482783,
+  "families": {
+    "cacheattack_gcg_f1": {
+      "n_attack": 499,
+      "excess_auroc": 0.8286231782201678,
+      "excess_auroc_cos_matched": 0.8047881241565452,
+      "matched_support": 195,
+      "excess_block_rate": 0.23246492985971945,
+      "n_poisoned": 462,
+      "tpr_poisoned": 0.22727272727272727,
+      "cosine_auroc": 0.8124666165999334,
+      "cosine_block_rate": 0.2124248496993988
+    },
+    "cacheattack_gcg_f2": {
+      "n_attack": 299,
+      "excess_auroc": 0.8551149120984444,
+      "excess_auroc_cos_matched": 0.8077736318407961,
+      "matched_support": 67,
+      "excess_block_rate": 0.3076923076923077,
+      "n_poisoned": 280,
+      "tpr_poisoned": 0.3,
+      "cosine_auroc": 0.8569580632837581,
+      "cosine_block_rate": 0.28762541806020064
+    }
+  },
+  "timing": {
+    "embed_wall_s": 821.6037390730344,
+    "n_encode_calls_anchor": 1297,
+    "n_entries_profiled": 1297
+  },
+  "fence_scoring": {
+    "features": [
+      "intercept",
+      "cosine",
+      "log_words"
+    ],
+    "coefficients": [
+      0.01911587174880824,
+      0.0,
+      0.0
+    ],
+    "centers": [
+      0.8990478925802836,
+      2.209314920821953
+    ],
+    "budget": 0.05,
+    "direction": "entry",
+    "statistic": "excess_span",
+    "embedder": "BAAI/bge-small-en-v1.5",
+    "policy": "multi[count:6+width:2:cap16]/runs",
+    "n_rows": 499,
+    "metadata": {
+      "cosine_span": [
+        0.6742306173507433,
+        0.9865050567285247
+      ],
+      "word_span": [
+        6,
+        17
+      ],
+      "distinct_words": 12,
+      "form": "flat"
+    }
+  },
+  "fence_holdout": {
+    "features": [
+      "intercept",
+      "cosine",
+      "log_words"
+    ],
+    "coefficients": [
+      0.018617186349031575,
+      0.0,
+      0.0
+    ],
+    "centers": [
+      0.8976399930033363,
+      2.205920856319537
+    ],
+    "budget": 0.05,
+    "direction": "entry",
+    "statistic": "excess_span",
+    "embedder": "BAAI/bge-small-en-v1.5",
+    "policy": "multi[count:6+width:2:cap16]/runs",
+    "n_rows": 225,
+    "metadata": {
+      "cosine_span": [
+        0.6742306173507433,
+        0.9803721784889555
+      ],
+      "word_span": [
+        6,
+        17
+      ],
+      "distinct_words": 12,
+      "form": "flat"
+    }
+  }
+}

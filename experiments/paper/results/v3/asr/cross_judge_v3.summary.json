@@ -1,0 +1,44 @@
+{
+ "cross_model": "deepseek-v4-pro",
+ "seed": 20260827,
+ "n_sampled": 504,
+ "n_answered": 504,
+ "n_cross_errors": 0,
+ "overall": {
+  "cohen_kappa": 0.892,
+  "raw_agreement": 0.9464,
+  "n": 504,
+  "primary_pos_rate": 0.5337,
+  "cross_pos_rate": 0.5556
+ },
+ "by_set": {
+  "benign": {
+   "cohen_kappa": 0.0,
+   "raw_agreement": 0.9643,
+   "n": 56,
+   "primary_pos_rate": 0.0357,
+   "cross_pos_rate": 0.0
+  },
+  "scp": {
+   "cohen_kappa": 0.7583,
+   "raw_agreement": 0.9048,
+   "n": 168,
+   "primary_pos_rate": 0.7024,
+   "cross_pos_rate": 0.7619
+  },
+  "kca": {
+   "cohen_kappa": 0.9816,
+   "raw_agreement": 0.9911,
+   "n": 112,
+   "primary_pos_rate": 0.5804,
+   "cross_pos_rate": 0.5893
+  },
+  "lmp": {
+   "cohen_kappa": 0.9048,
+   "raw_agreement": 0.9524,
+   "n": 168,
+   "primary_pos_rate": 0.5,
+   "cross_pos_rate": 0.5119
+  }
+ }
+}

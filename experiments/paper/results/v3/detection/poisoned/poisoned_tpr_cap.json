@@ -1,0 +1,45 @@
+{
+ "set": "CAP",
+ "records": "<server-workdir>/final500/eval/lmp_eval.jsonl",
+ "policy": "multi[count:6+width:2:cap16]/runs",
+ "embedder": "intfloat/e5-small-v2",
+ "budget": 0.05,
+ "n_benign": 499,
+ "n_attack": 800,
+ "n_attack_joined": 800,
+ "n_poisoned": 252,
+ "methods": {
+  "cosine": {
+   "threshold": -0.9376194668031325,
+   "auroc": 0.8440506012024048,
+   "tpr_all": 0.24,
+   "tpr_poisoned": 0.30158730158730157,
+   "n_all": 800,
+   "n_poisoned": 252
+  },
+  "perplexity": {
+   "threshold": 2.989289670591395,
+   "auroc": 0.5853682364729459,
+   "tpr_all": 0.04625,
+   "tpr_poisoned": 0.0873015873015873,
+   "n_all": 800,
+   "n_poisoned": 252
+  },
+  "binli": {
+   "threshold": 0.9878979261964559,
+   "auroc": 0.9417159318637275,
+   "tpr_all": 0.685,
+   "tpr_poisoned": 0.6746031746031746,
+   "n_all": 800,
+   "n_poisoned": 252
+  },
+  "excess": {
+   "threshold": 0.010257219833840498,
+   "auroc": 0.9623822645290581,
+   "tpr_all": 0.87375,
+   "tpr_poisoned": 0.9404761904761905,
+   "n_all": 800,
+   "n_poisoned": 252
+  }
+ }
+}

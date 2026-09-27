@@ -1,0 +1,108 @@
+{
+ "what": "Within-template control for the RQ3 granularity claim. On SCP the injected-span length and the template are nearly collinear (scp_z injects 2-6 words, scp_p 7-14, scp_i 94-216), so the pooled bucket comparison cannot separate 'the fine cut resolves short payloads' from 'the fine cut suits one template'. Holding the template fixed and varying only length separates them.",
+ "source": "cpu-server:<server-workdir>/out/v3/granularity/scp_byfamily.json:grid.<policy>.stratified_tpr_by_family",
+ "families": {
+  "scp_z": {
+   "count:6/runs": {
+    "1-2": {
+     "n": 113,
+     "tpr": 0.8584070796460177
+    },
+    "3-4": {
+     "n": 136,
+     "tpr": 0.9411764705882353
+    },
+    "5-8": {
+     "n": 18,
+     "tpr": 0.9444444444444444
+    }
+   },
+   "width:2:cap16/runs": {
+    "1-2": {
+     "n": 113,
+     "tpr": 0.9469026548672567
+    },
+    "3-4": {
+     "n": 136,
+     "tpr": 0.9632352941176471
+    },
+    "5-8": {
+     "n": 18,
+     "tpr": 1.0
+    }
+   },
+   "multi[count:6+width:2:cap16]/runs": {
+    "1-2": {
+     "n": 113,
+     "tpr": 0.8938053097345132
+    },
+    "3-4": {
+     "n": 136,
+     "tpr": 0.9338235294117647
+    },
+    "5-8": {
+     "n": 18,
+     "tpr": 1.0
+    }
+   }
+  },
+  "scp_p": {
+   "count:6/runs": {
+    "5-8": {
+     "n": 220,
+     "tpr": 0.9727272727272728
+    },
+    "9-16": {
+     "n": 45,
+     "tpr": 0.9555555555555556
+    }
+   },
+   "width:2:cap16/runs": {
+    "5-8": {
+     "n": 220,
+     "tpr": 0.9818181818181818
+    },
+    "9-16": {
+     "n": 45,
+     "tpr": 1.0
+    }
+   },
+   "multi[count:6+width:2:cap16]/runs": {
+    "5-8": {
+     "n": 220,
+     "tpr": 0.9681818181818181
+    },
+    "9-16": {
+     "n": 45,
+     "tpr": 0.9777777777777777
+    }
+   }
+  },
+  "scp_i": {
+   "count:6/runs": {
+    "17+": {
+     "n": 266,
+     "tpr": 0.9511278195488722
+    }
+   },
+   "width:2:cap16/runs": {
+    "17+": {
+     "n": 266,
+     "tpr": 1.0
+    }
+   },
+   "multi[count:6+width:2:cap16]/runs": {
+    "17+": {
+     "n": 266,
+     "tpr": 0.9962406015037594
+    }
+   }
+  }
+ },
+ "verdict": {
+  "holds": true,
+  "key_evidence": "Within scp_z alone -- one template, one construction -- count:6/runs blocks 0.8584 on 1-2-word injections (n=113) and 0.9412 on 3-4-word ones (n=136), a 8.3pp swing driven by length only, while width:2:cap16/runs moves 0.9469 -> 0.9632 (1.6pp). The coarse cut is length-sensitive and the fine cut is nearly not, which is the mechanism the deployed union assumes.",
+  "long_end": "The both-extremes finding also survives: within scp_p, count:6/runs falls 0.9727 (5-8, n=220) -> 0.9556 (9-16, n=45) while width:2 rises to 1.000.",
+  "caveat": "scp_z's 5-8 bucket is n=18 and scp_p's 9-16 is n=45; the well-powered comparison is scp_z 1-2 vs 3-4 (n=113 vs 136). scp_i occupies a single bucket (17+), so it contributes no within-template length contrast."
+ }
+}

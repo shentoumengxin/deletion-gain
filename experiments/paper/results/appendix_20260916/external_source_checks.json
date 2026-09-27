@@ -1,0 +1,18 @@
+{
+  "checked_on": "2026-09-16",
+  "sources": [
+    {
+      "url": "https://arxiv.org/html/2608.01718v1",
+      "location": "Table 4 and Appendix E",
+      "claim": "LaCache unoptimized k=20 latency 108.5 ms",
+      "status": "primary text confirmed",
+      "qualification": "H100 TP=2; not measured on this paper CPU; optimized value68.6ms is a different configuration"
+    },
+    {
+      "url": "https://www.sunnypatel.net/semantic-cache-reliability-sunny-patel.pdf",
+      "location": "Section 3.3, PDF page8",
+      "claim": "BGE-large PAWS medians both above0.97, gap0.011",
+      "status": "primary text confirmed"
+    }
+  ]
+}

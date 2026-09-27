@@ -1,0 +1,25 @@
+{
+  "policy": "multi[count:4+width:2:cap16]/runs",
+  "encoder": "thenlper/gte-small",
+  "pooling": "mean",
+  "text_prefix": "",
+  "storage_dtype": "float16",
+  "sets": {
+    "lmp": {
+      "n_rows": 1299,
+      "n_attack": 800,
+      "n_attack_answer_changed": 283,
+      "max_abs_diff": {
+        "excess_span": 0.0002618115309109825,
+        "base_cos": 6.044277290295774e-05,
+        "unchanged_answer_adl": 0.0001220703125
+      },
+      "tolerance": 0.001,
+      "unchanged_answer_echo_mismatches": 0,
+      "published_dump_sha256": "6fa1f49c3469393e8ae9b8c655fc5be76d716d120a8a7a6334fdd4e8ab060aa0",
+      "seconds": 109.0,
+      "output_sha256": "c1067d51f289c4442bc207d54f7fa0e5cd3992b8ca40d0ffcfb103ff12fd410e",
+      "judged_sha256": "6e3d7240003c2266f928cbaba81db32fb8a549b3f4e49cc1b3596dae69d47907"
+    }
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "policy": "multi[count:6+width:2:cap16]/runs",
+  "storage_dtype": "float16",
+  "embedder": "sentence-transformers/all-MiniLM-L6-v2",
+  "budget": 0.05,
+  "holdout": 0.5,
+  "seed": 0,
+  "composition": {
+    "kept": {
+      "genuine": {
+        "cacheattack_cleaned_qa": 499
+      },
+      "attack": {
+        "cacheattack_gcg_f1": 499,
+        "cacheattack_gcg_f2": 299
+      }
+    },
+    "dropped_no_anchor": {
+      "genuine": 1,
+      "attack": 2
+    }
+  },
+  "n_genuine": 499,
+  "n_attack": 798,
+  "n_attack_flag_missing": 0,
+  "n_poisoned": 742,
+  "n_poisoned_strict": 0,
+  "excess_auroc": 0.979829332851166,
+  "excess_auroc_cos_matched": NaN,
+  "matched_support": 0,
+  "excess_block_rate": 0.9360902255639098,
+  "tpr_all_planted": 0.9360902255639098,
+  "tpr_poisoned": 0.931266846361186,
+  "tpr_poisoned_strict": NaN,
+  "fence_form": "flat",
+  "threshold_scoring": 0.01530509528432134,
+  "threshold_holdout": 0.01820717643100208,
+  "benign_block_rate_in_sample": 0.050100200400801605,
+  "achieved_benign_block_rate": 0.040145985401459854,
+  "n_fit_intents": 225,
+  "n_eval_intents": 274,
+  "cosine_auroc": 0.9854420620690002,
+  "cosine_block_rate": 0.9761904761904762,
+  "cosine_threshold": 0.900939012562459,
+  "families": {
+    "cacheattack_gcg_f1": {
+      "n_attack": 499,
+      "excess_auroc": 0.981771157545552,
+      "excess_auroc_cos_matched": NaN,
+      "matched_support": 0,
+      "excess_block_rate": 0.9338677354709419,
+      "n_poisoned": 462,
+      "tpr_poisoned": 0.9285714285714286,
+      "cosine_auroc": 0.9849839960482086,
+      "cosine_block_rate": 0.9739478957915831
+    },
+    "cacheattack_gcg_f2": {
+      "n_attack": 299,
+      "excess_auroc": 0.9765886287625418,
+      "excess_auroc_cos_matched": NaN,
+      "matched_support": 0,
+      "excess_block_rate": 0.939799331103679,
+      "n_poisoned": 280,
+      "tpr_poisoned": 0.9357142857142857,
+      "cosine_auroc": 0.9862065267659064,
+      "cosine_block_rate": 0.979933110367893
+    }
+  },
+  "timing": {
+    "embed_wall_s": 467.51634231908247,
+    "n_encode_calls_anchor": 1297,
+    "n_entries_profiled": 1297
+  },
+  "fence_scoring": {
+    "features": [
+      "intercept",
+      "cosine",
+      "log_words"
+    ],
+    "coefficients": [
+      0.01530509528432134,
+      0.0,
+      0.0
+    ],
+    "centers": [
+      0.9633230469899596,
+      2.209314920821953
+    ],
+    "budget": 0.05,
+    "direction": "entry",
+    "statistic": "excess_span",
+    "embedder": "sentence-transformers/all-MiniLM-L6-v2",
+    "policy": "multi[count:6+width:2:cap16]/runs",
+    "n_rows": 499,
+    "metadata": {
+      "cosine_span": [
+        0.7121588727815077,
+        0.9956868860716075
+      ],
+      "word_span": [
+        6,
+        17
+      ],
+      "distinct_words": 12,
+      "form": "flat"
+    }
+  },
+  "fence_holdout": {
+    "features": [
+      "intercept",
+      "cosine",
+      "log_words"
+    ],
+    "coefficients": [
+      0.01820717643100208,
+      0.0,
+      0.0
+    ],
+    "centers": [
+      0.9638771654839469,
+      2.205920856319537
+    ],
+    "budget": 0.05,
+    "direction": "entry",
+    "statistic": "excess_span",
+    "embedder": "sentence-transformers/all-MiniLM-L6-v2",
+    "policy": "multi[count:6+width:2:cap16]/runs",
+    "n_rows": 225,
+    "metadata": {
+      "cosine_span": [
+        0.7849238320327248,
+        0.9952566963858028
+      ],
+      "word_span": [
+        6,
+        17
+      ],
+      "distinct_words": 12,
+      "form": "flat"
+    }
+  }
+}

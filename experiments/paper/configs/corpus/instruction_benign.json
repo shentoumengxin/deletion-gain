@@ -1,0 +1,17 @@
+{
+  "name": "instruction-benign-20260909",
+  "seed": 20260909,
+  "n_intents": 1000,
+  "embedding_model": "intfloat/e5-small-v2",
+  "cache_threshold": 0.9,
+  "bootstrap_iterations": 2000,
+  "fpr_budget": 0.05,
+  "calibration_fraction": 0.5,
+  "cosine_bin_width": 0.01,
+  "word_bin_width": 4.0,
+  "min_bin_intents": 20,
+  "policies": ["multi[count:4+width:2:cap16]/runs", "multi[count:6+width:2:cap16]/runs"],
+  "pooling": "cls",
+  "text_prefix": "",
+  "storage_dtype": "float16"
+}

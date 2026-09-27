@@ -1,0 +1,156 @@
+{
+  "policy": "multi[count:4+width:2:cap16]/runs",
+  "storage_dtype": "float16",
+  "embedder": "thenlper/gte-small",
+  "budget": 0.05,
+  "holdout": 0.5,
+  "seed": 0,
+  "composition": {
+    "kept": {
+      "genuine": {
+        "human_comqa": 499
+      },
+      "attack": {
+        "ndss_matched_compress_append": 267,
+        "ndss_matched_blend": 267,
+        "ndss_matched_fuse": 266
+      }
+    },
+    "dropped_no_anchor": {
+      "genuine": 1,
+      "attack": 0
+    }
+  },
+  "n_genuine": 499,
+  "n_attack": 800,
+  "n_attack_flag_missing": 0,
+  "n_poisoned": 252,
+  "n_poisoned_strict": 189,
+  "excess_auroc": 0.9529709418837675,
+  "excess_auroc_cos_matched": 0.9027008346447255,
+  "matched_support": 346,
+  "excess_block_rate": 0.8425,
+  "tpr_all_planted": 0.8425,
+  "tpr_poisoned": 0.9126984126984127,
+  "tpr_poisoned_strict": 0.9523809523809523,
+  "fence_form": "flat",
+  "threshold_scoring": 0.01637068888438932,
+  "threshold_holdout": 0.017725974972284196,
+  "benign_block_rate_in_sample": 0.050100200400801605,
+  "achieved_benign_block_rate": 0.03765690376569038,
+  "n_fit_intents": 260,
+  "n_eval_intents": 239,
+  "cosine_auroc": 0.8460696392785572,
+  "cosine_block_rate": 0.26625,
+  "cosine_threshold": 0.898496481597909,
+  "families": {
+    "ndss_matched_blend": {
+      "n_attack": 267,
+      "excess_auroc": 0.9704577694715273,
+      "excess_auroc_cos_matched": 0.9083017676767676,
+      "matched_support": 48,
+      "excess_block_rate": 0.8913857677902621,
+      "n_poisoned": 100,
+      "tpr_poisoned": 0.95,
+      "cosine_auroc": 0.859689416285755,
+      "cosine_block_rate": 0.2546816479400749
+    },
+    "ndss_matched_compress_append": {
+      "n_attack": 267,
+      "excess_auroc": 0.9869551837757913,
+      "excess_auroc_cos_matched": 0.9451331496786042,
+      "matched_support": 66,
+      "excess_block_rate": 0.951310861423221,
+      "n_poisoned": 104,
+      "tpr_poisoned": 0.9230769230769231,
+      "cosine_auroc": 0.9001673759504026,
+      "cosine_block_rate": 0.4044943820224719
+    },
+    "ndss_matched_fuse": {
+      "n_attack": 266,
+      "excess_auroc": 0.9013063721427818,
+      "excess_auroc_cos_matched": 0.8612875365705451,
+      "matched_support": 145,
+      "excess_block_rate": 0.6842105263157895,
+      "n_poisoned": 48,
+      "tpr_poisoned": 0.8125,
+      "cosine_auroc": 0.7780975484804195,
+      "cosine_block_rate": 0.13909774436090225
+    }
+  },
+  "timing": {
+    "embed_wall_s": 190.03823575843126,
+    "n_encode_calls_anchor": 1299,
+    "n_entries_profiled": 1299
+  },
+  "fence_scoring": {
+    "features": [
+      "intercept",
+      "cosine",
+      "log_words"
+    ],
+    "coefficients": [
+      0.01637068888438932,
+      0.0,
+      0.0
+    ],
+    "centers": [
+      0.9624627848375955,
+      1.962867986851695
+    ],
+    "budget": 0.05,
+    "direction": "entry",
+    "statistic": "excess_span",
+    "embedder": "thenlper/gte-small",
+    "policy": "multi[count:4+width:2:cap16]/runs",
+    "n_rows": 499,
+    "metadata": {
+      "cosine_span": [
+        0.8181837193288253,
+        0.9997343378970135
+      ],
+      "word_span": [
+        3,
+        14
+      ],
+      "distinct_words": 12,
+      "form": "flat"
+    }
+  },
+  "fence_holdout": {
+    "features": [
+      "intercept",
+      "cosine",
+      "log_words"
+    ],
+    "coefficients": [
+      0.017725974972284196,
+      0.0,
+      0.0
+    ],
+    "centers": [
+      0.9633844303179955,
+      1.9718632907348268
+    ],
+    "budget": 0.05,
+    "direction": "entry",
+    "statistic": "excess_span",
+    "embedder": "thenlper/gte-small",
+    "policy": "multi[count:4+width:2:cap16]/runs",
+    "n_rows": 260,
+    "metadata": {
+      "cosine_span": [
+        0.8181837193288253,
+        0.9997343378970135
+      ],
+      "word_span": [
+        3,
+        14
+      ],
+      "distinct_words": 12,
+      "form": "flat"
+    }
+  },
+  "pooling": "mean",
+  "text_prefix": ""
+}

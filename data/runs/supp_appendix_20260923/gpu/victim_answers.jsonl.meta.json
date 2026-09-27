@@ -1,0 +1,5 @@
+{
+  "n_prompts": 6086,
+  "wall_seconds": 209.37977260537446,
+  "model": "<gpu-workdir>/models/Qwen3-8B"
+}

@@ -1,0 +1,8 @@
+{
+  "existing_holdout_summary": "experiments/paper/results/main_table_holdout_20260913/summary.json",
+  "recomputed_json_exactly_equal": true,
+  "existing_sha256": "50dc59d57b32f5fbc134f461b68bb4c32e2b82690479ce45dbbdbc4776601d9a",
+  "recomputed_sha256": "50dc59d57b32f5fbc134f461b68bb4c32e2b82690479ce45dbbdbc4776601d9a",
+  "new_model_calls": 0,
+  "remote_analysis_source_sha256": "0f62150ff629d02ae955b65d4208861677b75fa0e57c81ec6ecd9bff8a2da126"
+}

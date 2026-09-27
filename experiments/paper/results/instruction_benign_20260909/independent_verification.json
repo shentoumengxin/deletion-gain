@@ -1,0 +1,245 @@
+{
+  "n_scored_rows": 126548,
+  "n_unique_pairs": 63274,
+  "split_leakage": false,
+  "cells": {
+    "comqa|multi[count:4+width:2:cap16]/runs": {
+      "threshold": 0.006114191829593842,
+      "n_calibration": 254,
+      "verified_groups": {
+        "bare": {
+          "blocked": 13,
+          "hits": 244
+        },
+        "polite/entry_only": {
+          "blocked": 695,
+          "hits": 1456
+        },
+        "polite/query_only": {
+          "blocked": 81,
+          "hits": 1464
+        },
+        "polite/both_same": {
+          "blocked": 69,
+          "hits": 1464
+        },
+        "polite/both_paraphrase": {
+          "blocked": 167,
+          "hits": 1463
+        },
+        "polite/exact_core": {
+          "blocked": 891,
+          "hits": 1464
+        },
+        "constraint/entry_only": {
+          "blocked": 891,
+          "hits": 1460
+        },
+        "constraint/query_only": {
+          "blocked": 82,
+          "hits": 1463
+        },
+        "constraint/both_same": {
+          "blocked": 54,
+          "hits": 1464
+        },
+        "constraint/both_paraphrase": {
+          "blocked": 93,
+          "hits": 1464
+        },
+        "constraint/exact_core": {
+          "blocked": 1070,
+          "hits": 1464
+        }
+      },
+      "all_bare_paper_reproduction": {
+        "CAP": {
+          "n": 800,
+          "blocked": 716,
+          "rate": 0.895
+        },
+        "SCP": {
+          "n": 798,
+          "blocked": 780,
+          "rate": 0.9774436090225563
+        }
+      }
+    },
+    "comqa|multi[count:6+width:2:cap16]/runs": {
+      "threshold": 0.00796685662932987,
+      "n_calibration": 254,
+      "verified_groups": {
+        "bare": {
+          "blocked": 17,
+          "hits": 244
+        },
+        "polite/entry_only": {
+          "blocked": 638,
+          "hits": 1456
+        },
+        "polite/query_only": {
+          "blocked": 104,
+          "hits": 1464
+        },
+        "polite/both_same": {
+          "blocked": 65,
+          "hits": 1464
+        },
+        "polite/both_paraphrase": {
+          "blocked": 138,
+          "hits": 1463
+        },
+        "polite/exact_core": {
+          "blocked": 814,
+          "hits": 1464
+        },
+        "constraint/entry_only": {
+          "blocked": 861,
+          "hits": 1460
+        },
+        "constraint/query_only": {
+          "blocked": 96,
+          "hits": 1463
+        },
+        "constraint/both_same": {
+          "blocked": 54,
+          "hits": 1464
+        },
+        "constraint/both_paraphrase": {
+          "blocked": 87,
+          "hits": 1464
+        },
+        "constraint/exact_core": {
+          "blocked": 1028,
+          "hits": 1464
+        }
+      },
+      "all_bare_paper_reproduction": {
+        "CAP": {
+          "n": 800,
+          "blocked": 699,
+          "rate": 0.87375
+        },
+        "SCP": {
+          "n": 798,
+          "blocked": 768,
+          "rate": 0.9624060150375939
+        }
+      }
+    },
+    "nq|multi[count:4+width:2:cap16]/runs": {
+      "threshold": 0.0022688164079849695,
+      "n_calibration": 262,
+      "verified_groups": {
+        "bare": {
+          "blocked": 14,
+          "hits": 237
+        },
+        "polite/entry_only": {
+          "blocked": 1030,
+          "hits": 1422
+        },
+        "polite/query_only": {
+          "blocked": 58,
+          "hits": 1422
+        },
+        "polite/both_same": {
+          "blocked": 284,
+          "hits": 1422
+        },
+        "polite/both_paraphrase": {
+          "blocked": 474,
+          "hits": 1422
+        },
+        "polite/exact_core": {
+          "blocked": 1341,
+          "hits": 1422
+        },
+        "constraint/entry_only": {
+          "blocked": 1161,
+          "hits": 1422
+        },
+        "constraint/query_only": {
+          "blocked": 69,
+          "hits": 1422
+        },
+        "constraint/both_same": {
+          "blocked": 128,
+          "hits": 1422
+        },
+        "constraint/both_paraphrase": {
+          "blocked": 348,
+          "hits": 1422
+        },
+        "constraint/exact_core": {
+          "blocked": 1359,
+          "hits": 1422
+        }
+      },
+      "all_bare_paper_reproduction": {
+        "KCA": {
+          "n": 798,
+          "blocked": 773,
+          "rate": 0.968671679197995
+        }
+      }
+    },
+    "nq|multi[count:6+width:2:cap16]/runs": {
+      "threshold": 0.0051744613727116116,
+      "n_calibration": 262,
+      "verified_groups": {
+        "bare": {
+          "blocked": 9,
+          "hits": 237
+        },
+        "polite/entry_only": {
+          "blocked": 789,
+          "hits": 1422
+        },
+        "polite/query_only": {
+          "blocked": 37,
+          "hits": 1422
+        },
+        "polite/both_same": {
+          "blocked": 140,
+          "hits": 1422
+        },
+        "polite/both_paraphrase": {
+          "blocked": 285,
+          "hits": 1422
+        },
+        "polite/exact_core": {
+          "blocked": 1066,
+          "hits": 1422
+        },
+        "constraint/entry_only": {
+          "blocked": 963,
+          "hits": 1422
+        },
+        "constraint/query_only": {
+          "blocked": 45,
+          "hits": 1422
+        },
+        "constraint/both_same": {
+          "blocked": 42,
+          "hits": 1422
+        },
+        "constraint/both_paraphrase": {
+          "blocked": 189,
+          "hits": 1422
+        },
+        "constraint/exact_core": {
+          "blocked": 1176,
+          "hits": 1422
+        }
+      },
+      "all_bare_paper_reproduction": {
+        "KCA": {
+          "n": 798,
+          "blocked": 751,
+          "rate": 0.9411027568922306
+        }
+      }
+    }
+  }
+}

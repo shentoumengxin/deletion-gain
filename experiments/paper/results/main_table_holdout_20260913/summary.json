@@ -1,0 +1,784 @@
+{
+  "schema_version": 1,
+  "protocol": {
+    "budget": 0.05,
+    "holdout": 0.5,
+    "seeds": [
+      0,
+      199
+    ],
+    "n_splits": 200,
+    "split_unit": "intent_id",
+    "split_function": "sha256(seed:intent_id), first 8 bytes < 0.5",
+    "fit_population": "benign calibration intents only",
+    "evaluation_population": "benign and attack rows from held-out intents only",
+    "aggregation": "arithmetic mean of per-split rates; overlapping splits are not independent trials",
+    "success_labels": "frozen poisoned flags used by the original main table; no answer re-judging",
+    "retrieval_conditioning": "none; candidate-pair detection, not end-to-end ASR",
+    "policy": "multi[count:4+width:2:cap16]/runs",
+    "answer_rule": "either",
+    "echo_min": 1,
+    "storage_dtype": "float16",
+    "model_calls": 0
+  },
+  "sets": {
+    "CAP": {
+      "benign_corpus": "ComQA",
+      "n_benign": 499,
+      "n_attack": 800,
+      "n_success": 252,
+      "n_benign_intents": 499,
+      "n_attack_intents": 191,
+      "split_counts": {
+        "calibration_benign": {
+          "mean": 250.8,
+          "sd_across_splits": 11.95449706177554,
+          "min": 220.0,
+          "max": 281.0
+        },
+        "test_benign": {
+          "mean": 248.2,
+          "sd_across_splits": 11.95449706177554,
+          "min": 218.0,
+          "max": 279.0
+        },
+        "test_attack": {
+          "mean": 396.295,
+          "sd_across_splits": 35.39686391475946,
+          "min": 307.0,
+          "max": 473.0
+        },
+        "test_success": {
+          "mean": 124.705,
+          "sd_across_splits": 14.445344405724635,
+          "min": 83.0,
+          "max": 161.0
+        }
+      },
+      "full_cohort_parity": {
+        "Cosine": {
+          "fpr": 0.050100200400801605,
+          "br_all": 0.24,
+          "br_success": 0.30158730158730157
+        },
+        "Perplexity": {
+          "fpr": 0.050100200400801605,
+          "br_all": 0.04625,
+          "br_success": 0.0873015873015873
+        },
+        "Multi-model": {
+          "fpr": 0.050100200400801605,
+          "br_all": 0.3125,
+          "br_success": 0.32936507936507936
+        },
+        "Key salting": {
+          "fpr": 0.050100200400801605,
+          "br_all": 0.375,
+          "br_success": 0.4166666666666667
+        },
+        "LLM judge": {
+          "fpr": 0.050100200400801605,
+          "br_all": 0.7225,
+          "br_success": 0.7976190476190477
+        },
+        "Erase-and-check": {
+          "fpr": 0.050100200400801605,
+          "br_all": 0.3,
+          "br_success": 0.2976190476190476
+        },
+        "Ours": {
+          "fpr": 0.050100200400801605,
+          "br_all": 0.82,
+          "br_success": 0.9603174603174603
+        }
+      },
+      "methods": {
+        "Cosine": {
+          "fpr": {
+            "mean": 0.05302659593399236,
+            "sd_across_splits": 0.02157587965254222,
+            "min": 0.007722007722007722,
+            "max": 0.12601626016260162
+          },
+          "br_all": {
+            "mean": 0.2583636400626008,
+            "sd_across_splits": 0.054440485311646566,
+            "min": 0.13761467889908258,
+            "max": 0.42487046632124353
+          },
+          "br_success": {
+            "mean": 0.3165475261503457,
+            "sd_across_splits": 0.061233383070872366,
+            "min": 0.16806722689075632,
+            "max": 0.5462184873949579
+          }
+        },
+        "Perplexity": {
+          "fpr": {
+            "mean": 0.05455057711181853,
+            "sd_across_splits": 0.02035220566090589,
+            "min": 0.011904761904761904,
+            "max": 0.12903225806451613
+          },
+          "br_all": {
+            "mean": 0.049806299450996114,
+            "sd_across_splits": 0.016438601947969488,
+            "min": 0.011655011655011656,
+            "max": 0.10133333333333333
+          },
+          "br_success": {
+            "mean": 0.08888607748779269,
+            "sd_across_splits": 0.02755348407252155,
+            "min": 0.02654867256637168,
+            "max": 0.1885245901639344
+          }
+        },
+        "Multi-model": {
+          "fpr": {
+            "mean": 0.05174945369786824,
+            "sd_across_splits": 0.01813420707142468,
+            "min": 0.011583011583011582,
+            "max": 0.128
+          },
+          "br_all": {
+            "mean": 0.3103130119454001,
+            "sd_across_splits": 0.03769388478000197,
+            "min": 0.2,
+            "max": 0.4326424870466321
+          },
+          "br_success": {
+            "mean": 0.32723773995390204,
+            "sd_across_splits": 0.05336019840079457,
+            "min": 0.16666666666666666,
+            "max": 0.48739495798319327
+          }
+        },
+        "Key salting": {
+          "fpr": {
+            "mean": 0.0529206221987026,
+            "sd_across_splits": 0.0199830662958082,
+            "min": 0.007905138339920948,
+            "max": 0.13414634146341464
+          },
+          "br_all": {
+            "mean": 0.38629453507236294,
+            "sd_across_splits": 0.06870393009898677,
+            "min": 0.23394495412844038,
+            "max": 0.6424870466321243
+          },
+          "br_success": {
+            "mean": 0.4334014997993949,
+            "sd_across_splits": 0.07823896680076162,
+            "min": 0.2462686567164179,
+            "max": 0.7815126050420168
+          }
+        },
+        "LLM judge": {
+          "fpr": {
+            "mean": 0.04831043736485976,
+            "sd_across_splits": 0.020673374341347566,
+            "min": 0.0,
+            "max": 0.1306122448979592
+          },
+          "br_all": {
+            "mean": 0.6748334942573336,
+            "sd_across_splits": 0.11932594005200853,
+            "min": 0.0,
+            "max": 0.833810888252149
+          },
+          "br_success": {
+            "mean": 0.7417872268741212,
+            "sd_across_splits": 0.13448540345509266,
+            "min": 0.0,
+            "max": 0.9296875
+          }
+        },
+        "Erase-and-check": {
+          "fpr": {
+            "mean": 0.05451294322010027,
+            "sd_across_splits": 0.020803302661563744,
+            "min": 0.008264462809917356,
+            "max": 0.13654618473895583
+          },
+          "br_all": {
+            "mean": 0.31285385061284043,
+            "sd_across_splits": 0.06208981160435107,
+            "min": 0.20240963855421687,
+            "max": 0.5677083333333334
+          },
+          "br_success": {
+            "mean": 0.31936935283637313,
+            "sd_across_splits": 0.08620614083071201,
+            "min": 0.15037593984962405,
+            "max": 0.7105263157894737
+          }
+        },
+        "Ours": {
+          "fpr": {
+            "mean": 0.0534082753629622,
+            "sd_across_splits": 0.019411865341424986,
+            "min": 0.013157894736842105,
+            "max": 0.109375
+          },
+          "br_all": {
+            "mean": 0.8217029969264157,
+            "sd_across_splits": 0.018898994895168535,
+            "min": 0.7813333333333333,
+            "max": 0.8758620689655172
+          },
+          "br_success": {
+            "mean": 0.9602263503778707,
+            "sd_across_splits": 0.013654785118919344,
+            "min": 0.9150943396226415,
+            "max": 0.9918032786885246
+          }
+        },
+        "LaCache": {
+          "status": "unverified",
+          "reason": "Available summaries lack per-row answer-prefix scores needed to refit and evaluate common intent holdouts.",
+          "fpr": null,
+          "br_all": null,
+          "br_success": null
+        }
+      }
+    },
+    "SCP": {
+      "benign_corpus": "ComQA",
+      "n_benign": 499,
+      "n_attack": 798,
+      "n_success": 649,
+      "n_benign_intents": 499,
+      "n_attack_intents": 498,
+      "split_counts": {
+        "calibration_benign": {
+          "mean": 250.8,
+          "sd_across_splits": 11.95449706177554,
+          "min": 220.0,
+          "max": 281.0
+        },
+        "test_benign": {
+          "mean": 248.2,
+          "sd_across_splits": 11.95449706177554,
+          "min": 218.0,
+          "max": 279.0
+        },
+        "test_attack": {
+          "mean": 396.635,
+          "sd_across_splits": 19.02319045270798,
+          "min": 348.0,
+          "max": 447.0
+        },
+        "test_success": {
+          "mean": 322.0,
+          "sd_across_splits": 16.703891762101428,
+          "min": 277.0,
+          "max": 371.0
+        }
+      },
+      "full_cohort_parity": {
+        "Cosine": {
+          "fpr": 0.050100200400801605,
+          "br_all": 0.37218045112781956,
+          "br_success": 0.40215716486902925
+        },
+        "Perplexity": {
+          "fpr": 0.050100200400801605,
+          "br_all": 0.023809523809523808,
+          "br_success": 0.023112480739599383
+        },
+        "Multi-model": {
+          "fpr": 0.050100200400801605,
+          "br_all": 0.3609022556390977,
+          "br_success": 0.3898305084745763
+        },
+        "Key salting": {
+          "fpr": 0.050100200400801605,
+          "br_all": 0.6140350877192983,
+          "br_success": 0.6610169491525424
+        },
+        "LLM judge": {
+          "fpr": 0.04408817635270541,
+          "br_all": 0.6954887218045113,
+          "br_success": 0.7103235747303543
+        },
+        "Erase-and-check": {
+          "fpr": 0.050100200400801605,
+          "br_all": 0.45363408521303256,
+          "br_success": 0.514637904468413
+        },
+        "Ours": {
+          "fpr": 0.050100200400801605,
+          "br_all": 0.9586466165413534,
+          "br_success": 0.9676425269645609
+        }
+      },
+      "methods": {
+        "Cosine": {
+          "fpr": {
+            "mean": 0.05302659593399236,
+            "sd_across_splits": 0.02157587965254222,
+            "min": 0.007722007722007722,
+            "max": 0.12601626016260162
+          },
+          "br_all": {
+            "mean": 0.3931348345249863,
+            "sd_across_splits": 0.06653419900233365,
+            "min": 0.20673076923076922,
+            "max": 0.5707070707070707
+          },
+          "br_success": {
+            "mean": 0.42601298455819064,
+            "sd_across_splits": 0.07137123024418111,
+            "min": 0.21994134897360704,
+            "max": 0.6189024390243902
+          }
+        },
+        "Perplexity": {
+          "fpr": {
+            "mean": 0.05455057711181853,
+            "sd_across_splits": 0.02035220566090589,
+            "min": 0.011904761904761904,
+            "max": 0.12903225806451613
+          },
+          "br_all": {
+            "mean": 0.026539727099931618,
+            "sd_across_splits": 0.00944915955613306,
+            "min": 0.007194244604316547,
+            "max": 0.0707070707070707
+          },
+          "br_success": {
+            "mean": 0.024925552523477106,
+            "sd_across_splits": 0.009593338627058457,
+            "min": 0.0030581039755351682,
+            "max": 0.0641025641025641
+          }
+        },
+        "Multi-model": {
+          "fpr": {
+            "mean": 0.05174945369786824,
+            "sd_across_splits": 0.01813420707142468,
+            "min": 0.011583011583011582,
+            "max": 0.128
+          },
+          "br_all": {
+            "mean": 0.35429484721645665,
+            "sd_across_splits": 0.056755857084807945,
+            "min": 0.20192307692307693,
+            "max": 0.5939086294416244
+          },
+          "br_success": {
+            "mean": 0.3824700769093313,
+            "sd_across_splits": 0.06048846231019291,
+            "min": 0.21994134897360704,
+            "max": 0.6389776357827476
+          }
+        },
+        "Key salting": {
+          "fpr": {
+            "mean": 0.0529206221987026,
+            "sd_across_splits": 0.0199830662958082,
+            "min": 0.007905138339920948,
+            "max": 0.13414634146341464
+          },
+          "br_all": {
+            "mean": 0.623862328029665,
+            "sd_across_splits": 0.057846271461713616,
+            "min": 0.5104166666666666,
+            "max": 0.8409090909090909
+          },
+          "br_success": {
+            "mean": 0.6695009308048775,
+            "sd_across_splits": 0.05374914401848861,
+            "min": 0.5579937304075235,
+            "max": 0.8658536585365854
+          }
+        },
+        "LLM judge": {
+          "fpr": {
+            "mean": 0.04851925567434342,
+            "sd_across_splits": 0.020510921127305355,
+            "min": 0.0,
+            "max": 0.1076923076923077
+          },
+          "br_all": {
+            "mean": 0.6941141599986248,
+            "sd_across_splits": 0.12364596729605051,
+            "min": 0.0,
+            "max": 0.8471849865951743
+          },
+          "br_success": {
+            "mean": 0.7116556732232836,
+            "sd_across_splits": 0.12082457216294935,
+            "min": 0.0,
+            "max": 0.8551136363636364
+          }
+        },
+        "Erase-and-check": {
+          "fpr": {
+            "mean": 0.05451294322010027,
+            "sd_across_splits": 0.020803302661563744,
+            "min": 0.008264462809917356,
+            "max": 0.13654618473895583
+          },
+          "br_all": {
+            "mean": 0.46069417797142015,
+            "sd_across_splits": 0.04244307195120998,
+            "min": 0.328125,
+            "max": 0.6401985111662531
+          },
+          "br_success": {
+            "mean": 0.5229271728032223,
+            "sd_across_splits": 0.04897887356908384,
+            "min": 0.37662337662337664,
+            "max": 0.7300613496932515
+          }
+        },
+        "Ours": {
+          "fpr": {
+            "mean": 0.0534082753629622,
+            "sd_across_splits": 0.019411865341424986,
+            "min": 0.013157894736842105,
+            "max": 0.109375
+          },
+          "br_all": {
+            "mean": 0.9581509529850107,
+            "sd_across_splits": 0.008325515402206872,
+            "min": 0.936,
+            "max": 0.9827160493827161
+          },
+          "br_success": {
+            "mean": 0.9667257221944118,
+            "sd_across_splits": 0.007623001277166682,
+            "min": 0.9466666666666667,
+            "max": 0.9876160990712074
+          }
+        },
+        "LaCache": {
+          "status": "unverified",
+          "reason": "Available summaries lack per-row answer-prefix scores needed to refit and evaluate common intent holdouts.",
+          "fpr": null,
+          "br_all": null,
+          "br_success": null
+        }
+      }
+    },
+    "KCA": {
+      "benign_corpus": "NQ",
+      "n_benign": 499,
+      "n_attack": 798,
+      "n_success": 742,
+      "n_benign_intents": 499,
+      "n_attack_intents": 499,
+      "split_counts": {
+        "calibration_benign": {
+          "mean": 250.47,
+          "sd_across_splits": 11.82028341453791,
+          "min": 223.0,
+          "max": 284.0
+        },
+        "test_benign": {
+          "mean": 248.53,
+          "sd_across_splits": 11.82028341453791,
+          "min": 215.0,
+          "max": 276.0
+        },
+        "test_attack": {
+          "mean": 397.575,
+          "sd_across_splits": 19.91543057531019,
+          "min": 341.0,
+          "max": 444.0
+        },
+        "test_success": {
+          "mean": 370.02,
+          "sd_across_splits": 19.3625824723873,
+          "min": 320.0,
+          "max": 414.0
+        }
+      },
+      "full_cohort_parity": {
+        "Cosine": {
+          "fpr": 0.050100200400801605,
+          "br_all": 0.9548872180451128,
+          "br_success": 0.9555256064690026
+        },
+        "Perplexity": {
+          "fpr": 0.050100200400801605,
+          "br_all": 0.424812030075188,
+          "br_success": 0.4191374663072776
+        },
+        "Multi-model": {
+          "fpr": 0.050100200400801605,
+          "br_all": 0.9862155388471178,
+          "br_success": 0.9865229110512129
+        },
+        "Key salting": {
+          "fpr": 0.050100200400801605,
+          "br_all": 1.0,
+          "br_success": 1.0
+        },
+        "LLM judge": {
+          "fpr": 0.04609218436873747,
+          "br_all": 1.0,
+          "br_success": 1.0
+        },
+        "Erase-and-check": {
+          "fpr": 0.050100200400801605,
+          "br_all": 1.0,
+          "br_success": 1.0
+        },
+        "Ours": {
+          "fpr": 0.050100200400801605,
+          "br_all": 0.9824561403508771,
+          "br_success": 0.9838274932614556
+        }
+      },
+      "methods": {
+        "Cosine": {
+          "fpr": {
+            "mean": 0.05226755251385802,
+            "sd_across_splits": 0.01965604302579337,
+            "min": 0.008333333333333333,
+            "max": 0.11877394636015326
+          },
+          "br_all": {
+            "mean": 0.9579108876117809,
+            "sd_across_splits": 0.015474126503735563,
+            "min": 0.9097560975609756,
+            "max": 1.0
+          },
+          "br_success": {
+            "mean": 0.9598141238493423,
+            "sd_across_splits": 0.015360442325744864,
+            "min": 0.9157894736842105,
+            "max": 1.0
+          }
+        },
+        "Perplexity": {
+          "fpr": {
+            "mean": 0.05500373193503224,
+            "sd_across_splits": 0.02152368825026141,
+            "min": 0.01282051282051282,
+            "max": 0.1111111111111111
+          },
+          "br_all": {
+            "mean": 0.4310944199226226,
+            "sd_across_splits": 0.04922697000571232,
+            "min": 0.2978723404255319,
+            "max": 0.5769230769230769
+          },
+          "br_success": {
+            "mean": 0.42520291835010554,
+            "sd_across_splits": 0.05091484677568064,
+            "min": 0.28774928774928776,
+            "max": 0.574585635359116
+          }
+        },
+        "Multi-model": {
+          "fpr": {
+            "mean": 0.052903702561780494,
+            "sd_across_splits": 0.020835224526861273,
+            "min": 0.011857707509881422,
+            "max": 0.11016949152542373
+          },
+          "br_all": {
+            "mean": 0.9826439793361266,
+            "sd_across_splits": 0.00995295071276386,
+            "min": 0.945273631840796,
+            "max": 1.0
+          },
+          "br_success": {
+            "mean": 0.9827128762392401,
+            "sd_across_splits": 0.010590320398463915,
+            "min": 0.9438502673796791,
+            "max": 1.0
+          }
+        },
+        "Key salting": {
+          "fpr": {
+            "mean": 0.05464383385264703,
+            "sd_across_splits": 0.019508503889746,
+            "min": 0.011764705882352941,
+            "max": 0.12704918032786885
+          },
+          "br_all": {
+            "mean": 0.9999876847290641,
+            "sd_across_splits": 0.0001737282756116525,
+            "min": 0.9975369458128078,
+            "max": 1.0
+          },
+          "br_success": {
+            "mean": 0.99998687664042,
+            "sd_across_splits": 0.00018512776876201652,
+            "min": 0.9973753280839895,
+            "max": 1.0
+          }
+        },
+        "LLM judge": {
+          "fpr": {
+            "mean": 0.04417174586709166,
+            "sd_across_splits": 0.014892490937544377,
+            "min": 0.012987012987012988,
+            "max": 0.10087719298245613
+          },
+          "br_all": {
+            "mean": 1.0,
+            "sd_across_splits": 0.0,
+            "min": 1.0,
+            "max": 1.0
+          },
+          "br_success": {
+            "mean": 1.0,
+            "sd_across_splits": 0.0,
+            "min": 1.0,
+            "max": 1.0
+          }
+        },
+        "Erase-and-check": {
+          "fpr": {
+            "mean": 0.05316947801241755,
+            "sd_across_splits": 0.02108400792522772,
+            "min": 0.008130081300813009,
+            "max": 0.12653061224489795
+          },
+          "br_all": {
+            "mean": 1.0,
+            "sd_across_splits": 0.0,
+            "min": 1.0,
+            "max": 1.0
+          },
+          "br_success": {
+            "mean": 1.0,
+            "sd_across_splits": 0.0,
+            "min": 1.0,
+            "max": 1.0
+          }
+        },
+        "Ours": {
+          "fpr": {
+            "mean": 0.053927389220002925,
+            "sd_across_splits": 0.020222323667987763,
+            "min": 0.012345679012345678,
+            "max": 0.11618257261410789
+          },
+          "br_all": {
+            "mean": 0.9822439499927492,
+            "sd_across_splits": 0.005811883262202809,
+            "min": 0.9639175257731959,
+            "max": 0.9975124378109452
+          },
+          "br_success": {
+            "mean": 0.9837468522410984,
+            "sd_across_splits": 0.006118008741551383,
+            "min": 0.9643835616438357,
+            "max": 0.9973190348525469
+          }
+        },
+        "LaCache": {
+          "status": "unverified",
+          "reason": "Available summaries lack per-row answer-prefix scores needed to refit and evaluate common intent holdouts.",
+          "fpr": null,
+          "br_all": null,
+          "br_success": null
+        }
+      }
+    }
+  },
+  "sources": {
+    "code:experiments/paper/results/answer_check_20260909/main_table.json": {
+      "sha256": "d186effdadbc2afa48c2961384f603dc7dc4d8aa68895e51388f1e11c307b764",
+      "bytes": 78582
+    },
+    "data:runs/paper/perrow/ci_table1.json": {
+      "sha256": "2e4806d85bfab13a68ba2a47810bfb05eda93346d04023b744082b1968d9ac98",
+      "bytes": 23497
+    },
+    "data:runs/paper/perrow/answer_check_rows/e5-small-v2__lmp.jsonl": {
+      "sha256": "b00322eac6164708a8411a9f67f260e432972ed8c116e5888ed6b1a5688e864d",
+      "bytes": 381071
+    },
+    "data:runs/paper/granularity32/scores/cap.json": {
+      "sha256": "78265d196a7d2ebfabddd140d949105a842f43ad5711621d2c9ab89b7136f1fd",
+      "bytes": 1629653
+    },
+    "data:runs/paper/operating/lmp_baseline_scores.json": {
+      "sha256": "f861a852adbfc284dced93f9260e6ae658d525d979dcadc180676f415e55ce90",
+      "bytes": 78270
+    },
+    "data:runs/paper/perrow/multiview_cap_e5.json": {
+      "sha256": "9db9ff6dd1ba655771fe109983a4e6fe574131c89159ff6e7fcc294a93df417b",
+      "bytes": 292776
+    },
+    "data:runs/paper/perrow/salting_cap_e5.json": {
+      "sha256": "9798b19261f7feda475ab5cf5f6e7e09ae8f37cdadb4fee7f9fd3b71c06948e4",
+      "bytes": 836534
+    },
+    "data:runs/paper/perrow/judge_vote_cap.json": {
+      "sha256": "3da491214153665e519b9f71b658639e148e0132b19ea511c9540552c470c4ee",
+      "bytes": 236504
+    },
+    "data:runs/paper/perrow/eac_cap.json": {
+      "sha256": "c83bbfb6dd7b0c0a47512c7aa4d6cd7834ee75ca2429ac81d269f8d61e6508d7",
+      "bytes": 246574
+    },
+    "data:runs/paper/perrow/answer_check_rows/e5-small-v2__scp.jsonl": {
+      "sha256": "17b5f99600f31279fdd8d24c3733f544e467f6fbfa93d4413eddd9a78e5ee3e7",
+      "bytes": 367931
+    },
+    "data:runs/paper/granularity32/scores/scp.json": {
+      "sha256": "c9055de0f170cfd99e2c2b9e6acbc0da115bdddf0dfe7b052ee8870ab945d208",
+      "bytes": 1608550
+    },
+    "data:runs/paper/operating/scp_baseline_scores.json": {
+      "sha256": "f95a5e76bc2413b5d73e0829d6a41586cd108d4607a5e85b73e9e1a9a42cefa1",
+      "bytes": 78270
+    },
+    "data:runs/paper/perrow/multiview_scp_e5.json": {
+      "sha256": "55285c75cf7b0a05ed70449dac52da0c3d8668b1aea09f6357e07a175d4112e7",
+      "bytes": 279521
+    },
+    "data:runs/paper/perrow/salting_scp_e5.json": {
+      "sha256": "071a0188571ffb08949ae4aa4ad9a2ffbf0c02878463fb96abc9d08ce4866ab9",
+      "bytes": 822445
+    },
+    "data:runs/paper/perrow/judge_vote_scp.json": {
+      "sha256": "4c65e48a91459f8b1a896c1581e2c4d148efb29dec34c9fb7d21e4fc993a99f7",
+      "bytes": 223362
+    },
+    "data:runs/paper/perrow/eac_scp.json": {
+      "sha256": "8235c1cff81128872294d31c98ce0ec95899608e88f3f2ef077e703e74ab03dd",
+      "bytes": 233199
+    },
+    "data:runs/paper/perrow/answer_check_rows/e5-small-v2__kca.jsonl": {
+      "sha256": "3c636e2894ccb92c3229b8de966623f61c3d44b090291e5d85edc31dc9830392",
+      "bytes": 377649
+    },
+    "data:runs/paper/granularity32/scores/kca.json": {
+      "sha256": "c9c0a49c96f674b3a08465099d9912a1e49f6ca7d87877951c952245ffa9d3a0",
+      "bytes": 1629803
+    },
+    "data:runs/paper/operating/kca_baseline_scores.json": {
+      "sha256": "9f66e81b2a527f235e82ce9e73701d97538debb09c1a8d2bd9eea0896e3e4e68",
+      "bytes": 76027
+    },
+    "data:runs/paper/perrow/multiview_kca_e5.json": {
+      "sha256": "b8dbd693bf55cf35574866ec555d4b9849256e99cad012b80506f59d973efa6e",
+      "bytes": 290308
+    },
+    "data:runs/paper/perrow/salting_kca_e5.json": {
+      "sha256": "64fb80b15bddc8846d226617640629ac42db105e51d9d9799333a24852784b90",
+      "bytes": 832918
+    },
+    "data:runs/paper/perrow/judge_vote_kca.json": {
+      "sha256": "35deb6656ba9d80dc41a66ac2cae2debaf11a16526681c7277eb41b5118624d1",
+      "bytes": 233941
+    },
+    "data:runs/paper/perrow/eac_kca.json": {
+      "sha256": "29560c48b7d32402c9b0b75ccbcaca1e333f2968e1ff807a79788b1ba6ee200b",
+      "bytes": 240752
+    }
+  },
+  "source_code": {
+    "path": "experiments/paper/rq1_detection/main_table_holdout.py",
+    "sha256": "543a94e29e87beca38d809f7d8e267ede319413b79ed4822d182052a1bd83ca7"
+  }
+}

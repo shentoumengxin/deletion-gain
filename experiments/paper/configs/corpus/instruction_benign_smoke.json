@@ -1,0 +1,9 @@
+{
+  "name": "instruction-benign-smoke",
+  "seed": 20260909,
+  "n_intents": 24,
+  "embedding_model": "deterministic-feature-hash-smoke",
+  "cache_threshold": 0.1,
+  "bootstrap_iterations": 64,
+  "min_bin_intents": 2
+}

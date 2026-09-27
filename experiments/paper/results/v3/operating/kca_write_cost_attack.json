@@ -1,0 +1,101 @@
+{
+  "eval": "<server-workdir>/final500/eval/kca_eval.jsonl",
+  "policy": "multi[count:4+width:2:cap16]/runs",
+  "embedder": "intfloat/e5-small-v2",
+  "arm": "attack",
+  "n_entries": 250,
+  "dimension": 384,
+  "storage_dtype": "float16",
+  "bytes_per_vector": 768,
+  "words_per_entry": {
+    "mean": 41.228,
+    "median": 41.0,
+    "p95": 45.0,
+    "max": 47.0,
+    "min": 34.0,
+    "n": 250
+  },
+  "serving_dot_products_per_hit": {
+    "mean": 135.0,
+    "median": 135.0,
+    "p95": 135.0,
+    "max": 135.0,
+    "min": 135.0,
+    "n": 250
+  },
+  "insertion_encoder_forward_passes": {
+    "mean": 140.0,
+    "median": 140.0,
+    "p95": 140.0,
+    "max": 140.0,
+    "min": 140.0,
+    "n": 250
+  },
+  "insertion_wall_ms": {
+    "mean": 421.34814931079745,
+    "median": 430.8504518121481,
+    "p95": 489.078574697487,
+    "max": 520.3609629534185,
+    "min": 334.2221830971539,
+    "n": 250
+  },
+  "vectors_persisted_as_shipped": {
+    "mean": 140.0,
+    "median": 140.0,
+    "p95": 140.0,
+    "max": 140.0,
+    "min": 140.0,
+    "n": 250
+  },
+  "vectors_persisted_spans_only": {
+    "mean": 136.0,
+    "median": 136.0,
+    "p95": 136.0,
+    "max": 136.0,
+    "min": 136.0,
+    "n": 250
+  },
+  "kb_per_entry_as_shipped": {
+    "mean": 105.0,
+    "median": 105.0,
+    "p95": 105.0,
+    "max": 105.0,
+    "min": 105.0,
+    "n": 250
+  },
+  "kb_per_entry_spans_only": {
+    "mean": 102.0,
+    "median": 102.0,
+    "p95": 102.0,
+    "max": 102.0,
+    "min": 102.0,
+    "n": 250
+  },
+  "storage_inflation_as_shipped": {
+    "mean": 140.0,
+    "median": 140.0,
+    "p95": 140.0,
+    "max": 140.0,
+    "min": 140.0,
+    "n": 250
+  },
+  "note": "inflation is relative to an undefended cache, which stores one vector per entry, so the vector counts are themselves the inflation factors. 'as shipped' counts the one-segment deletion vectors the store writes but the served statistic never reads; 'spans only' is what a deployment that drops them would pay.",
+  "mb_per_10k_entries": {
+    "mean": {
+      "as_shipped": 1025.390625,
+      "spans_only": 996.09375
+    },
+    "median": {
+      "as_shipped": 1025.390625,
+      "spans_only": 996.09375
+    },
+    "p95": {
+      "as_shipped": 1025.390625,
+      "spans_only": 996.09375
+    },
+    "max": {
+      "as_shipped": 1025.390625,
+      "spans_only": 996.09375
+    }
+  }
+}

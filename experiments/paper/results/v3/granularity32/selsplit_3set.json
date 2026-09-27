@@ -1,0 +1,75 @@
+{
+ "sets": [
+  "CAP",
+  "KCA",
+  "SCP"
+ ],
+ "n_seeds_used": 400,
+ "n_cells_eligible": 24,
+ "cells_eligible": [
+  "count:3",
+  "count:3/runs",
+  "count:4",
+  "count:4/runs",
+  "count:6",
+  "count:6/runs",
+  "count:8",
+  "count:8/runs",
+  "count:12",
+  "count:12/runs",
+  "width:1:cap16",
+  "width:1:cap16/runs",
+  "multi[count:6+width:1:cap16]/runs",
+  "multi[count:6+width:2:cap16]/runs",
+  "multi[count:6+width:3:cap16]/runs",
+  "multi[count:3+width:2:cap16]/runs",
+  "multi[count:4+width:2:cap16]/runs",
+  "multi[count:8+width:2:cap16]/runs",
+  "multi[count:3+width:1:cap16]/runs",
+  "multi[count:3+width:3:cap16]/runs",
+  "multi[count:4+width:1:cap16]/runs",
+  "multi[count:4+width:3:cap16]/runs",
+  "multi[count:8+width:1:cap16]/runs",
+  "multi[count:8+width:3:cap16]/runs"
+ ],
+ "deployed": "multi[count:6+width:2:cap16]/runs",
+ "candidate": "multi[count:4+width:2:cap16]/runs",
+ "criterion": "worst-class block rate at the 5% benign fence, fence refit per half; ONE 50/50 split of the union of intent_ids per seed, shared by every set (CAP and SCP ride the same ComQA intents)",
+ "selected_vs_deployed": {
+  "win_rate": 0.24,
+  "mean_gap": -0.013790253623222486,
+  "median_gap": -0.008988396824245903,
+  "p05_gap": -0.06486996449352139,
+  "p95_gap": 0.027628775215954506
+ },
+ "candidate_vs_deployed": {
+  "win_rate": 0.65,
+  "mean_gap": 0.021689983152883077,
+  "median_gap": 0.015153931029204426,
+  "p05_gap": -0.027126039374803488,
+  "p95_gap": 0.08983681057632724,
+  "note": "the candidate is FIXED here, not selected, so there is no selection cost to pay -- this is the honest test of that one swap"
+ },
+ "optimism": {
+  "mean_select_half": 0.9054097749607074,
+  "mean_test_half": 0.8632935183429962,
+  "note": "select minus test is what the argmax over cells buys itself"
+ },
+ "chosen_counts": {
+  "multi[count:4+width:2:cap16]/runs": 189,
+  "multi[count:8+width:3:cap16]/runs": 58,
+  "multi[count:6+width:2:cap16]/runs": 47,
+  "multi[count:6+width:3:cap16]/runs": 38,
+  "multi[count:3+width:2:cap16]/runs": 28,
+  "multi[count:6+width:1:cap16]/runs": 9,
+  "width:1:cap16/runs": 8,
+  "count:6/runs": 8,
+  "multi[count:8+width:2:cap16]/runs": 5,
+  "count:8/runs": 4,
+  "count:12/runs": 3,
+  "count:4/runs": 1,
+  "width:1:cap16": 1,
+  "count:6": 1
+ },
+ "command": "<repo>/experiments/paper/analysis/rq3_selection_split.py --dump <tmp> --dump <tmp> --dump <tmp> --seeds 400 --out experiments/paper/results/v3/granularity32/selsplit_3set.json"
+}

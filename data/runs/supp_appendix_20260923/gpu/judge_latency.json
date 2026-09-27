@@ -1,0 +1,9 @@
+{
+  "gpu": "NVIDIA RTX 6000D",
+  "dtype": "bfloat16",
+  "batch": 1,
+  "n_timed": 190,
+  "ms_median": 46.63744429126382,
+  "ms_p95": 62.10060506127775,
+  "prompt_tokens_median": 371.0
+}

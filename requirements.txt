@@ -1,0 +1,2 @@
+# Compatibility entry point; select smaller extras from pyproject.toml when appropriate.
+-e .[gptcache,research,test]

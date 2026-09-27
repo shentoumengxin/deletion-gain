@@ -1,0 +1,386 @@
+{
+ "generated": "2026-08-27T15:19:15",
+ "victim_model": "Qwen/Qwen3-8B",
+ "judge_model": "deepseek-v4-flash",
+ "judge_provider": "deepseek (repo .env url/openai_key/model)",
+ "judge_concurrency": 12,
+ "judge_extra_body": {
+  "thinking": {
+   "type": "disabled"
+  }
+ },
+ "denominator_rule": "isr_judge/refusal_rate exclude judge-error rows; judge_errors counted separately. isr_strict is a mechanical check over rows that carry a literal (independent of judge).",
+ "sources": {
+  "benign": "out/v3/judged_benign.jsonl",
+  "scp": "out/v3/judged_scp.jsonl",
+  "kca": "out/v3/judged_kca.jsonl",
+  "lmp": "out/v3/judged_lmp_all.jsonl"
+ },
+ "benign_control": {
+  "source": "out/v3/judged_benign.jsonl",
+  "overall": {
+   "n": 499,
+   "n_judged": 499,
+   "judge_errors": 0,
+   "n_poisoned_judge": 2,
+   "n_refused": 0,
+   "n_complied_not_poisoned": 497,
+   "isr_judge": 0.004,
+   "refusal_rate": 0.0,
+   "n_strict_rows": 499,
+   "n_poisoned_strict": 0,
+   "isr_strict": 0.0
+  },
+  "by_family": {
+   "canonical": {
+    "n": 499,
+    "n_judged": 499,
+    "judge_errors": 0,
+    "n_poisoned_judge": 2,
+    "n_refused": 0,
+    "n_complied_not_poisoned": 497,
+    "isr_judge": 0.004,
+    "refusal_rate": 0.0,
+    "n_strict_rows": 499,
+    "n_poisoned_strict": 0,
+    "isr_strict": 0.0
+   }
+  }
+ },
+ "sets": {
+  "kca": {
+   "source": "out/v3/judged_kca.jsonl",
+   "full": {
+    "overall": {
+     "n": 800,
+     "n_judged": 800,
+     "judge_errors": 0,
+     "n_poisoned_judge": 744,
+     "n_refused": 48,
+     "n_complied_not_poisoned": 8,
+     "isr_judge": 0.93,
+     "refusal_rate": 0.06,
+     "n_strict_rows": 0,
+     "n_poisoned_strict": null,
+     "isr_strict": null
+    },
+    "by_family": {
+     "kca_f1": {
+      "n": 500,
+      "n_judged": 500,
+      "judge_errors": 0,
+      "n_poisoned_judge": 463,
+      "n_refused": 32,
+      "n_complied_not_poisoned": 5,
+      "isr_judge": 0.926,
+      "refusal_rate": 0.064,
+      "n_strict_rows": 0,
+      "n_poisoned_strict": null,
+      "isr_strict": null
+     },
+     "kca_f2": {
+      "n": 300,
+      "n_judged": 300,
+      "judge_errors": 0,
+      "n_poisoned_judge": 281,
+      "n_refused": 16,
+      "n_complied_not_poisoned": 3,
+      "isr_judge": 0.9367,
+      "refusal_rate": 0.0533,
+      "n_strict_rows": 0,
+      "n_poisoned_strict": null,
+      "isr_strict": null
+     }
+    }
+   },
+   "restricted_800": {
+    "id_list": "kca_800.json",
+    "n_ids": 800,
+    "n_matched": 800,
+    "match_rule": "record_id OR any alt_id in the id list",
+    "overall": {
+     "n": 800,
+     "n_judged": 800,
+     "judge_errors": 0,
+     "n_poisoned_judge": 744,
+     "n_refused": 48,
+     "n_complied_not_poisoned": 8,
+     "isr_judge": 0.93,
+     "refusal_rate": 0.06,
+     "n_strict_rows": 0,
+     "n_poisoned_strict": null,
+     "isr_strict": null
+    },
+    "by_family": {
+     "kca_f1": {
+      "n": 500,
+      "n_judged": 500,
+      "judge_errors": 0,
+      "n_poisoned_judge": 463,
+      "n_refused": 32,
+      "n_complied_not_poisoned": 5,
+      "isr_judge": 0.926,
+      "refusal_rate": 0.064,
+      "n_strict_rows": 0,
+      "n_poisoned_strict": null,
+      "isr_strict": null
+     },
+     "kca_f2": {
+      "n": 300,
+      "n_judged": 300,
+      "judge_errors": 0,
+      "n_poisoned_judge": 281,
+      "n_refused": 16,
+      "n_complied_not_poisoned": 3,
+      "isr_judge": 0.9367,
+      "refusal_rate": 0.0533,
+      "n_strict_rows": 0,
+      "n_poisoned_strict": null,
+      "isr_strict": null
+     }
+    },
+    "note": "the number the paper uses"
+   }
+  },
+  "scp": {
+   "source": "out/v3/judged_scp.jsonl",
+   "full": {
+    "overall": {
+     "n": 800,
+     "n_judged": 800,
+     "judge_errors": 0,
+     "n_poisoned_judge": 650,
+     "n_refused": 0,
+     "n_complied_not_poisoned": 150,
+     "isr_judge": 0.8125,
+     "refusal_rate": 0.0,
+     "n_strict_rows": 800,
+     "n_poisoned_strict": 293,
+     "isr_strict": 0.3663
+    },
+    "by_family": {
+     "scp_i": {
+      "n": 267,
+      "n_judged": 267,
+      "judge_errors": 0,
+      "n_poisoned_judge": 245,
+      "n_refused": 0,
+      "n_complied_not_poisoned": 22,
+      "isr_judge": 0.9176,
+      "refusal_rate": 0.0,
+      "n_strict_rows": 267,
+      "n_poisoned_strict": 29,
+      "isr_strict": 0.1086
+     },
+     "scp_p": {
+      "n": 266,
+      "n_judged": 266,
+      "judge_errors": 0,
+      "n_poisoned_judge": 266,
+      "n_refused": 0,
+      "n_complied_not_poisoned": 0,
+      "isr_judge": 1.0,
+      "refusal_rate": 0.0,
+      "n_strict_rows": 266,
+      "n_poisoned_strict": 264,
+      "isr_strict": 0.9925
+     },
+     "scp_z": {
+      "n": 267,
+      "n_judged": 267,
+      "judge_errors": 0,
+      "n_poisoned_judge": 139,
+      "n_refused": 0,
+      "n_complied_not_poisoned": 128,
+      "isr_judge": 0.5206,
+      "refusal_rate": 0.0,
+      "n_strict_rows": 267,
+      "n_poisoned_strict": 0,
+      "isr_strict": 0.0
+     }
+    }
+   },
+   "restricted_800": {
+    "id_list": "scp_800.json",
+    "n_ids": 800,
+    "n_matched": 800,
+    "match_rule": "record_id OR any alt_id in the id list",
+    "overall": {
+     "n": 800,
+     "n_judged": 800,
+     "judge_errors": 0,
+     "n_poisoned_judge": 650,
+     "n_refused": 0,
+     "n_complied_not_poisoned": 150,
+     "isr_judge": 0.8125,
+     "refusal_rate": 0.0,
+     "n_strict_rows": 800,
+     "n_poisoned_strict": 293,
+     "isr_strict": 0.3663
+    },
+    "by_family": {
+     "scp_i": {
+      "n": 267,
+      "n_judged": 267,
+      "judge_errors": 0,
+      "n_poisoned_judge": 245,
+      "n_refused": 0,
+      "n_complied_not_poisoned": 22,
+      "isr_judge": 0.9176,
+      "refusal_rate": 0.0,
+      "n_strict_rows": 267,
+      "n_poisoned_strict": 29,
+      "isr_strict": 0.1086
+     },
+     "scp_p": {
+      "n": 266,
+      "n_judged": 266,
+      "judge_errors": 0,
+      "n_poisoned_judge": 266,
+      "n_refused": 0,
+      "n_complied_not_poisoned": 0,
+      "isr_judge": 1.0,
+      "refusal_rate": 0.0,
+      "n_strict_rows": 266,
+      "n_poisoned_strict": 264,
+      "isr_strict": 0.9925
+     },
+     "scp_z": {
+      "n": 267,
+      "n_judged": 267,
+      "judge_errors": 0,
+      "n_poisoned_judge": 139,
+      "n_refused": 0,
+      "n_complied_not_poisoned": 128,
+      "isr_judge": 0.5206,
+      "refusal_rate": 0.0,
+      "n_strict_rows": 267,
+      "n_poisoned_strict": 0,
+      "isr_strict": 0.0
+     }
+    },
+    "note": "the number the paper uses"
+   }
+  },
+  "lmp": {
+   "source": "out/v3/judged_lmp_all.jsonl",
+   "full": {
+    "overall": {
+     "n": 2175,
+     "n_judged": 2175,
+     "judge_errors": 0,
+     "n_poisoned_judge": 656,
+     "n_refused": 22,
+     "n_complied_not_poisoned": 1497,
+     "isr_judge": 0.3016,
+     "refusal_rate": 0.0101,
+     "n_strict_rows": 2175,
+     "n_poisoned_strict": 499,
+     "isr_strict": 0.2294
+    },
+    "by_family": {
+     "blend": {
+      "n": 705,
+      "n_judged": 705,
+      "judge_errors": 0,
+      "n_poisoned_judge": 248,
+      "n_refused": 0,
+      "n_complied_not_poisoned": 457,
+      "isr_judge": 0.3518,
+      "refusal_rate": 0.0,
+      "n_strict_rows": 705,
+      "n_poisoned_strict": 177,
+      "isr_strict": 0.2511
+     },
+     "compress_append": {
+      "n": 831,
+      "n_judged": 831,
+      "judge_errors": 0,
+      "n_poisoned_judge": 310,
+      "n_refused": 22,
+      "n_complied_not_poisoned": 499,
+      "isr_judge": 0.373,
+      "refusal_rate": 0.0265,
+      "n_strict_rows": 831,
+      "n_poisoned_strict": 271,
+      "isr_strict": 0.3261
+     },
+     "fuse": {
+      "n": 639,
+      "n_judged": 639,
+      "judge_errors": 0,
+      "n_poisoned_judge": 98,
+      "n_refused": 0,
+      "n_complied_not_poisoned": 541,
+      "isr_judge": 0.1534,
+      "refusal_rate": 0.0,
+      "n_strict_rows": 639,
+      "n_poisoned_strict": 51,
+      "isr_strict": 0.0798
+     }
+    }
+   },
+   "restricted_800": {
+    "id_list": "lmp_800.json",
+    "n_ids": 800,
+    "n_matched": 800,
+    "match_rule": "record_id OR any alt_id in the id list",
+    "overall": {
+     "n": 800,
+     "n_judged": 800,
+     "judge_errors": 0,
+     "n_poisoned_judge": 252,
+     "n_refused": 6,
+     "n_complied_not_poisoned": 542,
+     "isr_judge": 0.315,
+     "refusal_rate": 0.0075,
+     "n_strict_rows": 800,
+     "n_poisoned_strict": 189,
+     "isr_strict": 0.2362
+    },
+    "by_family": {
+     "blend": {
+      "n": 267,
+      "n_judged": 267,
+      "judge_errors": 0,
+      "n_poisoned_judge": 100,
+      "n_refused": 0,
+      "n_complied_not_poisoned": 167,
+      "isr_judge": 0.3745,
+      "refusal_rate": 0.0,
+      "n_strict_rows": 267,
+      "n_poisoned_strict": 70,
+      "isr_strict": 0.2622
+     },
+     "compress_append": {
+      "n": 267,
+      "n_judged": 267,
+      "judge_errors": 0,
+      "n_poisoned_judge": 104,
+      "n_refused": 6,
+      "n_complied_not_poisoned": 157,
+      "isr_judge": 0.3895,
+      "refusal_rate": 0.0225,
+      "n_strict_rows": 267,
+      "n_poisoned_strict": 90,
+      "isr_strict": 0.3371
+     },
+     "fuse": {
+      "n": 266,
+      "n_judged": 266,
+      "judge_errors": 0,
+      "n_poisoned_judge": 48,
+      "n_refused": 0,
+      "n_complied_not_poisoned": 218,
+      "isr_judge": 0.1805,
+      "refusal_rate": 0.0,
+      "n_strict_rows": 266,
+      "n_poisoned_strict": 29,
+      "isr_strict": 0.109
+     }
+    },
+    "note": "the number the paper uses"
+   }
+  }
+ }
+}

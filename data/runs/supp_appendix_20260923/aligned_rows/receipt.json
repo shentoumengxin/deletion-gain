@@ -1,0 +1,37 @@
+{
+  "policy": "multi[count:4+width:2:cap16]/runs",
+  "encoder": "intfloat/e5-small-v2",
+  "storage_dtype": "float16",
+  "sets": {
+    "lmp": {
+      "n_rows": 1299,
+      "n_attack": 800,
+      "n_attack_answer_changed": 283,
+      "max_abs_diff": {
+        "excess_span": 0.0,
+        "base_cos": 0.0,
+        "unchanged_answer_adl": 0.0
+      },
+      "unchanged_answer_echo_mismatches": 0,
+      "published_dump_sha256": "b00322eac6164708a8411a9f67f260e432972ed8c116e5888ed6b1a5688e864d",
+      "seconds": 45.0,
+      "output_sha256": "48843ef4d868156b64a2557d74a714dcddf9d068b9982b4afb2d5c78cc309562",
+      "judged_sha256": "6e3d7240003c2266f928cbaba81db32fb8a549b3f4e49cc1b3596dae69d47907"
+    },
+    "scp": {
+      "n_rows": 1297,
+      "n_attack": 798,
+      "n_attack_answer_changed": 237,
+      "max_abs_diff": {
+        "excess_span": 0.0,
+        "base_cos": 0.0,
+        "unchanged_answer_adl": 0.0
+      },
+      "unchanged_answer_echo_mismatches": 0,
+      "published_dump_sha256": "17b5f99600f31279fdd8d24c3733f544e467f6fbfa93d4413eddd9a78e5ee3e7",
+      "seconds": 467.3,
+      "output_sha256": "b22b79dc356d476bdfa89eaa3c68f095260df0677334a791772d5ba693a30a21",
+      "judged_sha256": "62ca0a3ab8b3269a34f4ac5fc0a91d58093f64e7d39d229cc135865060bad5e3"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "n_benign": 499,
+  "n_attack": 798,
+  "composition": {
+    "kept": {
+      "genuine": {
+        "cacheattack_cleaned_qa": 499
+      },
+      "attack": {
+        "cacheattack_gcg_f1": 499,
+        "cacheattack_gcg_f2": 299
+      }
+    },
+    "dropped_no_anchor": {
+      "genuine": 1,
+      "attack": 2
+    }
+  },
+  "incoming_query": "same independently validated NQ legal paraphrase as main table",
+  "attack_answer": "frozen Qwen response that received the saved injection verdict",
+  "benign_answer": "same frozen answer used for main-table benign calibration",
+  "victim_calls": 0,
+  "judge_calls": 0,
+  "sources": {
+    "datasets/final500/eval/kca_eval.jsonl": "9671984c4f35e2c627ad641547200dec5dc89af24593dfa87e3b37e5cb528803",
+    "runs/answer_check_20260909/cells/e5-small-v2__kca.json": "20e9af2741026591d339f31ef63e7e10b2cf02b10e4ed68f202a6d486be5e60a",
+    "runs/answer_check_20260909/asr/asr_flat.jsonl": "a954a98bed3bbe79428de1878cb0fdb75acaf434b5882d650366178a8d761671"
+  },
+  "inputs": {
+    "answers.jsonl": "b1ab94c99ba9d2a87784d25a27d3b89fa4805761ab90fb99cd6a7ce15bc35365",
+    "eval.jsonl": "9671984c4f35e2c627ad641547200dec5dc89af24593dfa87e3b37e5cb528803",
+    "identities.jsonl": "b12f658816a3f6d6cf31ead296a2e8ad7a65baa9da04d46830c6cecea0131874",
+    "flags.jsonl": "dbb99c31d5e24b75ba78764de02f9b0991dcc3c8139c86eb57c2a3c13d6630fb"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "model": "deepseek-v4-flash",
+  "prompt": "poisoning",
+  "votes": 10,
+  "temperature": 1.0,
+  "rows": 3394,
+  "uncached_calls": 33940,
+  "ms_per_call_median": 620.0725776143372
+}

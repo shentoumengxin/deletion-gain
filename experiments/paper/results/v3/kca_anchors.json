@@ -1,0 +1,108 @@
+{
+  "task": "KCA Natural-Questions benign anchors + kca_eval.jsonl assembly",
+  "date": "2026-08-27",
+  "purpose": "The 500 NQ canonicals (analysis-ws/f1e5) had no 'legal' paraphrase, so calibrate.load_pair_rows had no anchor for any KCA row and dropped every one. This gives each NQ question a V-validated benign anchor and assembles the KCA detection input, so KCA scores entry-side against its OWN NQ benign arm (EVAL_REDESIGN 8.6 red line).",
+  "operator_P": {
+    "role": "generator",
+    "model": "deepseek-v4-flash",
+    "endpoint": "https://api.deepseek.com/v1",
+    "prompt_source": "sentry/research/pipeline/generate.py::APIParaphraser (the legal-api task), transcribed byte-for-byte",
+    "system": "You generate faithful semantic paraphrases.",
+    "user_template": "Generate {count} semantically equivalent rewrites of the input. Use diverse vocabulary and syntax. Do not answer the input. Preserve the complete information need and expected answer.\n\nINPUT:\n{text}\n\nReturn JSON only as an array of strings.",
+    "temperature": 0.8,
+    "count_main": 3,
+    "count_recovery": 6
+  },
+  "validator_V": {
+    "role": "validator",
+    "model": "deepseek-v4-pro",
+    "prompt_source": "experiments/paper/analysis/v_annotate.py::JUDGE_SYSTEM, transcribed byte-for-byte",
+    "system": "You are an equivalence annotator for a semantic-cache study.\n\nYou are given two questions, A and B. Decide whether B expresses the same request or question as A — same information need, same expected answer. Judge answer-reuse: would a correct answer to A also correctly answer B?\n\nRules:\n- Judge the information need, not surface wording. Different phrasing with the same expected answer is equivalent; similar wording with a different expected answer is non_equivalent.\n- If B is a fragment, truncated, or not a real question, label non_equivalent.\n- If you genuinely cannot decide, label unsure.\n\nRespond with ONLY a JSON object, no markdown fences:\n{\"label\": \"equivalent\" | \"non_equivalent\" | \"unsure\", \"reason\": \"<one sentence>\"}",
+    "temperature": 0.0,
+    "decision_rule": "single independent judge; ONLY an explicit 'equivalent' is accepted; 'non_equivalent', 'unsure', and any candidate whose V call defeated every retry are excluded (counted) and dropped, never trusted (the conservative rule from v_annotate.py)"
+  },
+  "pv_independence": "P=deepseek-v4-flash and V=deepseek-v4-pro are SEPARATE models with SEPARATE prompts (the paraphrase prompt vs JUDGE_SYSTEM) — the stated P/V-independence red line. The ComQA V panel was glm-5.2 + qwen3-8b + qwen3-32b; those GLM/local-vLLM endpoints are unreachable from cpu-server (no GPU, no GLM key), so V here is the one model independent of P that is reachable, run as a single independent judge with the identical JUDGE_SYSTEM prompt.",
+  "generation": {
+    "nq_canonicals": 500,
+    "candidates_generated_main": 1491,
+    "candidates_validated_main": 1457,
+    "candidates_v_excluded_main": 34,
+    "V_equivalent_main": 1447,
+    "V_non_equivalent_main": 10,
+    "V_uncertain_main": 0,
+    "V_acceptance_rate_over_validated_main": 0.9931365820178449,
+    "intents_with_anchor_after_main": 493,
+    "recovery_pass": {
+      "anchorless_before": 7,
+      "recovered": 6,
+      "still_anchorless": 1,
+      "recovered_intents": ["comqaf1-d31819852797", "comqaf1-8b573b438d3a", "comqaf1-64c9f2fa08d0", "comqaf1-8003984dda86", "comqaf1-2b816b85088d", "comqaf1-e20778999718"],
+      "method": "same P and V, count=6 with a fresh seed (new P cache draws) plus a retry of V-excluded candidates"
+    },
+    "intents_with_anchor_final": 499,
+    "intents_without_anchor_final": 1,
+    "anchorless_intent": {
+      "intent_id": "comqaf1-5d51296acec1",
+      "question": "make it or break it who goes to the olympics",
+      "reason": "garbled/ambiguous source string ('Make It or Break It' TV show spliced onto 'who goes to the olympics'); V rejects every paraphrase as non_equivalent because each resolves the ambiguity and changes the expected answer. Legitimate P/V outcome, not a pipeline gap."
+    },
+    "legal_records_written": 499,
+    "output": "<server-workdir>/analysis-ws/f1e5/datasets/nq_legal.jsonl",
+    "stats_file": "<server-workdir>/analysis-ws/f1e5/datasets/nq_legal_stats.json",
+    "detail_file": "<server-workdir>/analysis-ws/f1e5/datasets/nq_legal_detail.jsonl"
+  },
+  "kca_eval": {
+    "path": "<server-workdir>/final500/eval/kca_eval.jsonl",
+    "total_rows": 1799,
+    "roles": {"canonical": 500, "legal": 499, "gcg": 800},
+    "attack_generators": {"cacheattack_gcg_f1": 500, "cacheattack_gcg_f2": 300},
+    "f1_text_source": "gcg500/datasets/validated_records.jsonl by record_id",
+    "f2_text_source": "out/rq3/f2_records_merged.jsonl by line_index (from kca_800.json)",
+    "f2_sha256_verified": true,
+    "f2_sha_mismatches": 0,
+    "record_ids_match_kca_800": true,
+    "n_record_ids_in_kca_800": 800,
+    "f2_alt_ids_form": "kca-f2-NNNN (for JOIN with answer/poisoned_flags tables that key f2 on that form; kca_800.json and record_ids use gcg-f2-NNNN)"
+  },
+  "calibrate_load_proof": {
+    "command": "python -m sentry.cache.defense.calibrate --records <server-workdir>/final500/eval/kca_eval.jsonl --embedder intfloat/e5-small-v2 --attack-role gcg --policy \"multi[count:6+width:2:cap16]/runs\" --budget 0.05 --benign-generator cacheattack_cleaned_qa --out <server-workdir>/out/v3/kca_calibrate",
+    "log": "<server-home>/project-workdir/logs/kca_calibrate.log",
+    "entry_side_rows": 1297,
+    "genuine": {"cacheattack_cleaned_qa": 499, "dropped_no_anchor": 1},
+    "attack": {"cacheattack_gcg_f1": 499, "cacheattack_gcg_f2": 299, "dropped_no_anchor": 2},
+    "attack_rows_total": 800,
+    "attack_rows_with_anchor": 798,
+    "attack_rows_without_anchor": 2,
+    "attack_intents_with_anchor": 499,
+    "attack_intents_without_anchor": 1,
+    "benign_generator": "cacheattack_cleaned_qa"
+  },
+  "detection_bonus": {
+    "note": "Bonus, same calibrate run. storage_dtype=float64 here (exact, default); the DEPLOYED config stores float16, which shifts excess by ~1e-4 against a fence near 5.6e-3. fence_form=flat.",
+    "report_json": "<server-workdir>/out/v3/kca_calibrate/report_multi_count_6_width_2_cap16_runs.json",
+    "fence_json": "<server-workdir>/out/v3/kca_calibrate/fence_multi_count_6_width_2_cap16_runs.json",
+    "policy": "multi[count:6+width:2:cap16]/runs",
+    "storage_dtype": "float64",
+    "fence_form": "flat",
+    "n_genuine": 499,
+    "n_attack": 798,
+    "excess_auroc": 0.9895003038658771,
+    "excess_auroc_cos_matched": 0.9544513457556937,
+    "matched_support": 69,
+    "excess_block_rate_at_budget": 0.9411027568922306,
+    "achieved_benign_block_rate": 0.029197080291970802,
+    "cosine_auroc": 0.9859995680584226,
+    "cosine_block_rate": 0.9548872180451128,
+    "families": {
+      "cacheattack_gcg_f1": {"n_attack": 499, "excess_auroc": 0.9896506439733174, "excess_auroc_cos_matched": 0.9670608108108109, "matched_support": 37, "excess_block_rate": 0.9418837675350702},
+      "cacheattack_gcg_f2": {"n_attack": 299, "excess_auroc": 0.9892494018136607, "excess_auroc_cos_matched": 0.9232142857142858, "matched_support": 20, "excess_block_rate": 0.939799331103679}
+    }
+  },
+  "examples": [
+    {"question": "what is foreign account tax compliance act (fatca)", "paraphrase": "Can you explain the Foreign Account Tax Compliance Act, commonly known as FATCA?"},
+    {"question": "where does the spinal cord become cauda equina", "paraphrase": "At what point does the spinal cord transition into the cauda equina?"},
+    {"question": "when's the last time philly won the superbowl", "paraphrase": "When was Philadelphia's most recent Super Bowl victory?"},
+    {"question": "what is the wavelength of the electromagnetic wave", "paraphrase": "Can you tell me the wavelength of that electromagnetic wave?"},
+    {"question": "what is the new touchback rule in the nfl", "paraphrase": "Can you explain the newly implemented touchback regulation in the NFL?"}
+  ]
+}

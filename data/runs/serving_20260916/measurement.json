@@ -1,0 +1,170 @@
+{
+  "extends": "experiments/paper/results/v3/detection/excess_serving_ms.json",
+  "dim": 384,
+  "repeats": 2000,
+  "numpy": "2.5.1",
+  "OMP_NUM_THREADS": "1",
+  "storage_dtype": "float16",
+  "query": "when did mariah carey and nick cannon get married in the caribbean",
+  "query_words": 12,
+  "echo_set_size": 3,
+  "echo_min": 1,
+  "eta_a": 0.02,
+  "note": "serving path only. Before: stored span vectors dotted with the query embedding the cache already computed for retrieval, then a max. After: the same dots with an argmax, plus the winning variant's answer_loss compare, the query's tokenisation and the echo set difference. No model call on either path.",
+  "command": "<server-home>/sentry-work/serving-20260916-appendix-concision/experiments/paper/rq4_system/bench_answer_check_ms.py --in experiments/paper/results/v3/detection/excess_serving_ms.json --n-spans 15 --n-spans 65 --n-spans 135 --repeats 2000 --out raw_summary.json",
+  "serving_ms": {
+    "15": {
+      "n_spans": 15,
+      "dg_only": {
+        "ms_median": 0.01401,
+        "ms_p95": 0.01428
+      },
+      "answer_checked": {
+        "ms_median": 0.02092,
+        "ms_p95": 0.02162
+      },
+      "delta_ms_median": 0.00691
+    },
+    "65": {
+      "n_spans": 65,
+      "dg_only": {
+        "ms_median": 0.05306,
+        "ms_p95": 0.05693
+      },
+      "answer_checked": {
+        "ms_median": 0.06036,
+        "ms_p95": 0.06481
+      },
+      "delta_ms_median": 0.0073
+    },
+    "135": {
+      "n_spans": 135,
+      "dg_only": {
+        "ms_median": 0.10702,
+        "ms_p95": 0.11189
+      },
+      "answer_checked": {
+        "ms_median": 0.11471,
+        "ms_p95": 0.11988
+      },
+      "delta_ms_median": 0.00769
+    }
+  },
+  "query_tokenise_ms": {
+    "ms_median": 0.00569,
+    "ms_p95": 0.0059
+  },
+  "sets": {
+    "LMP": {
+      "median": {
+        "n_spans": 20,
+        "ms_median": 0.01777,
+        "ms_p95": 0.01807
+      },
+      "p95": {
+        "n_spans": 31,
+        "ms_median": 0.02624,
+        "ms_p95": 0.02678
+      },
+      "mean_spans": {
+        "n_spans": 24,
+        "ms_median": 0.02076,
+        "ms_p95": 0.02107
+      }
+    },
+    "SCP": {
+      "median": {
+        "n_spans": 42,
+        "ms_median": 0.03461,
+        "ms_p95": 0.03554
+      },
+      "p95": {
+        "n_spans": 153,
+        "ms_median": 0.12066,
+        "ms_p95": 0.125
+      },
+      "mean_spans": {
+        "n_spans": 76,
+        "ms_median": 0.06142,
+        "ms_p95": 0.0647
+      }
+    },
+    "KCA": {
+      "median": {
+        "n_spans": 153,
+        "ms_median": 0.12038,
+        "ms_p95": 0.12474
+      },
+      "p95": {
+        "n_spans": 153,
+        "ms_median": 0.12029,
+        "ms_p95": 0.12465
+      },
+      "mean_spans": {
+        "n_spans": 152,
+        "ms_median": 0.11974,
+        "ms_p95": 0.12406
+      }
+    }
+  },
+  "sets_note": "ms_median/ms_p95 are the published values copied from --in and were measured on another host; compare answer_checked against dg_only_remeasured, which this run measured beside it.",
+  "bytes_per_entry_formula": {
+    "before": "(1 + n_spans) * 384 * 2  # whole + span block, float16",
+    "after": "before + n_spans * 2 + echo_tokens_json_bytes",
+    "deletion_block_not_charged": "n_deletions * 384 * 2, diagnostic, stored but never read at serving",
+    "examples_vectors_only": {
+      "15": {
+        "n_spans": 15,
+        "before_bytes": 12288,
+        "answer_loss_bytes": 30,
+        "echo_tokens_bytes": 0,
+        "after_bytes": 12318,
+        "overhead_fraction": 0.00244
+      },
+      "65": {
+        "n_spans": 65,
+        "before_bytes": 50688,
+        "answer_loss_bytes": 130,
+        "echo_tokens_bytes": 0,
+        "after_bytes": 50818,
+        "overhead_fraction": 0.00256
+      },
+      "135": {
+        "n_spans": 135,
+        "before_bytes": 104448,
+        "answer_loss_bytes": 270,
+        "echo_tokens_bytes": 0,
+        "after_bytes": 104718,
+        "overhead_fraction": 0.00259
+      }
+    }
+  },
+  "insertion_embedder_calls": {
+    "before": {
+      "calls": 1,
+      "texts": "n_variants (spans + deletions), one batch"
+    },
+    "after": {
+      "calls": 2,
+      "texts": "n_variants in the same batch, plus the answer in a call of its own"
+    },
+    "why_two": "the variant batch must stay byte-identical for the DG numbers to be unchanged; a real embedder pads a batch to its longest item and an answer is far longer than any variant (sentry/cache/defense/deletion.py:build_profile)"
+  },
+  "measured_at": "2026-09-16T09:11:10.383301+00:00",
+  "hardware": {
+    "host": "cpu-server",
+    "cpu": "AMD EPYC 9754 128-Core Processor",
+    "platform": "Linux-6.8.0-134-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3",
+    "numpy": "2.5.1"
+  },
+  "threads": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1"
+  },
+  "script_sha256": "89faa4297bfef9c5262d46569d4ad49a39290911d39302103fef47d10d5d3589",
+  "textnorm_sha256": "fa4ce9b789e46ee9819648e02146229eda743d814553e456977cd0884726a868",
+  "raw_samples_sha256": "bcaf05d3e39ba2ce1a14866af811f8e6369fbdafa462e644ddede24f51388d90",
+  "source_archive_sha256": "64a965f70b6bdeb2d5fd47a68cdfb88086dc72298dbbef1c6773271c56a23b79"
+}

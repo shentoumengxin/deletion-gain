@@ -1,0 +1,153 @@
+{
+  "unit": "tokens",
+  "k": 20,
+  "budget": 0.05,
+  "prefixes": "<server-workdir>/rebase/scp_lacache_input_798.jsonl",
+  "policy": "multi[count:4+width:2:cap16]/runs",
+  "encoders": {
+    "main": "intfloat/e5-small-v2",
+    "second": "<server-home>/models/BAAI__bge-large-en-v1.5"
+  },
+  "n_rows": 1297,
+  "n_benign": 499,
+  "n_attack": 798,
+  "n_poisoned": 649,
+  "poisoned_from": "<server-workdir>/out/v3/lacache/poisoned_ids_scp.json",
+  "note": "reimplementation from the paper's description, not the authors' code; prefixes decoded by the ASR victim, cut with its tokenizer",
+  "all_planted": {
+    "lacache_main": {
+      "scp/scp_i": {
+        "n_attack": 266,
+        "auroc": 0.7116639293624843,
+        "block": 0.06766917293233082
+      },
+      "scp/scp_p": {
+        "n_attack": 265,
+        "auroc": 0.9903883238174462,
+        "block": 0.9811320754716981
+      },
+      "scp/scp_z": {
+        "n_attack": 267,
+        "auroc": 0.5810047060412961,
+        "block": 0.0599250936329588
+      },
+      "POOLED": {
+        "n_attack": 798,
+        "auroc": 0.7605059743547244,
+        "block": 0.3684210526315789
+      }
+    },
+    "lacache_second": {
+      "scp/scp_i": {
+        "n_attack": 266,
+        "auroc": 0.7347702924646285,
+        "block": 0.06015037593984962
+      },
+      "scp/scp_p": {
+        "n_attack": 265,
+        "auroc": 0.9625288312474004,
+        "block": 0.8226415094339623
+      },
+      "scp/scp_z": {
+        "n_attack": 267,
+        "auroc": 0.5865401214413847,
+        "block": 0.052434456928838954
+      },
+      "POOLED": {
+        "n_attack": 798,
+        "auroc": 0.7608085845877218,
+        "block": 0.3107769423558897
+      }
+    },
+    "excess": {
+      "scp/scp_i": {
+        "n_attack": 266,
+        "auroc": 0.998297346572845,
+        "block": 1.0
+      },
+      "scp/scp_p": {
+        "n_attack": 265,
+        "auroc": 0.9916285400990661,
+        "block": 0.9811320754716981
+      },
+      "scp/scp_z": {
+        "n_attack": 267,
+        "auroc": 0.9837052381917393,
+        "block": 0.9550561797752809
+      },
+      "POOLED": {
+        "n_attack": 798,
+        "auroc": 0.9912004460047915,
+        "block": 0.9786967418546366
+      }
+    }
+  },
+  "poisoned": {
+    "lacache_main": {
+      "scp/scp_i": {
+        "n_attack": 245,
+        "auroc": 0.718138317451229,
+        "block": 0.06938775510204082
+      },
+      "scp/scp_p": {
+        "n_attack": 265,
+        "auroc": 0.9903883238174462,
+        "block": 0.9811320754716981
+      },
+      "scp/scp_z": {
+        "n_attack": 139,
+        "auroc": 0.6207667132826805,
+        "block": 0.07913669064748201
+      },
+      "POOLED": {
+        "n_attack": 649,
+        "auroc": 0.8084489472010277,
+        "block": 0.4437596302003082
+      }
+    },
+    "lacache_second": {
+      "scp/scp_i": {
+        "n_attack": 245,
+        "auroc": 0.7427099096151487,
+        "block": 0.0653061224489796
+      },
+      "scp/scp_p": {
+        "n_attack": 265,
+        "auroc": 0.9625288312474004,
+        "block": 0.8226415094339623
+      },
+      "scp/scp_z": {
+        "n_attack": 139,
+        "auroc": 0.6055348106284512,
+        "block": 0.07194244604316546
+      },
+      "POOLED": {
+        "n_attack": 649,
+        "auroc": 0.8030869134262362,
+        "block": 0.37596302003081666
+      }
+    },
+    "excess": {
+      "scp/scp_i": {
+        "n_attack": 245,
+        "auroc": 0.9983068177170668,
+        "block": 1.0
+      },
+      "scp/scp_p": {
+        "n_attack": 265,
+        "auroc": 0.9916285400990661,
+        "block": 0.9811320754716981
+      },
+      "scp/scp_z": {
+        "n_attack": 139,
+        "auroc": 0.986490967546604,
+        "block": 0.9640287769784173
+      },
+      "POOLED": {
+        "n_attack": 649,
+        "auroc": 0.9930492726593403,
+        "block": 0.9845916795069337
+      }
+    }
+  }
+}

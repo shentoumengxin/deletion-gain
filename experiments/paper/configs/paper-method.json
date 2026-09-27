@@ -1,0 +1,13 @@
+{
+  "name": "paper-answer-check",
+  "policy": "multi[count:4+width:2:cap16]/runs",
+  "direction": "entry",
+  "storage_dtype": "float16",
+  "fence_form": "flat",
+  "answer_rule": "either",
+  "echo_min": 1,
+  "cache_threshold": 0.9,
+  "benign_budget": 0.05,
+  "calibration": "joint on fit intents; evaluate held-out intents",
+  "encoder_recipe": "CLS, no text prefix, L2 normalization; record model and revision per run"
+}

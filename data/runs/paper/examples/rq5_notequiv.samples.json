@@ -1,0 +1,282 @@
+[
+  {
+    "kind": "qualifier:language",
+    "entry": "what city hosted the 1998 winter olympics? Reply in Simplified Chinese.",
+    "query": "which city is the hosting city of the 1998 winter olympics?",
+    "excess": 0.028569494208399715,
+    "cos": 0.966091513633728
+  },
+  {
+    "kind": "qualifier:format",
+    "entry": "what was willow smith first song? Answer with a single word.",
+    "query": "Can you identify Willow Smith's earliest recorded track?",
+    "excess": 0.017605246076797254,
+    "cos": 0.9691423177719116
+  },
+  {
+    "kind": "qualifier:temporal",
+    "entry": "name of mccain's daughter? Use only information published before 2015.",
+    "query": "what is john mcain's daughter name?",
+    "excess": 0.00862154103004975,
+    "cos": 0.8987054228782654
+  },
+  {
+    "kind": "qualifier:audience",
+    "entry": "For a reader who knows nothing about the subject: what age did yolanda denise king?",
+    "query": "What was the age of Yolanda Denise King at her demise?",
+    "excess": 0.00934694551777171,
+    "cos": 0.98453289270401
+  },
+  {
+    "kind": "qualifier:language",
+    "entry": "Respond in German: when did david beckham play for manchester united?",
+    "query": "In which period did David Beckham represent Manchester United?",
+    "excess": 0.016017345869315358,
+    "cos": 0.9662346839904785
+  },
+  {
+    "kind": "qualifier:format",
+    "entry": "what was the king of portugals son who granted independence to brazil? Give the answer as a JSON object.",
+    "query": "who was the king of portugal's son who granted independence to brazil?",
+    "excess": 0.01720790133598249,
+    "cos": 0.9804813861846924
+  },
+  {
+    "kind": "qualifier:temporal",
+    "entry": "what is the as of the 2019 season, language of colombia?",
+    "query": "Colombia's official language is what?",
+    "excess": 0.01847838041170702,
+    "cos": 0.9346091747283936
+  },
+  {
+    "kind": "qualifier:audience",
+    "entry": "what movies have george clooney and julia roberts starred in together? Explain it so a five-year-old understands.",
+    "query": "which movie stars george clooney and julia roberts?",
+    "excess": 0.02424699552635834,
+    "cos": 0.9700382947921753
+  },
+  {
+    "kind": "qualifier:audience",
+    "entry": "who is the maldives president? Answer at a graduate level, with citations.",
+    "query": "who is the president of maldives?",
+    "excess": 0.03589766330042943,
+    "cos": 0.9563461542129517
+  },
+  {
+    "kind": "qualifier:audience",
+    "entry": "For a reader who knows nothing about the subject: what was the highest point in australia's mainland?",
+    "query": "what is the highest point of the australia mainland?",
+    "excess": 0.015995147383986552,
+    "cos": 0.9816671013832092
+  },
+  {
+    "kind": "qualifier:language",
+    "entry": "what country is located between venezuela and suriname? Answer in French.",
+    "query": "What is the name of the country sandwiched between Venezuela and Suriname?",
+    "excess": 0.006906718441301085,
+    "cos": 0.9754236340522766
+  },
+  {
+    "kind": "qualifier:format",
+    "entry": "Answer in exactly two sentences: what is the second largest country of europe?",
+    "query": "what is the second largest country in europe by land area?",
+    "excess": 0.02982238421647465,
+    "cos": 0.9410694241523743
+  },
+  {
+    "kind": "qualifier:temporal",
+    "entry": "what is julianne hough's religion, as of 2020",
+    "query": "What are Julianne Hough's religious beliefs?",
+    "excess": 0.017598804801350454,
+    "cos": 0.9722858667373657
+  },
+  {
+    "kind": "qualifier:audience",
+    "entry": "place of birth of johnny campbell? Answer at a graduate level, with citations.",
+    "query": "Which city or town is Johnny Campbell's birthplace?",
+    "excess": 0.026106767504688433,
+    "cos": 0.958519697189331
+  },
+  {
+    "kind": "qualifier:audience",
+    "entry": "For a reader who knows nothing about the subject: who is the present ceo of opec?",
+    "query": "Could you specify who is the CEO of OPEC right now?",
+    "excess": 0.013181826697317489,
+    "cos": 0.9686809182167053
+  },
+  {
+    "kind": "qualifier:format",
+    "entry": "who invent jordan brand? Give the answer as a JSON object.",
+    "query": "Who is the inventor of the Air Jordan brand?",
+    "excess": 0.012260803388497443,
+    "cos": 0.9658583998680115
+  },
+  {
+    "kind": "qualifier:language",
+    "entry": "who is obama married to? Reply in Simplified Chinese.",
+    "query": "who is obama's wife?",
+    "excess": 0.039095700453593896,
+    "cos": 0.9309751987457275
+  },
+  {
+    "kind": "qualifier:language",
+    "entry": "Respond in German: who wrote the song 'i believe' performed by brooks and dunn?",
+    "query": "What person penned the tune 'I Believe' that Brooks and Dunn performed?",
+    "excess": 0.005509176908072622,
+    "cos": 0.9875937700271606
+  },
+  {
+    "kind": "qualifier:format",
+    "entry": "what did mary ingalls die from? Answer with a single word.",
+    "query": "what did mary ingalls die of?",
+    "excess": 0.01839452374320527,
+    "cos": 0.9813226461410522
+  },
+  {
+    "kind": "qualifier:temporal",
+    "entry": "what is the elizabeth as of the 2019 season, ii the queen birthdate?",
+    "query": "What day was Queen Elizabeth the Second born?",
+    "excess": -0.001022907379197413,
+    "cos": 0.9529024362564087
+  },
+  {
+    "kind": "qualifier:audience",
+    "entry": "who did fiji gain it's independence from? Explain it so a five-year-old understands.",
+    "query": "From what colonial power did Fiji become independent?",
+    "excess": 0.024858148848421413,
+    "cos": 0.9344154000282288
+  },
+  {
+    "kind": "qualifier:audience",
+    "entry": "what are the 5 languages in canada? Answer at a graduate level, with citations.",
+    "query": "Which five languages are present in Canada?",
+    "excess": 0.04054880597680177,
+    "cos": 0.9515246748924255
+  },
+  {
+    "kind": "qualifier:audience",
+    "entry": "For a reader who knows nothing about the subject: who was the king of the spartans at thermopylae?",
+    "query": "who was the king of sparta and hero of the 300 in the battle of thermopylae?",
+    "excess": 0.0027327243808519253,
+    "cos": 0.9510701298713684
+  },
+  {
+    "kind": "qualifier:language",
+    "entry": "who played indiana jones in the raiders of lost ark? Answer in French.",
+    "query": "Can you tell me the actor who played Indiana Jones in Raiders of the Lost Ark?",
+    "excess": 0.012996636327092803,
+    "cos": 0.9783507585525513
+  },
+  {
+    "kind": "qualifier:language",
+    "entry": "Respond in German: what were the ages of anne and shakespeare when they got married?",
+    "query": "How many years old were Anne and Shakespeare when they became spouses?",
+    "excess": 0.015210761593781985,
+    "cos": 0.9737396836280823
+  },
+  {
+    "kind": "qualifier:temporal",
+    "entry": "what does danielle cambell star in, as of 2020",
+    "query": "Name the shows and films Danielle Campbell is known for.",
+    "excess": 0.02624030927335952,
+    "cos": 0.9155091047286987
+  },
+  {
+    "kind": "qualifier:temporal",
+    "entry": "what is the world's biggest company by number of employees? Use only information published before 2015.",
+    "query": "which company has the largest number of employees in the world?",
+    "excess": 0.035340482664450557,
+    "cos": 0.9447945356369019
+  },
+  {
+    "kind": "qualifier:audience",
+    "entry": "what club did cristiano ronaldo play for after manchester united? Explain it so a five-year-old understands.",
+    "query": "Post-Manchester United, which side did Cristiano Ronaldo represent?",
+    "excess": 0.019797358642609786,
+    "cos": 0.9474897384643555
+  },
+  {
+    "kind": "qualifier:language",
+    "entry": "what sea borders egypt and saudi arabia? Reply in Simplified Chinese.",
+    "query": "what separates egypt and saudi arabia?",
+    "excess": 0.027166399878517655,
+    "cos": 0.9237515926361084
+  },
+  {
+    "kind": "qualifier:format",
+    "entry": "who was the german fascist leader during world war 2? Give the answer as a JSON object.",
+    "query": "fascist leader of germany in world war 2?",
+    "excess": 0.015516003164742331,
+    "cos": 0.9741909503936768
+  },
+  {
+    "kind": "qualifier:temporal",
+    "entry": "at what age did brahms get married, as of 2020",
+    "query": "At what age did Brahms enter into matrimony?",
+    "excess": 0.02046497562761762,
+    "cos": 0.9609615802764893
+  },
+  {
+    "kind": "qualifier:temporal",
+    "entry": "what sea borders sweden germany and russia? Use only information published before 2015.",
+    "query": "Which sea touches the shores of Sweden, Germany, and Russia?",
+    "excess": 0.020767259293709706,
+    "cos": 0.9514460563659668
+  },
+  {
+    "kind": "qualifier:temporal",
+    "entry": "when did jon and as of the 2019 season, kate file for a divorce?",
+    "query": "when did jon and kate get divorced?",
+    "excess": 0.00030931212482032677,
+    "cos": 0.9662528038024902
+  },
+  {
+    "kind": "qualifier:audience",
+    "entry": "what drug was ike turner in? Explain it so a five-year-old understands.",
+    "query": "Which substance was Ike Turner associated with in terms of drug use?",
+    "excess": 0.022517543554826158,
+    "cos": 0.9678298234939575
+  },
+  {
+    "kind": "qualifier:audience",
+    "entry": "who was the leader of germany in world war 1? Answer at a graduate level, with citations.",
+    "query": "Can you tell me the leader of Germany in the era of World War I?",
+    "excess": 0.03400765048305443,
+    "cos": 0.9351441860198975
+  },
+  {
+    "kind": "qualifier:language",
+    "entry": "Respond in German: what year was jonathan swifts guliver travels first published?",
+    "query": "when was jonathan swifts book gullivers travel first published?",
+    "excess": 0.0081884412925195,
+    "cos": 0.9815025925636292
+  },
+  {
+    "kind": "qualifier:format",
+    "entry": "what is arizona's smallest county? Answer with a single word.",
+    "query": "arizonas smallest county?",
+    "excess": 0.01293817209562953,
+    "cos": 0.9817337989807129
+  },
+  {
+    "kind": "qualifier:audience",
+    "entry": "For a reader who knows nothing about the subject: which country was us's enemies during world world 2?",
+    "query": "which countries were enemies of the us during the second world war?",
+    "excess": 0.016547838270279502,
+    "cos": 0.9527871608734131
+  },
+  {
+    "kind": "qualifier:language",
+    "entry": "what university did jen peckkaren rosser and carol pifer work at? Answer in French.",
+    "query": "what university have jen peckkaren rosser and carol pifer worked to develop?",
+    "excess": 0.0043061600093519115,
+    "cos": 0.9917191863059998
+  },
+  {
+    "kind": "qualifier:format",
+    "entry": "which is the smallest arabic country? Give the answer as a JSON object.",
+    "query": "Can you name the Arab country with the smallest landmass?",
+    "excess": 0.02809310701230161,
+    "cos": 0.9451576471328735
+  }
+]

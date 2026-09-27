@@ -1,0 +1,41 @@
+{
+  "deterministic_replay": "exact JSON equality",
+  "independent_formula_crosscheck": "ASR and benign counts, five methods, both calibrations",
+  "new_table_generator": "exact equality to build() output",
+  "benign_rows_match_main_table": 499,
+  "dg_and_cosine_match_main_table": 1297,
+  "tests": "285 passed, 34 warnings",
+  "victim_calls": 0,
+  "judge_calls": 0,
+  "embedding_recomputed": true,
+  "scripts_sha256": {
+    "sc_ipi_replay.py": "cd13908a53bea7747937d21e0b95e07e1161c519edc2e4ff6b9b6c425faaec5c",
+    "sc_ipi_score.py": "45d413cdd9d02cc745e97b9a0f55022754390e37e6f36ca37342de5fb898ad57"
+  },
+  "paper_verification": {
+    "compiler": "Tectonic 0.17.0, cached resources",
+    "compiled_from": "<paper-dir>/main.tex",
+    "pdf_sha256": "2981d03a15126de84c42589200652e593d3f2bec8d80c136f1af35e8d9ae269e",
+    "page_count": 26,
+    "ablation_table": 9,
+    "ablation_page": 25,
+    "visually_inspected_pages": [
+      9,
+      14,
+      25
+    ],
+    "undefined_references": 0,
+    "undefined_citations": 0,
+    "new_ablation_overflow": false,
+    "preexisting_overfull_boxes_pt": [
+      2.02867,
+      22.94627
+    ],
+    "tex_sha256": {
+      "sections/06_eval.tex": "6060cb4659c53e62fdda58e094c038823678f54a0b07a5f9d11997df1e259ff2",
+      "sections/07_limitations.tex": "7b750f5cfbc2e6faffb43f6b48375ff4971aa48dbfa13af9e783f3302252ad13",
+      "sections/appendix.tex": "380f096a83b74ac2058e915f0c67ab64a1b3025e17c0521b10b3a7f018a89b25",
+      "tab/appendix_answer_check.tex": "c459b0f5cd32f034d8bb7e9f5dc123764e9aaafcb77db6a1ace3a48ba761aabf"
+    }
+  }
+}

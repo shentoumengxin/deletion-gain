@@ -1,0 +1,18 @@
+{
+  "model": "<gpu-workdir>/models/Qwen3-8B",
+  "dtype": "bfloat16",
+  "n_rows": 3893,
+  "n_forward_items": 15572,
+  "wall_seconds": 528.0465919459239,
+  "label_token_ids": {
+    "SAFE": [
+      83788
+    ],
+    "UNSAFE": [
+      1861,
+      83788
+    ]
+  },
+  "gpu": "NVIDIA RTX 6000D",
+  "torch": "2.11.0+cu130"
+}

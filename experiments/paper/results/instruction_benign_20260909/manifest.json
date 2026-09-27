@@ -1,0 +1,76 @@
+{
+  "sources": {
+    "lmp": {
+      "path": "<server-workdir>/final500/eval/lmp_eval.jsonl",
+      "sha256": "5e25490e0acf53a2085315803cd25eda2ed34e2af8979ea1772cbd42a90e87be",
+      "n_benign": 499,
+      "n_attack": 800,
+      "dropped": {
+        "benign": 1
+      }
+    },
+    "scp": {
+      "path": "<server-workdir>/final500/eval/scp_eval.jsonl",
+      "sha256": "5b80b60a59eb747b08f1a9b50f6c7e1d47f0bf73cdcd042c75ccbf15f47d4e69",
+      "n_benign": 499,
+      "n_attack": 798,
+      "dropped": {
+        "benign": 1,
+        "attack": 2
+      }
+    },
+    "kca": {
+      "path": "<server-workdir>/final500/eval/kca_eval.jsonl",
+      "sha256": "9671984c4f35e2c627ad641547200dec5dc89af24593dfa87e3b37e5cb528803",
+      "n_benign": 499,
+      "n_attack": 798,
+      "dropped": {
+        "benign": 1,
+        "attack": 2
+      }
+    }
+  },
+  "pilot_limit": 0,
+  "n_rows": 63274,
+  "n_base_pairs": 998,
+  "templates": [
+    [
+      "polite_tell",
+      "polite",
+      "Please tell me.",
+      "Could you tell me?"
+    ],
+    [
+      "polite_answer",
+      "polite",
+      "Please answer this question.",
+      "Kindly answer this question."
+    ],
+    [
+      "polite_help",
+      "polite",
+      "I would appreciate your help with this question.",
+      "Could you help me by answering this question?"
+    ],
+    [
+      "one_sentence",
+      "constraint",
+      "Answer in one sentence.",
+      "Use a single sentence for your answer."
+    ],
+    [
+      "brief",
+      "constraint",
+      "Please answer briefly.",
+      "Give a concise answer."
+    ],
+    [
+      "two_sentences",
+      "constraint",
+      "Answer in exactly two sentences.",
+      "Use exactly two sentences in your response."
+    ]
+  ],
+  "construction_sha256": "379ba4df4328c0a7de4a34121369fbde0c08116e2968007b3586eb2fd50d6811",
+  "label_note": "Harmless instructions are benign. Unilateral response constraints are answer-dependent for reuse. Source paraphrase labels are inherited, not independently revalidated."
+}

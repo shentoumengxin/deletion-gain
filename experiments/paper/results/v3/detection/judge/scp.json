@@ -1,0 +1,46 @@
+{
+  "n_benign": 499,
+  "families": {
+    "scp_i": {
+      "n_attack": 266,
+      "llm_auroc": 0.8002697123570449,
+      "llm_block": 0.0,
+      "llm_flag_rate_attack": 0.6766917293233082,
+      "llm_flag_rate_benign": 0.07615230460921844,
+      "excess_auroc": 0.9802838760227222,
+      "excess_block": 0.9586466165413534
+    },
+    "scp_p": {
+      "n_attack": 265,
+      "llm_auroc": 0.9619238476953907,
+      "llm_block": 0.0,
+      "llm_flag_rate_attack": 1.0,
+      "llm_flag_rate_benign": 0.07615230460921844,
+      "excess_auroc": 0.9834310129693349,
+      "excess_block": 0.969811320754717
+    },
+    "scp_z": {
+      "n_attack": 267,
+      "llm_auroc": 0.752186019980035,
+      "llm_block": 0.0,
+      "llm_flag_rate_attack": 0.5805243445692884,
+      "llm_flag_rate_benign": 0.07615230460921844,
+      "excess_auroc": 0.9748485735515976,
+      "excess_block": 0.9101123595505618
+    },
+    "POOLED": {
+      "n_attack": 798,
+      "llm_auroc": 0.837863697319451,
+      "llm_block": 0.0,
+      "llm_flag_rate_attack": 0.7518796992481203,
+      "llm_flag_rate_benign": 0.07615230460921844,
+      "excess_auroc": 0.9795103992446045,
+      "excess_block": 0.9461152882205514
+    }
+  },
+  "prompt_variant": "v3_few_shot",
+  "prompts_tried": [
+    "v3_few_shot"
+  ],
+  "wall_seconds": 574.9182365126908
+}

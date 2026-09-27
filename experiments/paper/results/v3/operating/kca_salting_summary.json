@@ -1,0 +1,50 @@
+{
+  "embedder": "intfloat/e5-small-v2",
+  "dimension": 384,
+  "floor": 0.9,
+  "seed": 20260901,
+  "salts": {
+    "no salt": {
+      "attack_retrievable": 0.9862155388471178,
+      "benign_retrievable": 1.0,
+      "median_attack_cos": 0.9300209283828735,
+      "median_benign_cos": 0.9820026755332947,
+      "max_abs_cos_shift_vs_unsalted": 0.0
+    },
+    "orthogonal (secret rotation)": {
+      "attack_retrievable": 0.9862155388471178,
+      "benign_retrievable": 1.0,
+      "median_attack_cos": 0.9300208770527484,
+      "median_benign_cos": 0.9820027702138545,
+      "max_abs_cos_shift_vs_unsalted": 3.684569469530885e-07
+    },
+    "compressive k=256": {
+      "attack_retrievable": 0.9573934837092731,
+      "benign_retrievable": 0.9979959919839679,
+      "median_attack_cos": 0.9305195788756633,
+      "median_benign_cos": 0.9812409770942254,
+      "max_abs_cos_shift_vs_unsalted": 0.024970165112976672
+    },
+    "compressive k=128": {
+      "attack_retrievable": 0.8345864661654135,
+      "benign_retrievable": 0.9979959919839679,
+      "median_attack_cos": 0.9196327814149113,
+      "median_benign_cos": 0.9806614070071802,
+      "max_abs_cos_shift_vs_unsalted": 0.05122555888824354
+    },
+    "compressive k=64": {
+      "attack_retrievable": 0.949874686716792,
+      "benign_retrievable": 1.0,
+      "median_attack_cos": 0.9342784881248817,
+      "median_benign_cos": 0.9828973486956725,
+      "max_abs_cos_shift_vs_unsalted": 0.04065021404840019
+    },
+    "compressive k=32": {
+      "attack_retrievable": 0.5877192982456141,
+      "benign_retrievable": 0.9899799599198397,
+      "median_attack_cos": 0.9073814038711064,
+      "median_benign_cos": 0.9766173344973491,
+      "max_abs_cos_shift_vs_unsalted": 0.14242361657279135
+    }
+  }
+}

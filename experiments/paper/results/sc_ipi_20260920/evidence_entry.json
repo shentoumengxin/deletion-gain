@@ -1,0 +1,40 @@
+{
+  "id": "appendix-answer-check-ablation-20260920",
+  "paper": [
+    "paper:tab/appendix_answer_check.tex",
+    "paper:sections/06_eval.tex",
+    "paper:sections/appendix.tex"
+  ],
+  "source_code": [
+    "code:experiments/paper/rq2_robustness/sc_ipi_score.py",
+    "code:experiments/paper/rq2_robustness/sc_ipi_replay.py",
+    "code:experiments/paper/figures/appendix_tables.py"
+  ],
+  "result_fields": [
+    {
+      "artifact": "code:experiments/paper/results/sc_ipi_20260920/aligned_summary.json",
+      "json_pointer": "/evaluations/intent_holdout_seed0"
+    }
+  ],
+  "inputs": [
+    "data:runs/sc_ipi_ablation_20260920/eval.jsonl",
+    "data:runs/sc_ipi_ablation_20260920/answers.jsonl",
+    "data:runs/sc_ipi_ablation_20260920/flags.jsonl",
+    "data:runs/sc_ipi_ablation_20260920/identities.jsonl",
+    "data:runs/sc_ipi_ablation_20260920/inputs.json",
+    "data:runs/sc_ipi_ablation_20260920/scores.jsonl",
+    "data:runs/sc_ipi_ablation_20260920/cell.json",
+    "data:runs/sc_ipi_ablation_20260920/receipt.json"
+  ],
+  "configuration": {
+    "policy": "multi[count:4+width:2:cap16]/runs",
+    "storage_dtype": "float16",
+    "encoder": "intfloat/e5-small-v2",
+    "retrieval_floor": 0.9,
+    "benign_budget": 0.05,
+    "calibration": "225 NQ intents; seed 0 half-split; 274 held-out intents",
+    "answer_identity": "actual frozen Qwen answer with its saved success verdict",
+    "incoming_query": "validated legal paraphrase, identical to main-table query"
+  },
+  "notes": "Three paired configurations isolate fixed-DG-threshold Answer Check and joint calibration. CPU re-embedding authorized on cpu-server. No new victim or judge calls. Main-table numbers are unchanged; their answer-version mismatch is documented in the scoped report."
+}

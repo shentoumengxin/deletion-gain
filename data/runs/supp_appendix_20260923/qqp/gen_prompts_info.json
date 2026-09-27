@@ -1,0 +1,16 @@
+{
+  "benign_pairs": 2636,
+  "benign_entries": 2636,
+  "c01_canonical_inside_pairs": 200,
+  "attack_rows": 3586,
+  "attack_distinct_texts": 3290,
+  "attack_intents": 160,
+  "prompts": 6422,
+  "distinct_prompts": 6086,
+  "by_kind": {
+    "qqp_attack": 3586,
+    "qqp_benign_entry": 2636,
+    "validation_lmp": 100,
+    "validation_scp": 100
+  }
+}

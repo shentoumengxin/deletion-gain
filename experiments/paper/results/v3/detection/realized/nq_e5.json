@@ -1,0 +1,34 @@
+{
+  "eval": "<server-workdir>/final500/eval/kca_eval.jsonl",
+  "encoder": "intfloat/e5-small-v2",
+  "policy": "multi[count:6+width:2:cap16]/runs",
+  "storage_dtype": "float16",
+  "budget": 0.05,
+  "holdout": 0.5,
+  "n_seeds": 200,
+  "n_benign_judgeable": 499,
+  "n_benign_intents": 499,
+  "benign_generator": [
+    "cacheattack_cleaned_qa"
+  ],
+  "in_sample_block_rate": 0.050100200400801605,
+  "scoring_height_full_arm": 0.004372764699734927,
+  "excess_quantiles_benign": {
+    "0.9": 0.0017696734645124444,
+    "0.93": 0.0029814813130402385,
+    "0.95": 0.004372764699734927,
+    "0.97": 0.00649060409014028,
+    "0.99": 0.009399960876242916
+  },
+  "realized_mean": 0.05584210244815095,
+  "realized_std": 0.020428365568668064,
+  "realized_min": 0.01568627450980392,
+  "realized_p05": 0.021353997619820406,
+  "realized_median": 0.0546546743697479,
+  "realized_p95": 0.09064254210104246,
+  "realized_max": 0.10810810810810811,
+  "realized_seed0": 0.029197080291970802,
+  "frac_seeds_above_budget": 0.595,
+  "height_mean": 0.004237563363754313,
+  "height_std": 0.0008769629791812402
+}

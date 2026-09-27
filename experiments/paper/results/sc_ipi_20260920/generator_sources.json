@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "purpose": "Appendix table and defensive-prompt provenance; existing evidence only",
+  "generator_confirmation": {
+    "model": "deepseek-v4-flash",
+    "source": "author confirmation in task, 2026-09-16",
+    "run_metadata_retains_model": false
+  },
+  "sources_sha256": {
+    "code:experiments/paper/results/sc_ipi_20260920/aligned_summary.json": "dc4f7e39bf95f50445c6c7f6e37099a01d0f7af203affcfafe574b29117728c4",
+    "data:datasets/final500/sets/lmp_800.json": "c81bda50e4a6df7894c8f1fc39edeaf3854b36f24bb73726934eedd2db4652a7",
+    "data:datasets/final500/eval/lmp_eval.jsonl": "5e25490e0acf53a2085315803cd25eda2ed34e2af8979ea1772cbd42a90e87be",
+    "code:experiments/paper/results/v3/operating/bottleneck_e5.json": "2ef2b2c3dace6cd2ac78c15d2d2a51d90bdfce5bc6445a34d3f899c261bb7729",
+    "code:experiments/paper/results/v3/ablations_v3.json": "96211bdae6a1a7b27e8eedcb44107c6851d6f3a2e94c12a6d6c0bb8f0aea7980",
+    "code:experiments/paper/results/v3/granularity32/g32_cap.json": "27e24970c4ed19889186f060733d264f5267fe0a57847d32283fb2bb0bbdf24a",
+    "code:experiments/paper/results/v3/granularity32/g32_scp.json": "4a76dae138304c1016d34d021a5cf7f25844a58903522f18940666e30a4a13d6",
+    "code:experiments/paper/results/v3/granularity32/g32_kca.json": "24d999025aadf41c77b7eafae0b21f7601d6be0622fdea0afa0d145d970de8aa",
+    "code:experiments/paper/results/v3/adaptive/rq6_search_v3.json": "d3ca93635da9f16313d448c618fb373bc5f60966ac4d955e4222d6d296eac079",
+    "code:experiments/paper/results/second_corpus_qqp/chunks01/report_count_6.json": "90f408e1f883420cdb721a03b881c3b1af7c33582565b03974aecfd30250ad52",
+    "code:experiments/paper/results/deployed_v2/qqp_c01/report_multi_count_6_width_2_cap16_runs.json": "68d97059ce22b05a1fd4504729dded2434a97f80136464b7e31bb4532b7abe28",
+    "code:experiments/paper/results/answer_check_20260909/adaptive_gradient_row_judged.json": "bde12989c220e0e3cea8e80b8a349e6bc813120af5a13762a20a0a19b55f3200",
+    "code:experiments/paper/results/answer_check_20260913/serving_microbenchmark.json": "5c2e9c8fd65d86e4f1ea0d1d1aaa2fa00876d14e9ac4478ec812096f54b2074c",
+    "code:experiments/paper/results/appendix_20260916/wrapper_source_recheck.json": "4d02a03e583dc0fa935c5a2481ff60d845b1b8af350f7209a32d45b7815465aa",
+    "code:experiments/paper/results/answer_check_20260909/main_table.json": "d186effdadbc2afa48c2961384f603dc7dc4d8aa68895e51388f1e11c307b764",
+    "data:runs/answer_check_20260909/cells_mean/e5-small-v2__lmp__mean.json": "1864d3d0c9a33fb2cc9a0041c2a64abf8cab3be2aa7f29621f62504ac23c7261",
+    "data:runs/answer_check_20260909/cells_mean/gte-small__lmp__mean.json": "38d579c7319641122bef65f981629f2f6743eb4574a9127c72298ca74eed72a5",
+    "data:runs/answer_check_20260909/cells_mean/all-MiniLM-L6-v2__lmp__mean.json": "ca1c4f525b2d1629d964128b915d088f8c7d8071d0d2a69f66208175811b1d4d",
+    "code:experiments/paper/baselines/judge_vote.py": "ecc900f7f24f70483cdad395967c10b3200b1851a96b48f077d31185047d8104",
+    "code:experiments/paper/rq2_robustness/asr_judge.py": "7763a42d032f78c0d2ca868cdf37f8d7558aa80fffd59665c52ea25cc4fdda3e",
+    "code:experiments/paper/rq2_robustness/injection_success.py": "8516e3f2355e341bfd9bd5bef4c8c599b73fe3abc55469831f7d8908ca1ef6df"
+  },
+  "outputs_sha256": {
+    "tab/appendix_answer_check.tex": "c459b0f5cd32f034d8bb7e9f5dc123764e9aaafcb77db6a1ace3a48ba761aabf",
+    "tab/appendix_gradient.tex": "fb9eea93957f3f94855df8c670df2e1948537fbd84817ab89ad36933ec80ef90",
+    "sections/appendix_judge_prompt.tex": "fc56027db086ddde32c98d1203c7acb557fc72aedada562fad7c6c9249bd9b35",
+    "sections/appendix_asr_prompts.tex": "03e0a250e202d8fd3a206042f5080ad3c852ee2dea31bbec4547a7196cd6c983"
+  },
+  "supplements_sha256": {
+    "appendix_refusal_prompt.tex": "672915f25f12ea15646ac3ff5b99bf8e0b7598ece6504ca4ada354960f992c18",
+    "appendix_cap_statistics.tex": "4935be2bb46b0154d0b729d4f2df1690a2042af7aee2ed2d3f8222a9b828b8f2",
+    "appendix_configurations.tex": "0690ccde288fe47fe2196ec25bb2704a239ade3ab654eaeba9f43c643c523ad3",
+    "appendix_segmentation.tex": "75504c42bdfb7c8c8da30bccb148ab6e14cdd64ae11612a53136a5ae4cba9a9f",
+    "appendix_residual.tex": "514f122cb4531a2e0d99d57031276c8dc8e27d73062fa4189878c7f386f9be99",
+    "appendix_answer_cost.tex": "f2480719c57c718a19bb374cbfee815af284e4404a91a0f33edb0ad587b05066",
+    "appendix_representation.tex": "4cf09f951265278bf913fd6fe952de751117b5b1ae8197141e1b4e33b1a5950a",
+    "appendix_qqp.tex": "4dceae434136113aa102053a0bb005892b9419b2f317c7e9078c1d3864b22e4a"
+  },
+  "caveats": [
+    "PAWS logistic controls are historical pair-split diagnostics; MLP test-selected metrics are not used.",
+    "CAP destructive ablations are six-segment historical statistics, not PAWS or current joint calibration.",
+    "QQP local controls use historical affine fences; no paired before/after transfer claim.",
+    "Residual-length fractions are surviving-candidate outcomes, not target ASR.",
+    "Historical GPU/CPU SKU and generation elapsed time are not inferred from current machines."
+  ]
+}

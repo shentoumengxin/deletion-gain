@@ -1,0 +1,45 @@
+{
+ "set": "KCA",
+ "records": "<server-workdir>/final500/eval/kca_eval.jsonl",
+ "policy": "multi[count:6+width:2:cap16]/runs",
+ "embedder": "intfloat/e5-small-v2",
+ "budget": 0.05,
+ "n_benign": 499,
+ "n_attack": 798,
+ "n_attack_joined": 798,
+ "n_poisoned": 742,
+ "methods": {
+  "cosine": {
+   "threshold": -0.9509754045909908,
+   "auroc": 0.9859870116172194,
+   "tpr_all": 0.9548872180451128,
+   "tpr_poisoned": 0.9555256064690026,
+   "n_all": 798,
+   "n_poisoned": 742
+  },
+  "perplexity": {
+   "threshold": 2.28032264649868,
+   "auroc": 0.8274945881738415,
+   "tpr_all": 0.424812030075188,
+   "tpr_poisoned": 0.4191374663072776,
+   "n_all": 798,
+   "n_poisoned": 742
+  },
+  "binli": {
+   "threshold": 0.9593005418777466,
+   "auroc": 0.9765043872205564,
+   "tpr_all": 0.8784461152882206,
+   "tpr_poisoned": 0.8733153638814016,
+   "n_all": 798,
+   "n_poisoned": 742
+  },
+  "excess": {
+   "threshold": 0.004372765364376569,
+   "auroc": 0.9895279280365242,
+   "tpr_all": 0.9411027568922306,
+   "tpr_poisoned": 0.9420485175202157,
+   "n_all": 798,
+   "n_poisoned": 742
+  }
+ }
+}

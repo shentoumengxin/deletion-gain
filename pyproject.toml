@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "deletion-gain"
+version = "0.3.0"
+description = "Keep poisoned answers out of LLM semantic caches: a drop-in Deletion Gain hit filter for GPTCache"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24"]
+
+[project.optional-dependencies]
+gptcache = ["gptcache==0.1.44", "faiss-cpu>=1.7.4", "sqlalchemy>=1.4,<3"]
+models = ["torch>=2.0", "transformers>=4.36", "sentence-transformers>=2.2", "datasets>=2.14"]
+research = ["pandas>=2.0", "scipy>=1.10", "scikit-learn>=1.3", "matplotlib>=3.7", "requests>=2.31"]
+test = ["pytest>=7.4"]
+
+[project.scripts]
+sentry-cache = "sentry.cache.runtime_cli:main"
+sentry-data = "sentry.artifacts:main"
+sentry-paper-figures = "experiments.paper.figures.export:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["sentry*", "experiments", "experiments.paper*"]
+exclude = ["tests*", "experiments.paper.results*"]
+
+[tool.setuptools.package-data]
+"sentry.cache" = ["fences/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

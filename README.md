@@ -63,7 +63,8 @@ few dot products and one word-set operation.
 | Failure mode | Fails closed. Any missing profile, mismatched fence or unreadable score becomes a cache miss. |
 | Integration | One GPTCache `SimilarityEvaluation` plus one insertion hook. Remove them and your cache is unchanged. |
 
-Numbers come from the paper (Table 1, Table 3 and Table 4) with `intfloat/e5-small-v2`.
+Numbers come from the paper (Tables 1 and 3, and Table 17 in the appendix) with
+`intfloat/e5-small-v2`.
 
 ## Try it in 60 seconds
 

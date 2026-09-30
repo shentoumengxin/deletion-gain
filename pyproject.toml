@@ -10,6 +10,12 @@ readme = "README.md"
 requires-python = ">=3.10"
 dependencies = ["numpy>=1.24"]
 
+[project.urls]
+Homepage = "https://xxbai.space/deletion-gain/"
+Paper = "https://arxiv.org/abs/2609.35908"
+Repository = "https://github.com/shentoumengxin/deletion-gain"
+Documentation = "https://github.com/shentoumengxin/deletion-gain/blob/main/REPRODUCE.md"
+
 [project.optional-dependencies]
 gptcache = ["gptcache==0.1.44", "faiss-cpu>=1.7.4", "sqlalchemy>=1.4,<3"]
 models = ["torch>=2.0", "transformers>=4.36", "sentence-transformers>=2.2", "datasets>=2.14"]

@@ -6,7 +6,8 @@ A drop-in hit filter for GPTCache. No model calls at serving time. About 0.02 ms
 </p>
 
 <p align="center">
-<a href="#paper">Paper</a> ·
+<a href="https://arxiv.org/abs/2609.35908">Paper</a> ·
+<a href="https://xxbai.space/deletion-gain/">Project website</a> ·
 <a href="#try-it-in-60-seconds">Demo</a> ·
 <a href="#use-it">Use it</a> ·
 <a href="#calibrate-on-your-own-traffic">Calibrate</a> ·
@@ -212,19 +213,25 @@ and [data/README.md](data/README.md) describes the benchmark data. The CAP bench
 
 ## Paper
 
-**Similarity Is Not Validity: Defending LLM Semantic Caches Against Poisoning.**
+**[Similarity Is Not Validity: Defending LLM Semantic Caches Against Poisoning](https://arxiv.org/abs/2609.35908).**
 Zihan Zhang, Shuangjie Yao, Zesen Liu, Zhixiang Zhang, Wai Ip Lai, Dung Hiu Hilton Yeung,
 Chun Kit Zhang, Fuchen Ma, Yuanyuan Yuan, Yu Jiang, Dongdong She.
 The Hong Kong University of Science and Technology and Tsinghua University.
 
+[arXiv:2609.35908](https://arxiv.org/abs/2609.35908) ·
+[Project website and interactive examples](https://xxbai.space/deletion-gain/)
+
 ```bibtex
-@article{zhang2026similarity,
+@misc{zhang2026similarity,
   title   = {Similarity Is Not Validity: Defending {LLM} Semantic Caches Against Poisoning},
   author  = {Zhang, Zihan and Yao, Shuangjie and Liu, Zesen and Zhang, Zhixiang and
              Lai, Wai Ip and Yeung, Dung Hiu Hilton and Zhang, Chun Kit and Ma, Fuchen and
              Yuan, Yuanyuan and Jiang, Yu and She, Dongdong},
-  journal = {arXiv preprint},
-  year    = {2026}
+  year    = {2026},
+  eprint  = {2609.35908},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.CR},
+  url     = {https://arxiv.org/abs/2609.35908}
 }
 ```
 

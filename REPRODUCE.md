@@ -1,5 +1,8 @@
 # Reproducing the paper
 
+[Paper: arXiv:2609.35908](https://arxiv.org/abs/2609.35908) ·
+[Project website and interactive examples](https://xxbai.space/deletion-gain/)
+
 Every table and figure maps to a frozen result file and to the script that produced it.
 Paths below are relative to the repository root. `R/` stands for
 `experiments/paper/results/`, `X/` for `experiments/paper/`, and `data/` is the

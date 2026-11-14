@@ -43,6 +43,33 @@ from these three files.
 | `runs/sc_ipi_ablation_20260920/` | Rows of the Answer Check ablation on KCA |
 | `runs/serving_20260916/`, `runs/asr_columns_20260916/` | Latency samples and LaCache scores |
 
+## Earlier Answer Check rows
+
+`runs/paper/perrow/answer_check_rows/` holds an earlier version of the per-row scores.
+The backend model answered each attack prompt twice. In these files the outcome label
+(`poisoned`) refers to the first answer, while `adl_best` and `echo_best` of the attack
+rows were computed on the second one. For e5-small-v2,
+`runs/supp_appendix_20260923/inputs/rows_{lmp,scp,kca}.jsonl` compute both on the
+labelled answer, and the reported results of our defense use these files. The CAP rows
+of the other embedding models are in `runs/supp_appendix_20260923/aligned_rows_other/`.
+
+The two versions of the e5-small-v2 files differ only in `adl_best` and `echo_best` of
+attack rows. Benign rows are identical, and so are `excess_span`, `base_cos` and
+`poisoned` of attack rows.
+
+| Set | Attack rows | `adl_best` differs | `echo_best` differs |
+|---|---|---|---|
+| CAP (`lmp`) | 800 | 282 | 26 |
+| SCP (`scp`) | 798 | 235 | 38 |
+| KCA (`kca`) | 798 | 426 | 154 |
+
+The earlier files stay in the release because scripts read them.
+`recompute_baseline_asr.py` and `recompute_nli_appendix.py` take the evaluated entries
+from them, `aligned_main_table.py` and `kca_answer_alignment.py` take them as the input
+of the alignment, and `main_table_holdout.py` reads them for the held-out FPR, which
+uses benign rows only. For the block rate or ASR of our defense, use
+`inputs/rows_{lmp,scp,kca}.jsonl`.
+
 ## Sources and licenses
 
 | Source | Use | License |
